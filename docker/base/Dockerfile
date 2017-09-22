@@ -3,8 +3,8 @@ FROM ubuntu:16.04
 ENV DEBIAN_FRONTEND noninteractive
 ENV TANGO_HOST TangoBox-VM:10000
 
-ADD ../../resources/supervisord.conf /etc/supervisord.conf
-ADD ../../resources/tango_register_device /usr/local/bin/
+ADD resources/supervisord.conf /etc/supervisord.conf
+ADD resources/tango_register_device /usr/local/bin/
 #adding PyAlarm DS
 ADD /usr/local/lib/python2.7/dist-packages/panic-6.0.6-py2.7.egg/panic/ds/PyAlarm.py /usr/local/bin/
 
