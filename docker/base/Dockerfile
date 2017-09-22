@@ -6,7 +6,7 @@ ENV TANGO_HOST TangoBox-VM:10000
 ADD resources/supervisord.conf /etc/supervisord.conf
 ADD resources/tango_register_device /usr/local/bin/
 #adding PyAlarm DS
-ADD /usr/local/lib/python2.7/dist-packages/panic-6.0.6-py2.7.egg/panic/ds/PyAlarm.py /usr/local/bin/
+ADD resources/PyAlarm.py /usr/local/bin/
 
 RUN apt-get update && apt-get install -y \
     # mandatory packages/tools
@@ -37,6 +37,7 @@ RUN apt-get update && apt-get install -y \
     setuptools \
     #PyTango
     pytango \
+    fandango \
 # cleaning
  && apt-get -y clean \
  && alias python=python2.7 \
