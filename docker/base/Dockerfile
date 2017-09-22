@@ -43,5 +43,5 @@ RUN apt-get update && apt-get install -y \
  && apt-get -y clean \
  && alias python=python2.7 \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
+#supervisor
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
