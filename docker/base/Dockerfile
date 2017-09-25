@@ -3,6 +3,9 @@ FROM ubuntu:16.04
 ENV DEBIAN_FRONTEND noninteractive
 ENV TANGO_HOST TangoBox-VM:10000
 
+COPY resources/supervisord.conf /etc/supervisord.conf
+COPY resources/tango_register_device /usr/local/bin/
+
 RUN apt-get update && apt-get install -y \
     # mandatory packages/tools
     build-essential \
@@ -17,6 +20,7 @@ RUN apt-get update && apt-get install -y \
     default-jdk \
     libzmq3-dev \
     libomniorb4-dev libcos4-dev omniidl \
+	supervisor \
     # Tango-9.2.5a
  && wget https://sourceforge.net/projects/tango-cs/files/tango-9.2.5a.tar.gz -P /tmp && cd /tmp/ && tar xvfz tango-9.2.5a.tar.gz \
  && tango-9.2.5a/configure --prefix=/usr/local --enable-java --enable-mariadb --disable-dbserver \
@@ -32,9 +36,13 @@ RUN apt-get update && apt-get install -y \
     setuptools \
     #PyTango
     pytango \
+    fandango \
+    panic \
 # cleaning
  && apt-get -y clean \
  && alias python=python2.7 \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#supervisor
 
-CMD /bin/bash
+
+CMD /usr/bin/supervisord -c /etc/supervisord.conf
