@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y \
     libboost-all-dev \
     libboost-dev \
     libboost-python-dev \
+    sudo \
  && pip install -U \
     numpy \
     six \
@@ -41,8 +42,13 @@ RUN apt-get update && apt-get install -y \
 # cleaning
  && apt-get -y clean \
  && alias python=python2.7 \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+#adding user
+ && useradd -ms /bin/bash tango-cs \
+ && tango-cs:tango | chpasswd \
+ && ech "tango-cs ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/tango-cs \
+ && chmod 0440 /etc/sudoers.d/tango-cs \
+ && mkdir /home/tango-cs/dservers
 #supervisor
-
-
+USER tango-cs
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
