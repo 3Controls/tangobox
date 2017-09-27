@@ -8,7 +8,7 @@ COPY resources/tango_register_device /usr/local/bin/
 RUN git clone https://github.com/sergirubio/PyPLC.git \
     && cd PyPLC \
     && sudo python setup.py install
-    #check install dir
+    #check PyPLC install dir
 
 
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
