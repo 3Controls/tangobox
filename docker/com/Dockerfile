@@ -5,10 +5,13 @@ COPY resources/SerialLine /usr/local/bin/
 COPY resources/supervisord.conf /etc/supervisord.conf
 COPY resources/tango_register_device /usr/local/bin/
 
-RUN git clone https://github.com/sergirubio/PyPLC.git \
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    && git clone https://github.com/sergirubio/PyPLC.git \
     && cd PyPLC \
-    && sudo python setup.py install
-    #check PyPLC install dir
-
+    && sudo python setup.py install \
+    && cd /usr/local/lib/python2.7/dist-packages \
+    && sudo unzip pyplc-7.7-py2.7.egg
 
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
