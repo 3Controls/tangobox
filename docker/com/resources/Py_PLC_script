@@ -1,6 +1,0 @@
-#!/bin/python
-
-chmod 755 /usr/local/lib/python2.7/dist-packages/PyPLC/PyPLC.py
-/usr/local/lib/python2.7/dist-packages/PyPLC/PyPLC.py
-
-exit 1
