@@ -14,27 +14,23 @@ RUN apt-get update && apt-get install -y \
 	unzip \
 	wget \
 # install mariadb and mysql
-	mariadb-client mariadb-server libmysqlclient-dev libmariadb-client-lgpl-dev
+	mariadb-client mariadb-server libmysqlclient-dev libmariadb-client-lgpl-dev \
 
 # getting HDB, TDB, and SNAP
-RUN wget https://sourceforge.net/projects/tango-cs/files/tools/ArchivingRoot-16.2.4.zip -P /tmp/mambo \
+ && wget https://sourceforge.net/projects/tango-cs/files/tools/ArchivingRoot-16.2.4.zip -P /tmp/mambo \
  && cd /tmp/mambo && unzip ArchivingRoot-16.2.4.zip \
  && cp /tmp/mambo/bin/linux/* /usr/local/bin/ \
  && mkdir /usr/local/conf && cp /tmp/mambo/conf/*.xml /usr/local/conf/ \
  && cp /tmp/mambo/conf/linux/* /usr/local/conf/ \
+ && mkdir /usr/local/conf/snap/ && cp /tmp/mambo/conf/snap/* /usr/local/conf/snap/ \
  && mkdir /usr/local/db/ && cp /tmp/mambo/db/* /usr/local/db/ \
  && cp /tmp/mambo/device/linux/* /usr/local/bin/ \
- && mkdir /usr/local/lib/java/ && cp /tmp/mambo/lib/java/* /usr/local/lib/java/
+ && mkdir /usr/local/lib/java/ && cp /tmp/mambo/lib/java/* /usr/local/lib/java/ \
 
 # GETTING AND INSTALLING HDB++ SERVER
-# here we are wait for chedburgh
-#RUN wget www.tango-controls.org/media/filer_public/e1/2e/e12ed9d9-bb8c-4c57-83b1-fadf6bd4c868/hdb_16-1ubuntu2_amd64.deb -P /tmp/ \
-# && dpkg -i /tmp/hdb_16-1ubuntu2_amd64.deb \
-# OR
-# RUN git clone --recursive https://github.com/tango-controls/libhdbpp.git && cd libhdbpp && make && make install
 
 # cleaning
-RUN apt-get clean -y \
+ && apt-get clean -y \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
