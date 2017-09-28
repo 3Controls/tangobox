@@ -4,6 +4,7 @@ COPY resources/ModbusDS /usr/local/bin/
 COPY resources/SerialLine /usr/local/bin/
 COPY resources/supervisord.conf /etc/supervisord.conf
 COPY resources/tango_register_device /usr/local/bin/
+COPY resources/Py_PLC_script /usr/local/bin/
 
 RUN apt-get update && apt-get install -y \
     git \
