@@ -7,11 +7,12 @@ services:
     command: supervisord -c /etc/supervisord.archiving.conf
 #    environment:
     volumes:
-      - ./.config/supervisord/supervisor.archiving.conf:/etc:ro
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.archiving.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
       - base:tangobox-base  
+      - sardana:tangobox-sardana
       - sim:tangobox-sim
       - com:tangobox-com
       - web:tangobox-web
@@ -22,10 +23,11 @@ services:
     command: supervisord -c /etc/supervisord.base.conf
 #    environment: 
     volumes:
-      - ./.config/supervisord/supervisor.base.conf:/etc:ro
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.base.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
+      - sardana:tangobox-sardana
       - sim:tangobox-sim  
       - com:tangobox-com
       - archiving:tangobox-archiving
@@ -37,7 +39,7 @@ services:
     command: supervisord -c /etc/supervisord.com.conf
 #    environment: 
     volumes:
-      - ./.config/supervisord/supervisor.com.conf:/etc:ro
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.com.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
@@ -45,6 +47,23 @@ services:
       - sim:tangobox-sim
       - archiving:tangobox-archiving
       - web:tangobox-web
+      - sardana:tangobox-sardana
+
+  sardana:
+    image: sardana:latest
+    hostname: tangobox-sardana
+    command: supervisord -c /etc/supervisord.sardana.conf
+#    environment: 
+    volumes:
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.sardana.conf:/etc:ro
+    extra_hosts:
+      - "TangoBox-VM:10.0.2.15"
+    links:
+      - base:tangobox-base  
+      - com:tangobox-com
+      - archiving:tangobox-archiving
+      - web:tangobox-web
+
 
   sim:
     image: sim:latest
@@ -52,7 +71,7 @@ services:
     command: supervisord -c /etc/supervisord.sim.conf
 #    environment: 
     volumes:
-      - ./.config/supervisord/supervisor.sim.conf:/etc:ro
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.sim.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
@@ -60,6 +79,7 @@ services:
       - com:tangobox-com
       - archiving:tangobox-archiving
       - web:tangobox-web
+      - sardana:tangobox-sardana
 
   web:
     image: web:latest
@@ -67,7 +87,7 @@ services:
     command: supervisord -c /etc/supervisord.web.conf
 #    environment: 
     volumes:
-      - ./.config/supervisord/supervisor.web.conf:/etc:ro
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.web.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
@@ -75,3 +95,4 @@ services:
       - sim:tangobox-sim
       - com:tangobox-com
       - archiving:tangobox-archiving
+      - sardana:tangobox-sardana

@@ -1,0 +1,12 @@
+[Unit]
+Description= Startup of all containres
+After=tango-starter.service
+Wants=tango-starter.service
+
+[Service]
+Restart=on-failure
+RestartSec=10
+ExecStart= /usr/tango-cs/Dockerfiles/composer/docker-compose up
+
+[Install]
+WantedBy=tango.target
