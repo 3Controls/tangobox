@@ -1,5 +1,5 @@
 127.0.0.1	localhost 
-127.0.1.1       TangoBox-VM tangobox-vm
+127.0.1.2 TangoBox-VM tangobox-vm
 # 10.0.2.15	TangoBox-VM
 172.18.0.2	tangobox-archive
 172.18.0.3	tangobox-sim
