@@ -1,8 +1,8 @@
 [Unit]
 Description=TangoAccessControl device server
-Requires=tango-db.service, mysql.service
+Requires=tango-db.service
+Requires=mysql.service
 After=tango-db.service
-
 
 [Service]
 Restart=always

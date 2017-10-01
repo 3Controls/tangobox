@@ -1,7 +1,8 @@
 [Unit]
 Description=Starter device server
-After=tango-accesscontrol.service
-Requires=tango-db.service, tango-accesscontrol.service
+After=tango-accesscontrol
+Requires=tango-db.service
+Requires=tango-accesscontrol.service
 
 [Service]
 Restart=always

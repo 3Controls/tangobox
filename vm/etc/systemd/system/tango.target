@@ -1,0 +1,10 @@
+[Unit]
+Description=Tango development enviroment target
+After=mysql.service
+Requires=tango-db.service
+Requires=tango-accesscontrol.service
+Requires=tango-starter.service
+
+[Install]
+WantedBy=multi-user.target
+
