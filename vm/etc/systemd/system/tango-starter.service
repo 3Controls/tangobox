@@ -4,8 +4,8 @@ After=tango-accesscontrol.service
 Requires=tango-db.service, tango-accesscontrol.service
 
 [Service]
-Restart=on-failure
-RestartSec=5
+Restart=always
+RestartSec=10
 #Environment=MYSQL_UNIX_PORT=/var/run/mysqld/mysqld.sock
 Environment=LD_LIBRARY_PATH=/usr/local/lib
 Environment=PYTHONPATH=${PYTHONPATH}:/home/tango-cs/.local/lib/python2.7/site-packages
