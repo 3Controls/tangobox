@@ -7,7 +7,7 @@ services:
     command: supervisord -c /etc/supervisord.archiving.conf
 #    environment:
     volumes:
-      - ./.config/supervisord/supervisor.archiving.conf:/etc:ro
+      - ./.config/supervisord/supervisord.archiving.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
@@ -22,7 +22,7 @@ services:
     command: supervisord -c /etc/supervisord.base.conf
 #    environment: 
     volumes:
-      - ./.config/supervisord/supervisor.base.conf:/etc:ro
+      - ./.config/supervisord/d.base.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
@@ -37,7 +37,7 @@ services:
     command: supervisord -c /etc/supervisord.com.conf
 #    environment: 
     volumes:
-      - ./.config/supervisord/supervisor.com.conf:/etc:ro
+      - ./.config/supervisord/supervisord.com.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
@@ -52,7 +52,7 @@ services:
     command: supervisord -c /etc/supervisord.sim.conf
 #    environment: 
     volumes:
-      - ./.config/supervisord/supervisor.sim.conf:/etc:ro
+      - ./.config/supervisord/supervisord.sim.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
@@ -67,7 +67,7 @@ services:
     command: supervisord -c /etc/supervisord.web.conf
 #    environment: 
     volumes:
-      - ./.config/supervisord/supervisor.web.conf:/etc:ro
+      - ./.config/supervisord/supervisord.web.conf:/etc:ro
     extra_hosts:
       - "TangoBox-VM:10.0.2.15"
     links:
