@@ -1,0 +1,29 @@
+#
+# Resource backup , created Thu Jul 18 15:02:13 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/beam2, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/beam2/DEVICE/GenericSimulator: "elin/focus/sect1",\ 
+                                                "elin/focus/sect2"
+
+
+# --- elin/focus/sect1 properties
+
+elin/focus/sect1->__SubDevices: "elin/focus/sect1"
+
+# --- elin/focus/sect2 properties
+
+elin/focus/sect2->__SubDevices: "elin/focus/sect2"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+

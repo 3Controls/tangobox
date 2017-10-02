@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pogoDsl:PogoSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pogoDsl="http://www.esrf.fr/tango/pogo/PogoDsl">
+  <multiClasses pogoRevision="8.1" name="LinacMediumLevel" sourcePath="/mntdirect/_segfs/tango/cppserver/misc/simu/linac/MulticlassLinac" description="" filestogenerate="XMI   file,Code files,Makefile">
+    <classes classname="LinacRF" sourcePath="/mntdirect/_segfs/tango/cppserver/misc/simu/linac/LinacRF">
+      <inheritances classname="Device_4Impl" sourcePath="/segfs/tango/templates/AbstractClasses"/>
+    </classes>
+    <classes classname="LinacModulator" sourcePath="/mntdirect/_segfs/tango/cppserver/misc/simu/linac/LinacModulator">
+      <inheritances classname="Device_4Impl" sourcePath="/segfs/tango/templates/AbstractClasses"/>
+    </classes>
+    <classes classname="LinacModAux" sourcePath="/mntdirect/_segfs/tango/cppserver/misc/simu/linac/LinacModAux">
+      <inheritances classname="Device_4Impl" sourcePath="/segfs/tango/templates/AbstractClasses"/>
+    </classes>
+    <classes classname="LinacHVPS" sourcePath="/mntdirect/_segfs/tango/cppserver/misc/simu/linac/LinacHVPS">
+      <inheritances classname="Device_4Impl" sourcePath="/segfs/tango/templates/AbstractClasses"/>
+    </classes>
+    <classes classname="LinacGunAux" sourcePath="/mntdirect/_segfs/tango/cppserver/misc/simu/linac/LinacGunAux">
+      <inheritances classname="Device_4Impl" sourcePath="/segfs/tango/templates/AbstractClasses"/>
+    </classes>
+    <classes classname="LinacGun" sourcePath="/mntdirect/_segfs/tango/cppserver/misc/simu/linac/LinacGun">
+      <inheritances classname="Device_4Impl" sourcePath="/segfs/tango/templates/AbstractClasses"/>
+    </classes>
+    <classes classname="LinacCooling" sourcePath="/mntdirect/_segfs/tango/cppserver/misc/simu/linac/LinacCooling">
+      <inheritances classname="Device_4Impl" sourcePath="/segfs/tango/templates/AbstractClasses"/>
+    </classes>
+    <preferences makefileHome="/segfs/tango/cppserver/env"/>
+  </multiClasses>
+</pogoDsl:PogoSystem>

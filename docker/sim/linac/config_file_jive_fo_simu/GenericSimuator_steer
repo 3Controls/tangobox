@@ -1,0 +1,129 @@
+#
+# Resource backup , created Thu Jul 18 15:25:17 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/steer, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/steer/DEVICE/GenericSimulator: "elin/steer/bh1",\ 
+                                                "elin/steer/bh2",\ 
+                                                "elin/steer/bv1",\ 
+                                                "elin/steer/bv2",\ 
+                                                "elin/steer/chan16",\ 
+                                                "elin/steer/gh1",\ 
+                                                "elin/steer/gh2",\ 
+                                                "elin/steer/gh3",\ 
+                                                "elin/steer/gh4",\ 
+                                                "elin/steer/gv1",\ 
+                                                "elin/steer/gv2",\ 
+                                                "elin/steer/gv3",\ 
+                                                "elin/steer/gv4",\ 
+                                                "elin/steer/s1h1",\ 
+                                                "elin/steer/s1h2",\ 
+                                                "elin/steer/s1v1",\ 
+                                                "elin/steer/s1v2",\ 
+                                                "elin/steer/s2h1",\ 
+                                                "elin/steer/s2h2",\ 
+                                                "elin/steer/s2v1",\ 
+                                                "elin/steer/s2v2",\ 
+                                                "elin/steer/triplet"
+
+
+# --- elin/steer/bh1 properties
+
+elin/steer/bh1->__SubDevices: "elin/steer/bh1"
+
+# --- elin/steer/bh2 properties
+
+elin/steer/bh2->__SubDevices: "elin/steer/bh2"
+
+# --- elin/steer/bv1 properties
+
+elin/steer/bv1->__SubDevices: "elin/steer/bv1"
+
+# --- elin/steer/bv2 properties
+
+elin/steer/bv2->__SubDevices: "elin/steer/bv2"
+
+# --- elin/steer/chan16 properties
+
+elin/steer/chan16->__SubDevices: "elin/steer/chan16"
+
+# --- elin/steer/gh1 properties
+
+elin/steer/gh1->__SubDevices: "elin/steer/gh1"
+
+# --- elin/steer/gh2 properties
+
+elin/steer/gh2->__SubDevices: "elin/steer/gh2"
+
+# --- elin/steer/gh3 properties
+
+elin/steer/gh3->__SubDevices: "elin/steer/gh3"
+
+# --- elin/steer/gh4 properties
+
+elin/steer/gh4->__SubDevices: "elin/steer/gh4"
+
+# --- elin/steer/gv1 properties
+
+elin/steer/gv1->__SubDevices: "elin/steer/gv1"
+
+# --- elin/steer/gv2 properties
+
+elin/steer/gv2->__SubDevices: "elin/steer/gv2"
+
+# --- elin/steer/gv3 properties
+
+elin/steer/gv3->__SubDevices: "elin/steer/gv3"
+
+# --- elin/steer/gv4 properties
+
+elin/steer/gv4->__SubDevices: "elin/steer/gv4"
+
+# --- elin/steer/s1h1 properties
+
+elin/steer/s1h1->__SubDevices: "elin/steer/s1h1"
+
+# --- elin/steer/s1h2 properties
+
+elin/steer/s1h2->__SubDevices: "elin/steer/s1h2"
+
+# --- elin/steer/s1v1 properties
+
+elin/steer/s1v1->__SubDevices: "elin/steer/s1v1"
+
+# --- elin/steer/s1v2 properties
+
+elin/steer/s1v2->__SubDevices: "elin/steer/s1v2"
+
+# --- elin/steer/s2h1 properties
+
+elin/steer/s2h1->__SubDevices: "elin/steer/s2h1"
+
+# --- elin/steer/s2h2 properties
+
+elin/steer/s2h2->__SubDevices: "elin/steer/s2h2"
+
+# --- elin/steer/s2v1 properties
+
+elin/steer/s2v1->__SubDevices: "elin/steer/s2v1"
+
+# --- elin/steer/s2v2 properties
+
+elin/steer/s2v2->__SubDevices: "elin/steer/s2v2"
+
+# --- elin/steer/triplet properties
+
+elin/steer/triplet->__SubDevices: "elin/steer/triplet"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+

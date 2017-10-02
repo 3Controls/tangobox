@@ -1,0 +1,15 @@
+LINAC=/home/tango-cs/dservers/linac
+
+echo "Compiling all the linac simulator servers"
+
+TARGETS=('GenericMultiChannel' 'GenericSimulator' 'Linac'
+	'LinacCooling' 'LinacGun' 'LinacGunAux' 'LinacHVPS' 'LinacMediumLevel'
+	'LinacModAux' 'LinacModulator' 'LinacRF' 'LinacSequencer' 'Simurelay')
+
+for TARGET in ${TARGETS[*]}
+do
+	echo "Compiling : $TARGET"
+	cd $LINAC/$TARGET
+	make clean
+	make SIMU=1
+done

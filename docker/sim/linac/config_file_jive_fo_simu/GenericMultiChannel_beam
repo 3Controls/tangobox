@@ -1,0 +1,44 @@
+#
+# Resource backup , created Thu Jul 18 15:29:24 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericMultiChannel/beam, GenericMultiChannel device declaration
+#---------------------------------------------------------
+
+GenericMultiChannel/beam/DEVICE/GenericMultiChannel: "elin/focus/beam1",\ 
+                                                     "elin/focus/beam2"
+
+
+# --- elin/focus/beam1 properties
+
+elin/focus/beam1->AttributesList: "elin/focus/buncher/current",\ 
+                                  "elin/focus/lens/current",\ 
+                                  "elin/focus/triplet/current",\ 
+                                  "elin/focus/spare/current"
+elin/focus/beam1->AttributesSpectrumName: new_attribute
+elin/focus/beam1->__SubDevices: "elin/focus/buncher",\ 
+                                "elin/focus/lens",\ 
+                                "elin/focus/triplet",\ 
+                                "elin/focus/spare"
+
+# --- elin/focus/beam2 properties
+
+elin/focus/beam2->AttributesList: "ELIN/FOCUS/SECT1/current",\ 
+                                  "ELIN/FOCUS/SECT2/current"
+elin/focus/beam2->AttributesSpectrumName: currentSpecturum
+elin/focus/beam2->__SubDevices: "elin/focus/sect1",\ 
+                                "elin/focus/sect2"
+
+#---------------------------------------------------------
+# CLASS GenericMultiChannel properties
+#---------------------------------------------------------
+
+CLASS/GenericMultiChannel->Description: "This class tries to be a generic Tango multichannel device server.",\ 
+                                        "It collects DevDouble data from different devices and compute some common",\ 
+                                        "operation on it : sum, mean, RMS and standard deviation.",\ 
+                                        "The collected data are also provided into a spectrum attribute."
+CLASS/GenericMultiChannel->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericMultiChannel->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericMultiChannel->ProjectTitle: TangoMultiChannel
+

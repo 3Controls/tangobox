@@ -1,0 +1,43 @@
+#
+# Resource backup , created Thu Jul 18 15:32:10 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER LinacRF/linac, LinacRF device declaration
+#---------------------------------------------------------
+
+LinacRF/linac/DEVICE/LinacRF: "elin/rf/run"
+
+
+# --- elin/rf/run properties
+
+elin/rf/run->__SubDevices: "elin/o-rf/freq"
+
+# --- elin/rf/run attribute properties
+
+elin/rf/run/Frequency->__value: 2998.1601
+elin/rf/run/Delay->__value: 40
+elin/rf/run/PBunchPhase->__value: 250
+elin/rf/run/PBunchAttenu->__value: 7.5
+elin/rf/run/BunchPhase->__value: 17.6
+elin/rf/run/Sect2Phase->__value: 243
+
+#---------------------------------------------------------
+# CLASS LinacRF properties
+#---------------------------------------------------------
+
+CLASS/LinacRF->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/LinacRF/"
+CLASS/LinacRF->cvs_tag: LinacRF-Release_1_1_0
+CLASS/LinacRF->Description: "This class will manage the Linac RadioFrequency.",\ 
+                            "The three structures of the linac (buncher - section 1 - section 2) consist of",\ 
+                            "coupled wave guide cavities, through which a high frequency electromagnetic wave",\ 
+                            "passes at the same speed than the electrons.",\ 
+                            "The electrons are adjusted to the peak of the RF wave,",\ 
+                            "they are then subjected to the maximum electrical field.",\ 
+                            "The phase of the section1 is the reference;",\ 
+                            "phases of the RF in buncher and section 2 are matched to get the electrons",\ 
+                            "adjusted to the peak of the RF wave."
+CLASS/LinacRF->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/LinacRF->InheritedFrom: Tango::Device_4Impl
+CLASS/LinacRF->ProjectTitle: "Linac Radio Frequency"
+

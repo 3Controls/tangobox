@@ -1,0 +1,11 @@
+/**
+ * Device Class Identification:
+ * 
+ * Class Name   :	LinacModAux
+ * Contact      :	vedder@esrf.fr
+ * Class Family :	Miscellaneous
+ * Platform     :	Unix Like
+ * Bus          :	Not Applicable
+ * Manufacturer :	none
+ * Reference    :	
+ */

@@ -1,0 +1,24 @@
+#
+# Resource backup , created Thu Jul 18 15:24:53 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/linacrf, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/linacrf/DEVICE/GenericSimulator: "elin/rf/bun-at"
+
+
+# --- elin/rf/bun-at properties
+
+elin/rf/bun-at->__SubDevices: "elin/rf/bun-at"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+

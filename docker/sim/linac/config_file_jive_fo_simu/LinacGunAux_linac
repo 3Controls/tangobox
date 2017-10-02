@@ -1,0 +1,26 @@
+#
+# Resource backup , created Thu Jul 18 15:34:36 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER LinacGunAux/linac, LinacGunAux device declaration
+#---------------------------------------------------------
+
+LinacGunAux/linac/DEVICE/LinacGunAux: "elin/gun/aux"
+
+
+# --- elin/gun/aux attribute properties
+
+elin/gun/aux/HeatV->__value: 5.6
+
+#---------------------------------------------------------
+# CLASS LinacGunAux properties
+#---------------------------------------------------------
+
+CLASS/LinacGunAux->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/LinacGunAux/"
+CLASS/LinacGunAux->cvs_tag: LinacGunAux-Release_1_0_0
+CLASS/LinacGunAux->Description: "This class will manage the gun auxiliary of the Linac."
+CLASS/LinacGunAux->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/LinacGunAux->InheritedFrom: Tango::Device_4Impl
+CLASS/LinacGunAux->ProjectTitle: "Linac Gun Auxiliary"
+

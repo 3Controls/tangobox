@@ -1,0 +1,37 @@
+#
+# Resource backup , created Thu Jul 18 15:35:14 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER LinacHVPS/linac, LinacHVPS device declaration
+#---------------------------------------------------------
+
+LinacHVPS/linac/DEVICE/LinacHVPS: "elin/gun/hv",\ 
+                                  "elin/mod1/hv",\ 
+                                  "elin/mod2/hv"
+
+
+# --- elin/gun/hv attribute properties
+
+elin/gun/hv/HighVoltage->__value: 75
+
+# --- elin/mod1/hv attribute properties
+
+elin/mod1/hv/HighVoltage->__value: 19.5
+
+# --- elin/mod2/hv attribute properties
+
+elin/mod2/hv/HighVoltage->__value: 18.85
+
+#---------------------------------------------------------
+# CLASS LinacHVPS properties
+#---------------------------------------------------------
+
+CLASS/LinacHVPS->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/LinacHVPS/"
+CLASS/LinacHVPS->cvs_tag: LinacHVPS-Release_1_0_0
+CLASS/LinacHVPS->Description: "The high voltage power supply will provide high voltage",\ 
+                              "to the modulators and to the the gun modulator of the linac."
+CLASS/LinacHVPS->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/LinacHVPS->InheritedFrom: Tango::Device_4Impl
+CLASS/LinacHVPS->ProjectTitle: "Linac High Voltage Power Supply"
+
