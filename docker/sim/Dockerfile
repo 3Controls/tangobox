@@ -1,3 +1,4 @@
+
 FROM base:latest
 
 ENV TANGO_HOST TangoBox-VM:10000
@@ -14,5 +15,4 @@ RUN sudo apt-get update \
 #    && sudo bash linac.start
 
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
-
 
