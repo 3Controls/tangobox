@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="89">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="LinacRF"
+                   displayName="LinacRF"
+                   projectFiles="true"
+                   root="../LinacRF">
+      <itemPath>../LinacRF/LinacRF.cpp</itemPath>
+    </logicalFolder>
+    <df root="." name="MulticlassLinac">
+      <in>MultiClassesFactory.cpp</in>
+      <in>main.cpp</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile.multi</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile.multi</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile.multi</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile.multi clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem></pElem>
+              <pElem>../../../../../release/debian6/include</pElem>
+              <pElem>../LinacRF</pElem>
+              <pElem>../LinacModulator</pElem>
+              <pElem>../LinacModAux</pElem>
+              <pElem>../LinacHVPS</pElem>
+              <pElem>../LinacGunAux</pElem>
+              <pElem>../LinacGun</pElem>
+              <pElem>../LinacCooling</pElem>
+              <pElem>../include</pElem>
+              <pElem>Z://tango/cppserver/misc/simu/linac/MulticlassLinac</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>_DEBUG</Elem>
+              <Elem>_REENTRANT</Elem>
+              <Elem>linux</Elem>
+            </preprocessorList>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem></pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="../LinacRF/LinacRF.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="MultiClassesFactory.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

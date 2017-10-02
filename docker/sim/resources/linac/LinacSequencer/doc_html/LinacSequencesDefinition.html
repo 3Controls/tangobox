@@ -1,0 +1,1245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Linac Sequences definition</title>
+
+
+</head>
+<body>
+
+<center>
+<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td style="text-align: center;"><a href="http://www.esrf.fr/" target="new"> <img src="http://www.esrf.fr/gifs/logo/80.gif" border="0"></a></td>
+
+      <td style="text-align: center;">
+      <h1>Linac Sequences Definition</h1>
+
+      </td>
+
+      <td style="text-align: center;"><a href="http://www.esrf.fr/" target="new"> <img src="http://www.esrf.fr/gifs/logo/80.gif" border="0"></a></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<span style="font-weight: bold;"></span>
+<p style="text-align: left; color: rgb(0, 0, 0);" class="MsoNormal"><span style="font-style: italic;">Reynald Bourtembourg - 4 August, 2006</span></p>
+<p style="text-align: left; color: rgb(0, 0, 0);" class="MsoNormal">This page describes
+the macros used to change the state of the Linac.<br>
+
+The text <span style="color: navy;" lang="EN-GB">written
+in dark blue</span> is the text displayed during the execution of
+the sequence in the Attribute <span style="font-style: italic;">SequenceHistory</span>
+of the sequencer device (elin/master/seq).</p>
+
+<p style="text-align: left;" class="MsoNormal"><a href="#Macro_ON">Macro ON</a><br>
+
+<a href="#Macro_OFF">Macro OFF</a><br>
+
+<a href="#Macro_STANDBY">Macro STANDBY</a><br>
+
+<a href="#Macro_Low_Heating">Macro LOW HEATING</a><br>
+
+<a href="#Macro_Load_settings">Macro LOAD SETTINGS</a><br>
+
+<a href="#Macro_Save_settings_">Macro SAVE SETTINGS</a>&nbsp;<br>
+
+<a href="#Macro_Force_Save">Macro FORCE SAVE</a></p>
+
+<b><i><span style="font-size: 14pt; font-family: Arial;" lang="EN-GB">
+</span></i></b>
+<h2><a name="Macro_ON"></a><span lang="EN-GB">Macro ON</span></h2>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Begin macro On<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Open The economy
+relay<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Set the klystron
+focussing currents<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">SetCurrent</span></span><b style=""> </b><span style="">&nbsp;</span>on
+Tango:://elin/focus/klystron</span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">SetCurrent</b> on each
+Tango Bruker channel device<span style=""></span></span><span lang="EN-GB"></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>each tango Bruker
+Channels devices will apply its set point.</span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Devsetvalue</b> on each
+taco Bruker channel
+device<span style=""><o:p></o:p></span></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Set the beam1
+focussing
+currents<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>idem
+klystron focussing currents</span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Set the beam2
+focussing
+currents<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Idem
+klystron focussing currents</span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Set the steering
+currents<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB">Idem klystron
+focussing currents<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Switch ON/OFF 352Mhz<br>
+
+<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if pulseType == LONG</span></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style=""></span><b style="">On</b>
+on elin/r-gun/352m<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else<br>
+
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">Off</span> on
+elin/r-gun/352m</span></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Switch On Modulator
+1 HV<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Reset</b> on elin/mod1/hv
+(reset the Daresbury)<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Switch On Modulator
+2 HV<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b style=""><span lang="EN-GB">SoftReset</span></b><span lang="EN-GB"> on elin/mod2/hv (<span style="font-weight: bold;">SoftReset</span> don't
+reset the Daresbury)</span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1);</span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">On </b>on elin/mod1/hv</span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">SoftOn</b> on elin/mod2/hv
+(doesn't pulse the relay which is the same as for elin/mod1/hv, but
+says to the server that we want elin/mod2/hv to be switched on, will
+change the state of the device)</span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Switch On Gun HV<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">On</b> on elin/gun/hv</span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1);<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Switch On Modulator
+running<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">On</b> on elin/mod1/run<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">SoftOn</span> on
+elin/mod2/run </span></span><span lang="EN-GB">(doesn't
+pulse the relay which is the same as for
+elin/mod1/run, but says to the server that we want elin/mod2/run to be
+switched on, will change the state of the device)</span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1)</span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Switch On Beam<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style=""></span><b style="">On</b>
+on elin/beam/run</span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Set the Modulator 1
+High
+Voltage<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">SetHV</span> on
+elin/mod1/hv</span></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Set the Modulator 2
+High
+Voltage<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">SetHV</span> on
+elin/mod2/hv</span></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Switch On the
+triggers<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">TimingOn</b> on elin/rf/run<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOn</span> on
+taco://elin/t-rf/1</span></span><span lang="EN-GB"><span style=""></span></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">TimingOn</b> on
+elin/mod1/run<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOn</span> on
+taco://elin/t-mod/1<br>
+
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOn</span> on
+taco://elin/t-mod/s1</span></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">TimingOn</b> on
+elin/mod2/run<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOn</span> on
+taco://elin/t-mod/2<br>
+
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOn</span> on
+taco://elin/t-mod/s2</span></span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Switch On RF<o:p></o:p></span></div>
+
+<div style="text-align: left;"><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">On </b>on elin/rf/run</span></div>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">End <span style="">&nbsp;</span>macro ON<o:p></o:p></span></div>
+
+<b><i><span style="font-size: 14pt; font-family: Arial;" lang="EN-GB">
+</span></i></b>
+<h2><a name="Macro_OFF"></a><span lang="EN-GB">Macro OFF</span><span lang="EN-GB"><o:p></o:p></span></h2>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Begin macro Off<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 1 High
+Voltage<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">HVZero </b>on elin/mod1/hv
+(set the high voltage to</span> 0.0 and memorized the set point)<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 2 High
+Voltage<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">HVZero </b>on elin/mod2/hv
+(set the high voltage to</span> 0.0 and memorized the set point)<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">sleep</b>(1) (let the time
+to the capacity to discharge)</span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Modulators
+<span style="">&nbsp;</span>HV<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off</b> on elin/mod1/hv<o:p></o:p></span>
+(the 2 Modulators HVPS are controlled with the same relay)<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">SoftOff</span></span>
+on elin/mod2/hv (SoftOff doesn't send any command to the OffRelay, but
+is usefull to signal we want elin/mod2/hv to be OFF)<br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Gun HV<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b>on elin/gun/hv</span>
+<br>
+
+<span lang="EN-GB"><span style=""><span style="font-style: italic;">set the current in Bruker to 0<br>
+
+</span></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">ZeroCurrent</span>
+on elin/focus/beam1<br>
+
+<span style="font-style: italic;"><span style="font-style: italic;"></span></span></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">ZeroCurrent</span>
+on elin/focus/beam1<br>
+
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">ZeroCurrent</span>
+on elin/steer/1<br>
+
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1)</span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Beam1
+focussing<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b>on elin/focus/beam1</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOff</span> on
+taco://elin/focus/beam1</span></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Beam2 focussing<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b>on elin/focus/beam2</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOff</span> on
+taco://elin/focus/beam2</span></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the steerers<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off</b> on elin/steer/1</span>
+<br>
+
+<span lang="EN-GB"><span style=""></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOff</span> on
+taco://elin/steer/1</span></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Modulator
+auxiliaries<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off</b> on elin/mod1/aux</span>
+(the 2 modulator auxiliaries are controlled with the same relay)<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">SoftOff</span> on
+elin/mod2/aux (to signal we want elin/mod2/aux to be OFF)</span></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Gun
+auxiliaries<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b><span style="">&nbsp;</span>on
+elin/gun/aux</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1) (we don't stop
+everything in the same moment - the electric network prefers)</span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Klystron
+focussing<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">ZeroCurrent</span></span><b style=""> </b><span style="">&nbsp;</span>on
+elin/focus/klystron</span>
+<br>
+
+<span lang="EN-GB"><span style=""></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1)</span><br>
+
+<span lang="EN-GB"><span style=""></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><b style="">Off
+</b>on elin/focus/klystron</span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOff</span> on
+taco://elin/focus/klystron</span></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch off
+352Mhz<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Set attribute In352Mhz </b>of
+elin/beam/run
+with value <b style="">false</b></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">End macro
+Off <o:p></o:p></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></div>
+
+<b><i><span style="font-size: 14pt; font-family: Arial;" lang="EN-GB">
+</span></i></b>
+<h2><a name="Macro_STANDBY"></a><span lang="EN-GB">Macro STANDBY</span><span lang="EN-GB"><o:p>&nbsp;</o:p></span></h2>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Begin macro Standby<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the beam<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">Off</span>
+on elin/beam/run</span><br>
+
+<span lang="EN-GB">Switch(elin/gun/aux state)</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Case
+OFF:<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Switch On the gun auxiliaries<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">On </b>on elin/gun/aux</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Case
+ON:</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">Switch Off the gun
+HV<o:p></o:p></span></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b>on elin/gun/hv<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Open the
+economy relay<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"><b style="">Set attribute Economy </b>of
+elin/beam/run
+with value <span style="font-weight: bold;">false</span></span><br>
+
+<span lang="EN-GB">if (elin/mod2/aux state = FAULT)<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The modulator auxiliaries are Fault<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB">Switch(elin/mod1/aux state)<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"></span><span lang="EN-GB">Case
+OFF:</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"></span><span style="color: navy;" lang="EN-GB">Switch On the modulator auxiliaries <o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">On</b> on elin/mod1/aux
+(the 2 modulator auxiliaries are controlled with the same relay)<o:p></o:p></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">SoftOn</b> on elin/mod2/aux
+(to signal elin/mod2/aux sould be OFF)<o:p></o:p></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"></span><span lang="EN-GB">Case
+ON:</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">Set the
+Modulator 1 High Voltage<o:p></o:p></span></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"></span><b style=""><span lang="EN-GB">HVZero </span></b><span lang="EN-GB">on elin/mod1/hv (set the high voltage to 0 and
+memorize the last set value)</span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"></span><span style="color: navy;" lang="EN-GB">Set the Modulator 2 High Voltage<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"></span><b style=""><span lang="EN-GB">HVZero </span></b><span lang="EN-GB">on elin/mod2/hv (set the high voltage to 0 and
+memorize the last set value)</span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1)</span>
+&nbsp;(let the time to the capacity to discharge)<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">Switch Off
+the Modulators HV<o:p></o:p></span></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b style=""><span lang="EN-GB">Off</span></b><span lang="EN-GB"> on elin/mod1/hv<o:p></o:p></span>
+&nbsp;(the 2 modulator HVPS are controlled with the same relay)<span style="color: navy;" lang="EN-GB"><span style=""><br>
+
+</span></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b style=""><span lang="EN-GB">SoftOff</span></b><span lang="EN-GB"> on elin/mod2/hv<o:p></o:p></span>&nbsp;<span lang="EN-GB">(to signal elin/mod2/hv sould be OFF)</span><br>
+
+<span style="color: navy;" lang="EN-GB"><span style=""><span style="font-weight: bold;"></span></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"></span><span lang="EN-GB">Case
+INIT (Low
+heating) or MOVING:</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">The
+modulator auxiliaries are Warming up<o:p></o:p></span></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;"></span></span><span lang="EN-GB"></span><span lang="EN-GB">Case
+FAULT :</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">The modulator
+auxiliaries are Fault<o:p></o:p></span></span>
+<span lang="EN-GB"><o:p></o:p></span><br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+klystron
+focussing currents<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">SetCurrent</span>
+on elin/focus/klystron</span><br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+beam1 focussing
+currents<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">SetCurrent</span>
+on elin/focus/beam1</span><br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+beam2 focussing
+currents<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">SetCurrent</span>
+on elin/focus/beam2</span><br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+steering
+currents<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-weight: bold;">SetCurrent</span>
+on elin/steer/1</span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch off
+352Mhz<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Set attribute In352Mhz </b>of
+elin/beam/run
+with value <b style="">false</b></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">End of
+macro Standby<o:p></o:p></span><br>
+
+</div>
+
+<b><i><span style="font-size: 14pt; font-family: Arial;" lang="EN-GB">
+</span></i></b>
+<h2><a name="Macro_Low_Heating"></a><span lang="EN-GB">Macro Low Heating</span></h2>
+
+<div style="text-align: left;"><span lang="EN-GB"><o:p></o:p></span><span style="color: navy;" lang="EN-GB">Begin macro Economy</span>
+<br>
+
+<span lang="EN-GB">if(elin/mod2/aux state = FAULT)</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">The
+modulator auxiliaries are Fault<o:p></o:p></span></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span style="color: navy;" lang="EN-GB">Close the economy
+relay<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><b style="">Set
+attribute Economy </b>of elin/beam/run
+with value <span style="font-weight: bold;">true</span></span><span lang="EN-GB"><o:p></o:p></span><br>
+
+<span lang="EN-GB">Switch(elin/mod1/aux state)<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span style="color: navy;" lang="EN-GB"></span><span lang="EN-GB">Case OFF:<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Close the economy relay<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><b style="">Set attribute Economy </b>of
+elin/beam/run
+with value <span style="font-weight: bold;">true</span></span><br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Switch On the modulator auxiliaries<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><b style="">On</b> on
+elin/mod1/aux (the 2 modulator auxiliaries are controlled with the same
+relay)<o:p></o:p></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><b style="">SoftOn</b> on
+elin/mod2/aux (to signal elin/mod2/aux sould be OFF)</span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Case
+ON:</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">Set the Modulator
+1 High Voltage<o:p></o:p></span></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span style="color: navy;" lang="EN-GB"></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">HVZero</span></span></span><b style=""><span lang="EN-GB"> </span></b><span lang="EN-GB">on elin/mod1/hv (set high voltage to 0.0)</span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span style="color: navy;" lang="EN-GB"></span><span style="color: navy;" lang="EN-GB">Set the Modulator 2
+High Voltage<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span style="color: navy;" lang="EN-GB"></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">HVZero</span></span></span><b style=""><span lang="EN-GB"> </span></b><span lang="EN-GB">on elin/mod2/hv (set high voltage to 0.0)</span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1)&nbsp;<i>
+(let the time to capacity
+to decharge</i></span>)<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">Switch Off the
+Modulators HV<o:p></o:p></span></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b style=""><span lang="EN-GB">Off</span></b><span lang="EN-GB"> on elin/mod1/hv<o:p></o:p></span>
+&nbsp;(the 2 modulator HVPS are controlled with the same relay)<span style="color: navy;" lang="EN-GB"><span style=""><br>
+
+</span></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b style=""><span lang="EN-GB">SoftOff</span></b><span lang="EN-GB"> on elin/mod2/hv<o:p></o:p></span>&nbsp;<span lang="EN-GB">(to signal elin/mod2/hv sould be OFF)</span><br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Close the economy relay</span><span lang="EN-GB"><o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><b style="">Set attribute Economy </b>of
+elin/beam/run
+with value <span style="font-weight: bold;">true</span></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span style="color: navy;" lang="EN-GB"></span><span lang="EN-GB">Case INIT (Low
+heating) or MOVING:</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">The modulator
+auxiliaries are Warming up<o:p></o:p></span></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Close the economy relay<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><b style="">Set attribute Economy </b>of
+elin/beam/run
+with value <span style="font-weight: bold;">true</span></span><br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span style="color: navy;" lang="EN-GB"></span><span lang="EN-GB">Case FAULT :</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">The modulator
+auxiliaries are Fault<o:p></o:p></span></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Close the economy relay<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;"></span></span><span lang="EN-GB"><b style="">Set attribute Economy </b>of
+elin/beam/run
+with value <span style="font-weight: bold;">true</span></span><span style="color: navy;" lang="EN-GB"><o:p></o:p></span><br>
+
+<span lang="EN-GB">Switch(elin/gun/aux state)</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Case
+OFF:</span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Switch On the gun auxiliaries<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">On </b>on elin/gun/aux</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Case
+ON:</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: navy;">Switch Off the gun
+HV<o:p></o:p></span></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b>on elin/gun/hv</span>
+<br>
+
+<span lang="EN-GB"><span style=""><span style="font-style: italic;">set the current in Bruker to 0<br>
+
+</span></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">ZeroCurrent</span>
+on elin/focus/beam1<br>
+
+<span style="font-style: italic;"><span style="font-style: italic;"></span></span></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">ZeroCurrent</span>
+on elin/focus/beam1<br>
+
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">ZeroCurrent</span>
+on elin/steer/1<br>
+
+</span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Sleep</b>(1)</span><span lang="EN-GB"><o:p></o:p></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Beam1
+focussing<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b>on elin/focus/beam1</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOff</span> on
+taco://elin/focus/beam1</span></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Beam2 focussing<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b>on elin/focus/beam2</span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOff</span> on
+taco://elin/focus/beam2</span></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the steerers<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off</b> on elin/steer/1</span>
+<br>
+
+<span lang="EN-GB"><span style=""></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOff</span> on
+taco://elin/steer/1</span></span><br>
+
+<b style=""><span lang="EN-GB">Sleep(1)<o:p></o:p></span></b>
+&nbsp;(we don't stop everything in the same moment - the electric
+network prefers)<br>
+
+<span style="color: navy;" lang="EN-GB">Switch Off
+the Klystron
+focussing<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Off </b><span style="">&nbsp;</span>on
+elin/focus/klystron</span><br>
+
+<span lang="EN-GB"><span style=""></span></span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-weight: bold;">DevOff</span> on
+taco://elin/focus/klystron</span></span><br>
+
+<span style="color: navy;" lang="EN-GB">Switch off
+352Mhz<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Set attribute In352Mhz </b>of
+elin/beam/run
+with value <b style="">false</b></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reset the
+Beam1 focussing<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Reset </b><span style="">&nbsp;</span>on
+elin/focus/beam1</span><br>
+
+<span style="color: navy;" lang="EN-GB">Reset the
+Beam2 focussing<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Reset </b><span style="">&nbsp;</span>on
+elin/focus/beam2</span><br>
+
+<span style="color: navy;" lang="EN-GB">Reset the
+steerers<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Reset </b><span style="">&nbsp;</span>on
+elin/steer/1</span><br>
+
+<span style="color: navy;" lang="EN-GB">Reset the
+Klystron focussing<br>
+
+</span><span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b style="">Reset </b><span style="">&nbsp;</span>on
+elin/focus/klystron</span><br>
+
+<span style="color: navy;" lang="EN-GB">End macro
+Economy <o:p></o:p></span></div>
+
+<b><i><span style="font-size: 14pt; font-family: Arial;" lang="EN-GB">
+</span></i></b>
+<h2><a name="Macro_Load_settings"></a><span lang="EN-GB">Macro Load settings</span><span lang="EN-GB"><o:p>&nbsp;</o:p></span></h2>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Begin of config
+file
+selection<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Loading all
+the settings...<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 1 High
+Voltage<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 2 High
+Voltage<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 1 VPFN<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 2 VPFN<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Buncher Phase<o:p></o:p></span>
+<br>
+
+<b style=""><span lang="EN-GB">Sleep(1)<o:p></o:p></span></b>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Pre-buncher
+phase<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Pre-buncher
+attenuation<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Section2 Phase<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the Gun
+heating
+voltage<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the Gun
+grid voltage<o:p></o:p></span>
+<br>
+
+<b style=""><span lang="EN-GB">Sleep(1)<o:p></o:p></span></b>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the Gun
+pulse
+voltage<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the Gun
+pulse length<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the Gun
+High Voltage<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the RF
+Frequency<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Switch in
+long|short
+pulse mode<o:p></o:p></span>
+<b style=""><span lang="EN-GB"></span></b><br>
+
+<span style="color: navy;" lang="EN-GB">Set the RF
+delay<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 1
+delay<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 2
+delay<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 1
+delay s<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Modulator 2
+delay s<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Klystron
+focussing currents<o:p></o:p></span>
+<br>
+
+<span lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Position
+the set point (will be effectively set only if the powersupply is
+already on)</span>
+<br>
+
+<b style=""><span lang="EN-GB">Sleep(1)<o:p></o:p></span></b>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Beam1 focussing
+currents<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB">Position the
+set point (will be
+effectively set only if the powersupply is already on)<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Beam2 focussing
+currents<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB"></span><span lang="EN-GB">Position the set
+point (will be effectively set only if the powersupply is already on)<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Set the
+Steering
+currents<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-GB">Position the
+set point (will be
+effectively set only if the powersupply is already on)<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">End of
+config file
+selection<o:p></o:p></span><br>
+
+</div>
+
+<b><i><span style="font-size: 14pt; font-family: Arial; color: navy;" lang="EN-GB">
+</span></i></b>
+<h2><a name="Macro_Save_settings_"></a><span lang="EN-GB">Macro Save Settings</span><span style="color: navy;" lang="EN-GB"><o:p></o:p></span></h2>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB">Begin to save
+configuration<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Klystron
+focussing currents set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Beam1 focussing
+currents set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Beam2 focussing
+currents set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Steerers
+currents set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Modulator 1 high
+voltage set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Modulator 2 high
+voltage set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Modulator 1 VPFN
+set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Modulator 2 VPFN
+set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Buncher phase
+set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Pre-buncher
+phase set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Pre-buncher
+attenuation set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Section 2 phase
+set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading Gun
+heating
+voltage set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading Gun
+grid voltage
+set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading Gun
+pulse
+voltage set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading Gun
+pulse length
+set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading Gun
+high voltage
+set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading RF
+frequency set
+point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Short/Long pulse
+mode set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading RF
+timer set
+point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Modulator 1
+timer set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Modulator 2
+timer set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Modulator 1
+timer s set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Reading
+Modulator 2
+timer s set point<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">Saving
+settings in file
+&hellip;<o:p></o:p></span>
+<br>
+
+<span style="color: navy;" lang="EN-GB">End<span style="">&nbsp; </span>to save configuration<o:p></o:p></span></div>
+
+</center>
+
+<center>
+<h2><a name="Macro_Force_Save"></a><span lang="EN-GB">Macro Force Save</span><span style="color: navy;" lang="EN-GB"><o:p></o:p></span></h2>
+
+<div style="text-align: left;"><span style="color: navy;" lang="EN-GB"><span style="color: rgb(0, 0, 0);">The Macro FORCE SAVE is almost
+the same as the <a href="#Macro_Save_settings_">macro
+SAVE SETTING</a>.<br>
+
+The difference is that if the <a href="#Macro_Save_settings_">Macro
+SAVE SETTING</a> doesn't succeed in reading a set point, the
+macro is stopped, the error is reported to the user and nothing is
+written to the configuration file.<br>
+
+The Macro Force Save will save all the settings it could retrieve in
+the configuration file wanted and save a default value for the settings
+it could not get.</span></span><span style="color: navy;" lang="EN-GB"></span></div>
+
+</center>
+
+<center>
+<br>
+
+<hr width="100%">
+<h3> ESRF - Software Engineering Group </h3>
+
+</center>
+
+</body>
+</html>

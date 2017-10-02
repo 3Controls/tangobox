@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+  <title>Tango Device Server User's Guide</title>
+
+
+</head>
+
+
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);" alink="#ff0000" link="#0000ff" vlink="#7f00ff">
+
+<p><!-------TITLE------></p>
+
+<table border="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td align="left"> <a href="http://www.esrf.fr/" target="new"> <img src="http://www.esrf.fr/gifs/logo/80.gif" border="0"></a>
+      </td>
+
+      <td align="center"> <a href="http://www.elettra.trieste.it/" target="new"> <img src="http://www.esrf.fr/computing/cs/tango/elettra_logo.gif" border="0"></a> </td>
+
+      <td align="center"> <a href="http://www.synchrotron-soleil.fr/" target="new">
+      <img src="http://www.esrf.fr/computing/cs/tango/soleil_logo.gif" border="0"></a> </td>
+
+      <td align="right"> <a href="http://www.cells.es/" target="new"> <img src="http://www.esrf.fr/computing/cs/tango/alba.jpg" border="0"></a>
+      </td>
+
+      <td>
+      <h2><font color="#7f00ff">
+      <center><a href="http://www.esrf.fr/Infrastructure/Computing/tango/" target="_top"> TANGO </a> <br>
+
+Device Server </center>
+
+      </font> </h2>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<hr width="100%">
+<br>
+
+<center>
+<h1>Linac <br>
+
+Device Description <br>
+
+<br>
+
+Linac Class <br>
+
+</h1>
+
+<b>
+Revision: Release_1_1 - Author: bourtemb - CVS repository: ESRF<br>
+<br>
+
+</b>
+</center>
+
+<center>
+This class&nbsp;manages the high level object controlling the linac
+(ELIN/MASTER/OP).<br>
+
+<br>
+
+<img style="width: 680px; height: 400px;" alt="ESRF Linac" src="linac.jpg"><br>
+
+<br>
+
+&nbsp;This object allows the executions of sequences to put the
+linac in ON,OFF,
+STANDBY or LOW HEATING STATE.<br>
+
+It allows to load linac configuration files too.<br>
+
+For more information about the Linac configuration files, please have a
+look at the <a href="http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/LinacSequencer/doc_html/Description.html">LinacSequencer
+Device Server User's Guide Device Description</a>.<br>
+For more information about the Linac Sequences used to change the state of the Linac, please have a look at the <a href="http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/LinacSequencer/doc_html/LinacSequencesDefinition.html">Linac Sequences Definition</a>.<br>
+
+The Linac server creates a thread which&nbsp;looks at the state of the
+main
+linac devices and then calculate the global state of the Linac.<br>
+This server is also in charge of the <span style="font-style: italic;">Beam Stop</span>: <br>
+When the linac is in ON, UNKNOWN or ALARM state, the SR current is polled at 300ms, otherwise it is polled to 10 s.<br>
+If &nbsp;the Linac is ON and the CT_Current is above the SRCT_limit (Beam stop), the Linac&nbsp;Standby Macro will be executed.<br>
+
+There are 2 CT devices to read the SR current, a PCT device and an ICT device.<br>
+The server saves 2 different values for the beam stop, one which will
+be used when the PCT device is selected and one when the ICT device is
+selected.<br>
+When the CT device attribute is changed, the value of the beam stop will changed accordingly.<br>
+
+</center>
+
+<center>
+<br>
+
+<hr width="100%">
+<h3> ESRF - Software Engineering Group </h3>
+
+</center>
+
+</body>
+</html>

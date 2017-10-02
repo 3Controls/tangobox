@@ -3,7 +3,7 @@ FROM base:latest
 
 ENV TANGO_HOST TangoBox-VM:10000
 #adding linac files
-ADD linac/ /home/tango-cs/dservers/linac
+ADD resources/linac/ /home/tango-cs/dservers/linac
 
 ##Linac configuration
 #Installing packets for compiling linac  classes

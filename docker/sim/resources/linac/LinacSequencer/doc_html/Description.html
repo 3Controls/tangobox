@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+
+
+  
+  
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+
+
+
+  
+  
+  
+  
+  <title>LinacSequencer Tango Device Server User's Guide - Device Description</title>
+  <meta content="Reynald Bourtembourg" name="author">
+</head>
+
+
+<body alink="#ff0000" bgcolor="#ffffff" link="#0000ff" text="#000000" vlink="#7f00ff">
+
+
+
+
+<p><!-------TITLE------></p>
+
+
+
+
+<table border="0" width="100%">
+
+
+
+    <tbody>
+
+
+    <tr>
+
+
+
+        <td align="left">
+			<a href="http://www.esrf.fr/" target="new">
+			<img src="http://www.esrf.fr/gifs/logo/80.gif" border="0"></a>
+		</td>
+
+
+
+        <td align="center">
+			<a href="http://www.elettra.trieste.it/" target="new">
+			<img src="http://www.esrf.fr/computing/cs/tango/elettra_logo.gif" border="0"></a>
+
+		</td>
+
+
+
+        <td align="center">
+			<a href="http://www.synchrotron-soleil.fr/" target="new">
+			<img src="http://www.esrf.fr/computing/cs/tango/soleil_logo.gif" border="0"></a>
+		</td>
+
+
+
+        <td align="right">
+			<a href="http://www.cells.es/" target="new">
+			<img src="http://www.esrf.fr/computing/cs/tango/alba.jpg" border="0"></a>
+		</td>
+
+
+
+    	 <td>
+			
+      
+      
+      <h2><font color="#7f00ff">
+			
+      
+      
+      <center><a href="http://www.esrf.fr/Infrastructure/Computing/tango/" target="_top">
+					 TANGO </a> <br>
+
+
+ Device Server
+			</center>
+
+
+      </font>
+    	</h2>
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  </tbody>
+</table>
+
+
+
+
+<hr width="100%">
+<br>
+
+
+
+<center>
+<h1>
+Sequencer Server for LINAC		<br>
+
+
+
+Device Description 		<br>
+
+
+ <br>
+
+
+
+LinacSequencer Class	<br>
+
+
+
+</h1>
+
+
+
+<b>
+Revision: Release_1_1 - Author: bourtemb -  CVS repository: ESRF<br>
+
+<br>
+
+
+
+</b>
+</center>
+
+
+
+
+
+<center>
+Sequencer server to execute the necessary <a href="LinacSequencesDefinition.html">sequences</a> to change the state of the LINAC.<br>
+
+
+<br>
+
+
+<img style="width: 680px; height: 400px;" alt="ESRF Linac" src="linac.jpg"><br>
+
+<br>
+
+<div style="text-align: left;">The <a href="LinacSequencesDefinition.html">sequences</a> are executed by a dedicated thread.<br>
+See <a href="LinacSequencesDefinition.html">Linac sequences definition</a> page for a detail on the macros used to change the state of the Linac.<br>
+<br>
+This server uses <a href="http://www.gnu.org/software/flex" target="_blank">FLEX</a> and <a href="http://www.gnu.org/software/bison/" target="_blank">BISON</a> to parse the linac configuration files.<br>
+
+The Linac configuration files must begin with the following characters : <br>
+
+<pre>#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ###&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp;&nbsp; #####</pre>
+
+Otherwise, there will be an <span style="font-style: italic;">ErrorReadingFile</span> exception when trying to read&nbsp;a bad file.<br>
+
+<br>
+
+</div>
+
+<div style="text-align: left;"><span style="font-weight: bold;"></span>The linac configuration files are in the directory <span style="font-style: italic;">/operation/linac/conf</span><br>
+
+You can edit the files with nedit.<br>
+
+<span style="color: rgb(204, 0, 0);">!! All the characters on a line after a </span><span style="font-weight: bold; color: rgb(0, 0, 153);">#</span><span style="color: rgb(204, 0, 0);"> are considered as comments. !!</span><br>
+
+<span style="font-weight: bold;">Tip:</span> If you view a file with nedit, you can enable the syntax highlighting &nbsp;to see the comments in another color.<br>
+
+You can do that by choosing <span style="font-weight: bold;">Preferences -&gt; Language Mode -&gt; Csh</span> in the nedit menu.<br>
+
+<br>
+
+Here is an example of&nbsp; Linac configuration file :</div>
+
+<div style="text-align: left;">
+<pre><span style="color: rgb(0, 0, 153);">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ###&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp;&nbsp; #####</span><br style="color: rgb(0, 0, 153);"><span style="color: rgb(0, 0, 153);">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; ##&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp; # #&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp;&nbsp; #</span><br style="color: rgb(0, 0, 153);"><span style="color: rgb(0, 0, 153);">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; # #&nbsp;&nbsp; #&nbsp; #&nbsp;&nbsp; #&nbsp; #</span><br style="color: rgb(0, 0, 153);"><span style="color: rgb(0, 0, 153);">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; #&nbsp; #&nbsp; # #&nbsp;&nbsp;&nbsp;&nbsp; # #</span><br style="color: rgb(0, 0, 153);"><span style="color: rgb(0, 0, 153);">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp; # # ####### #</span><br style="color: rgb(0, 0, 153);"><span style="color: rgb(0, 0, 153);">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; ## #&nbsp;&nbsp;&nbsp;&nbsp; # #&nbsp;&nbsp;&nbsp;&nbsp; #</span><br style="color: rgb(0, 0, 153);"><span style="color: rgb(0, 0, 153);">#######&nbsp; ###&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp;&nbsp; # #&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp; #####</span><br><br><br><span style="color: rgb(0, 0, 153);"># Focus KLY1	180.0 A</span><br>elin/focus/kly1/current-&gt;__value:		180.0<br><span style="color: rgb(0, 0, 153);"># Focus KLY2	155.0 A</span><br>elin/focus/kly2/current-&gt;__value:		155.0<br><span style="color: rgb(0, 0, 153);"># Focus KLY3	158.0 A</span><br>elin/focus/kly3/current-&gt;__value:		158.0<br><span style="color: rgb(0, 0, 153);"># Focus KLY4	179.0 A</span><br>elin/focus/kly4/current-&gt;__value:		179.0<br><span style="color: rgb(0, 0, 153);"># Focus KLY5	160.0 A</span><br>elin/focus/kly5/current-&gt;__value:		160.0<br><span style="color: rgb(0, 0, 153);"># Focus KLY6	170.0 A</span><br>elin/focus/kly6/current-&gt;__value:		170.0<br><span style="color: rgb(0, 0, 153);"># B1 coil	0.0 A</span><br>elin/focus/b1coil/current-&gt;__value:		0.0<br><span style="color: rgb(0, 0, 153);"># B2 coil	14.0 A</span><br>elin/focus/b2coil/current-&gt;__value:		14.0<br><span style="color: rgb(0, 0, 153);"># Buncher Solenoid 68.0 A</span><br>elin/focus/buncher/current-&gt;__value:		68.0<br><span style="color: rgb(0, 0, 153);"># Magnetic lens	0.00 A</span><br>elin/focus/lens/current-&gt;__value:		0.00<br><span style="color: rgb(0, 0, 153);"># Triplet	2.32 A</span><br>elin/focus/triplet/current-&gt;__value:		2.32<br><span style="color: rgb(0, 0, 153);"># S1 solenoid	80.0 A</span><br>elin/focus/sect1/current-&gt;__value:		80.0<br><span style="color: rgb(0, 0, 153);"># S2 solenoid	10.0 A</span><br>elin/focus/sect2/current-&gt;__value:		10.0<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/GH1	0.00 A</span><br>elin/steer/gh1/current-&gt;__value:		0.00<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/GV1	0.00 A</span><br>elin/steer/gv1/current-&gt;__value:		0.00<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/BH1	0.40 A</span><br>elin/steer/bh1/current-&gt;__value:		0.40<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/BV1	-0.20 A</span><br>elin/steer/bv1/current-&gt;__value:		-0.20<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/BH2	1.00 A</span><br>elin/steer/bh2/current-&gt;__value:		1.00<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/BV2	0.30 A</span><br>elin/steer/bv2/current-&gt;__value:		0.30<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/S1H1	-0.30 A</span><br>elin/steer/s1h1/current-&gt;__value:		-0.30<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/S1V1	-0.50 A</span><br>elin/steer/s1v1/current-&gt;__value:		-0.50<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/S1H2	-0.30 A</span><br>elin/steer/s1h2/current-&gt;__value:		-0.30<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/S1V2	-1.20 A</span><br>elin/steer/s1v2/current-&gt;__value:		-1.20<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/TRIPLET	0.00 A</span><br>elin/steer/triplet/current-&gt;__value:		0.00<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/S2H1	-0.65 A</span><br>elin/steer/s2h1/current-&gt;__value:		-0.65<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/S2V1	0.10 A</span><br>elin/steer/s2v1/current-&gt;__value:		0.10<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/S2H2	0.00 A</span><br>elin/steer/s2h2/current-&gt;__value:		0.00<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/S2V2	0.50 A</span><br>elin/steer/s2v2/current-&gt;__value:		0.50<br><span style="color: rgb(0, 0, 153);"># ELIN/STEER/CHAN16	 0.00 A</span><br>elin/steer/chan16/current-&gt;__value:		0.00<br><span style="color: rgb(0, 0, 153);"># mod 1 hv 	19.20 kV</span><br>elin/mod1/hv/highvoltage-&gt;__value:		19.20<br><span style="color: rgb(0, 0, 153);"># mod 2 hv 	16.95 kV</span><br>elin/mod2/hv/highvoltage-&gt;__value:		16.95<br><span style="color: rgb(0, 0, 153);"># vpfn1	33.00 kV</span><br>elin/mod1/run/vpfn-&gt;__value:			33.00<br><span style="color: rgb(0, 0, 153);"># vpfn2	33.00 kV</span><br>elin/mod2/run/vpfn-&gt;__value:			33.00<br><span style="color: rgb(0, 0, 153);"># buncher phase	-103.0 deg</span><br>elin/rf/run/bunchphase-&gt;__value:		-103.0<br><span style="color: rgb(0, 0, 153);"># pbuncher phase	70.0 deg</span><br>elin/rf/run/pbunchphase-&gt;__value:		70.0<br><span style="color: rgb(0, 0, 153);"># pbuncher atten	7.0 %</span><br>elin/rf/run/pbunchattenu-&gt;__value:		7.0<br><span style="color: rgb(0, 0, 153);"># section phase	79.0 deg</span><br>elin/rf/run/sect2phase-&gt;__value:		79.0<br><span style="color: rgb(0, 0, 153);"># gun heating v	5.70 V</span><br>elin/gun/aux/heatv-&gt;__value:			5.70<br><span style="color: rgb(0, 0, 153);"># gun grid v	-92.0 V</span><br>elin/beam/run/gridv-&gt;__value:			-92.0<br><span style="color: rgb(0, 0, 153);"># gun pulse v	0.0 V</span><br>elin/beam/run/pulsev-&gt;__value:			0.0<br><span style="color: rgb(0, 0, 153);"># gun pulse length	2.00 &oacute;m</span><br>elin/beam/run/pulsel-&gt;__value:			2.00<br><span style="color: rgb(0, 0, 153);"># gun hv	75.0 kV</span><br>elin/gun/hv/highvoltage-&gt;__value:		75.0<br><span style="color: rgb(0, 0, 153);"># frequency	2998.16 MHz</span><br>elin/rf/run/frequency-&gt;__value:			2998.160100<br><span style="color: rgb(0, 0, 153);"># Short pulse</span><br>elin/beam/run/pulsetype-&gt;__value:		"SHORT"<br><span style="color: rgb(0, 0, 153);"># timer rf	44.50 &oacute;s</span><br>elin/rf/run/delay-&gt;__value:			44.50<br><span style="color: rgb(0, 0, 153);"># timer mod1	58.45 &oacute;s</span><br>elin/mod1/run/delay-&gt;__value:			58.45<br><span style="color: rgb(0, 0, 153);"># timer mod2	58.35 &oacute;s</span><br>elin/mod2/run/delay-&gt;__value:			58.35<br><span style="color: rgb(0, 0, 153);"># timer mod1_s	3.00 &oacute;s</span><br>elin/mod1/run/delays-&gt;__value:			3.00<br><span style="color: rgb(0, 0, 153);"># timer mod2_s	3.00 &oacute;s</span><br>elin/mod2/run/delays-&gt;__value:			3.00<br></pre>
+
+<p style="color: rgb(204, 0, 0);">!! All the blue lines are considered as comments !!</p>
+
+<p><span style="font-weight: bold;">Tip:</span> This file can be loaded
+by Jive, it is the same file format. In theory, there is no real
+interest in loading a linac file in jive.<br>
+
+One interest could be to change easily the memorized value of a
+particular device attribute of the linac when&nbsp;the device is not
+exported.<br>
+
+Then, the next time its server will be started, it will set the value we want at initialization for the memorized attributes.<br>
+
+
+
+</p>
+
+</div>
+
+
+
+</center>
+
+
+
+
+<center>
+<hr width="100%">
+<h3> ESRF - Software Engineering Group </h3>
+
+
+
+</center>
+
+
+
+</body>
+</html>
