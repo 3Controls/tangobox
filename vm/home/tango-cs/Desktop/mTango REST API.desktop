@@ -1,7 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Link to http://tangobox-web:8080/tango/rest/rc4
-Type=Link
-URL=http://tangobox-web:8080/tango/rest/rc4
-Icon=/usr/share/icons/ubuntu-mobile/apps/240/webbrowser-app.png
-Name[en_US]=mTango REST API
