@@ -1,0 +1,64 @@
+#
+# Resource backup , created Thu Jul 18 15:29:54 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericMultiChannel/klystron, GenericMultiChannel device declaration
+#---------------------------------------------------------
+
+GenericMultiChannel/klystron/DEVICE/GenericMultiChannel: "elin/focus/klystron",\ 
+                                                         "elin/focus/klystron1",\ 
+                                                         "elin/focus/klystron2"
+
+
+# --- elin/focus/klystron properties
+
+elin/focus/klystron->AttributesList: "ELIN/FOCUS/KLY1/current ",\ 
+                                     "ELIN/FOCUS/KLY2/current ",\ 
+                                     "ELIN/FOCUS/KLY3/current ",\ 
+                                     "ELIN/FOCUS/KLY4/current ",\ 
+                                     "ELIN/FOCUS/KLY5/current ",\ 
+                                     "ELIN/FOCUS/KLY6/current "
+elin/focus/klystron->__SubDevices: "elin/focus/kly1",\ 
+                                   "elin/focus/kly2",\ 
+                                   "elin/focus/kly3",\ 
+                                   "elin/focus/kly4",\ 
+                                   "elin/focus/kly5",\ 
+                                   "elin/focus/kly6"
+
+# --- elin/focus/klystron1 properties
+
+elin/focus/klystron1->AttributesList: "ELIN/FOCUS/KLY1_1/current ",\ 
+                                      "ELIN/FOCUS/KLY1_2/current ",\ 
+                                      "ELIN/FOCUS/KLY1_3/current ",\ 
+                                      "ELIN/FOCUS/KLY4/current ",\ 
+                                      "ELIN/FOCUS/KLY5/current ",\ 
+                                      "ELIN/FOCUS/KLY6/current "
+elin/focus/klystron1->__SubDevices: "elin/focus/kly1_1",\ 
+                                    "elin/focus/kly1_2",\ 
+                                    "elin/focus/kly1_3",\ 
+                                    "elin/focus/kly4",\ 
+                                    "elin/focus/kly5",\ 
+                                    "elin/focus/kly6"
+
+# --- elin/focus/klystron2 properties
+
+elin/focus/klystron2->AttributesList: "ELIN/FOCUS/KLY2_1/current ",\ 
+                                      "ELIN/FOCUS/KLY2_2/current ",\ 
+                                      "ELIN/FOCUS/KLY2_3/current "
+elin/focus/klystron2->__SubDevices: "elin/focus/kly2_1",\ 
+                                    "elin/focus/kly2_2",\ 
+                                    "elin/focus/kly2_3"
+
+#---------------------------------------------------------
+# CLASS GenericMultiChannel properties
+#---------------------------------------------------------
+
+CLASS/GenericMultiChannel->Description: "This class tries to be a generic Tango multichannel device server.",\ 
+                                        "It collects DevDouble data from different devices and compute some common",\ 
+                                        "operation on it : sum, mean, RMS and standard deviation.",\ 
+                                        "The collected data are also provided into a spectrum attribute."
+CLASS/GenericMultiChannel->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericMultiChannel->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericMultiChannel->ProjectTitle: TangoMultiChannel
+

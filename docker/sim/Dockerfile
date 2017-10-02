@@ -1,8 +1,9 @@
+
 FROM base:latest
 
 ENV TANGO_HOST TangoBox-VM:10000
 #adding linac files
-ADD /resources/linac/ /home/tango-cs/dservers/linac
+ADD linac/ /home/tango-cs/dservers/linac
 
 ##Linac configuration
 #Installing packets for compiling linac  classes
@@ -11,8 +12,7 @@ RUN sudo apt-get update \
     && cd /home/tango-cs/dservers/linac/bin/ \
     && sudo bash make.all \
     && sudo bash linac.copy \
-    && sudo bash linac.start
+#    && sudo bash linac.start
 
-CMD /bin/bash
-
+CMD /usr/bin/supervisord -c /etc/supervisord.conf
 

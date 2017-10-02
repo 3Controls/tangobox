@@ -1,0 +1,34 @@
+#
+# Resource backup , created Thu Jul 18 15:29:41 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericMultiChannel/GunFocus, GenericMultiChannel device declaration
+#---------------------------------------------------------
+
+GenericMultiChannel/GunFocus/DEVICE/GenericMultiChannel: "elin/focus/gun"
+
+
+# --- elin/focus/gun properties
+
+elin/focus/gun->AttributesList: "elin/focus/b1coil/current ",\ 
+                                "elin/focus/b2coil/current ",\ 
+                                "elin/focus/b3coil/current ",\ 
+                                "elin/focus/b4coil/current "
+elin/focus/gun->__SubDevices: "elin/focus/b1coil",\ 
+                              "elin/focus/b2coil",\ 
+                              "elin/focus/b3coil",\ 
+                              "elin/focus/b4coil"
+
+#---------------------------------------------------------
+# CLASS GenericMultiChannel properties
+#---------------------------------------------------------
+
+CLASS/GenericMultiChannel->Description: "This class tries to be a generic Tango multichannel device server.",\ 
+                                        "It collects DevDouble data from different devices and compute some common",\ 
+                                        "operation on it : sum, mean, RMS and standard deviation.",\ 
+                                        "The collected data are also provided into a spectrum attribute."
+CLASS/GenericMultiChannel->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericMultiChannel->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericMultiChannel->ProjectTitle: TangoMultiChannel
+

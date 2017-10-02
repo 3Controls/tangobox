@@ -1,0 +1,20 @@
+127.0.0.1	localhost 
+172.18.0.1      TangoBox-VM
+172.18.0.2	tangobox-archive
+172.18.0.3	tangobox-sim
+172.18.0.4      tangobox-com
+172.18.0.5      tangobox-web
+172.18.0.6      tangobox-sardana
+
+172.17.0.1 a
+172.17.0.2 b
+172.17.0.3 c
+172.17.0.4 d
+172.17.0.5 e
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

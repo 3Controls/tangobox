@@ -1,0 +1,22 @@
+#
+# Resource backup , created Thu Jul 18 15:33:49 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER LinacCooling/linac, LinacCooling device declaration
+#---------------------------------------------------------
+
+LinacCooling/linac/DEVICE/LinacCooling: "elin/cool/1"
+
+
+#---------------------------------------------------------
+# CLASS LinacCooling properties
+#---------------------------------------------------------
+
+CLASS/LinacCooling->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/LinacCooling/"
+CLASS/LinacCooling->cvs_tag: LinacCooling-Release_1_0_0
+CLASS/LinacCooling->Description: "This class will manage the linac cooling."
+CLASS/LinacCooling->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/LinacCooling->InheritedFrom: Tango::Device_4Impl
+CLASS/LinacCooling->ProjectTitle: "Linac cooling"
+

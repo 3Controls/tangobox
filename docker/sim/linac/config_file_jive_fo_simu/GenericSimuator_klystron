@@ -1,0 +1,79 @@
+#
+# Resource backup , created Thu Jul 18 15:02:42 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/klystron, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/klystron/DEVICE/GenericSimulator: "elin/focus/kly1",\ 
+                                                   "elin/focus/kly1_1",\ 
+                                                   "elin/focus/kly1_2",\ 
+                                                   "elin/focus/kly1_3",\ 
+                                                   "elin/focus/kly2",\ 
+                                                   "elin/focus/kly2_1",\ 
+                                                   "elin/focus/kly2_2",\ 
+                                                   "elin/focus/kly2_3",\ 
+                                                   "elin/focus/kly3",\ 
+                                                   "elin/focus/kly4",\ 
+                                                   "elin/focus/kly5",\ 
+                                                   "elin/focus/kly6"
+
+
+# --- elin/focus/kly1 properties
+
+elin/focus/kly1->__SubDevices: "elin/focus/kly1"
+
+# --- elin/focus/kly1_1 properties
+
+elin/focus/kly1_1->__SubDevices: "elin/focus/kly1_1"
+
+# --- elin/focus/kly1_2 properties
+
+elin/focus/kly1_2->__SubDevices: "elin/focus/kly1_2"
+
+# --- elin/focus/kly1_3 properties
+
+elin/focus/kly1_3->__SubDevices: "elin/focus/kly1_3"
+
+# --- elin/focus/kly2 properties
+
+elin/focus/kly2->__SubDevices: "elin/focus/kly2"
+
+# --- elin/focus/kly2_1 properties
+
+elin/focus/kly2_1->__SubDevices: "elin/focus/kly2_1"
+
+# --- elin/focus/kly2_2 properties
+
+elin/focus/kly2_2->__SubDevices: "elin/focus/kly2_2"
+
+# --- elin/focus/kly2_3 properties
+
+elin/focus/kly2_3->__SubDevices: "elin/focus/kly2_3"
+
+# --- elin/focus/kly3 properties
+
+elin/focus/kly3->__SubDevices: "elin/focus/kly3"
+
+# --- elin/focus/kly4 properties
+
+elin/focus/kly4->__SubDevices: "elin/focus/kly4"
+
+# --- elin/focus/kly5 properties
+
+elin/focus/kly5->__SubDevices: "elin/focus/kly5"
+
+# --- elin/focus/kly6 properties
+
+elin/focus/kly6->__SubDevices: "elin/focus/kly6"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+

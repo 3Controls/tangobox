@@ -1,0 +1,158 @@
+#
+# Resource backup , created Thu Jul 18 15:31:45 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER LinacModulator/linac, LinacModulator device declaration
+#---------------------------------------------------------
+
+LinacModulator/linac/DEVICE/LinacModulator: "elin/mod/run-1",\ 
+                                            "elin/mod/run-2",\ 
+                                            "elin/mod1/run",\ 
+                                            "elin/mod2/run"
+
+
+# --- elin/mod/run-1 properties
+
+elin/mod/run-1->delayS_name: "elin/t-mod/s1"
+elin/mod/run-1->delay_name: "elin/t-mod/1"
+
+# --- elin/mod/run-1 attribute properties
+
+elin/mod/run-1/VPFN->description: "Voltage Pulse Forming Network."
+elin/mod/run-1/VPFN->display_unit: kV
+elin/mod/run-1/VPFN->format: %5.2g
+elin/mod/run-1/VPFN->label: "Mod1 VPFN"
+elin/mod/run-1/VPFN->standard_unit: kV
+elin/mod/run-1/VPFN->unit: kV
+elin/mod/run-1/Delay->description: Delay
+elin/mod/run-1/Delay->display_unit: ms
+elin/mod/run-1/Delay->format: %5.2g
+elin/mod/run-1/Delay->standard_unit: ms
+elin/mod/run-1/Delay->unit: ms
+elin/mod/run-1/DelayS->description: DelayS
+elin/mod/run-1/DelayS->display_unit: ms
+elin/mod/run-1/DelayS->format: %5.2g
+elin/mod/run-1/DelayS->standard_unit: ms
+elin/mod/run-1/DelayS->unit: ms
+elin/mod/run-1/PeakPowerOut->description: "Peak Power Out."
+elin/mod/run-1/PeakPowerOut->display_unit: MW
+elin/mod/run-1/PeakPowerOut->format: %5.2f
+elin/mod/run-1/PeakPowerOut->label: "Mod1 Power Out"
+elin/mod/run-1/PeakPowerOut->standard_unit: MW
+elin/mod/run-1/PeakPowerOut->unit: MW
+
+# --- elin/mod/run-2 properties
+
+elin/mod/run-2->delayS_name: "elin/t-mod/s2"
+elin/mod/run-2->delay_name: "elin/t-mod/2"
+
+# --- elin/mod/run-2 attribute properties
+
+elin/mod/run-2/VPFN->description: "Voltage Pulse Forming Network."
+elin/mod/run-2/VPFN->display_unit: kV
+elin/mod/run-2/VPFN->format: %5.2g
+elin/mod/run-2/VPFN->label: "Mod2 VPFN"
+elin/mod/run-2/VPFN->standard_unit: kV
+elin/mod/run-2/VPFN->unit: kV
+elin/mod/run-2/Delay->description: Delay
+elin/mod/run-2/Delay->display_unit: ms
+elin/mod/run-2/Delay->format: %5.2g
+elin/mod/run-2/Delay->standard_unit: ms
+elin/mod/run-2/Delay->unit: ms
+elin/mod/run-2/DelayS->description: DelayS
+elin/mod/run-2/DelayS->display_unit: ms
+elin/mod/run-2/DelayS->format: %5.2g
+elin/mod/run-2/DelayS->standard_unit: ms
+elin/mod/run-2/DelayS->unit: ms
+elin/mod/run-2/PeakPowerOut->description: "Peak Power Out."
+elin/mod/run-2/PeakPowerOut->display_unit: MW
+elin/mod/run-2/PeakPowerOut->format: %5.2f
+elin/mod/run-2/PeakPowerOut->label: "Mod2 Power Out"
+elin/mod/run-2/PeakPowerOut->standard_unit: MW
+elin/mod/run-2/PeakPowerOut->unit: MW
+
+# --- elin/mod1/run properties
+
+elin/mod1/run->delayS_name: "elin/t-mod/s1"
+elin/mod1/run->delay_name: "elin/t-mod/1"
+
+# --- elin/mod1/run attribute properties
+
+elin/mod1/run/VPFN->description: "Voltage Pulse Forming Network."
+elin/mod1/run/VPFN->display_unit: kV
+elin/mod1/run/VPFN->format: %5.2g
+elin/mod1/run/VPFN->label: "Mod1 VPFN"
+elin/mod1/run/VPFN->standard_unit: kV
+elin/mod1/run/VPFN->unit: kV
+elin/mod1/run/VPFN->__value: 33
+elin/mod1/run/Delay->description: Delay
+elin/mod1/run/Delay->display_unit: ms
+elin/mod1/run/Delay->format: %5.2g
+elin/mod1/run/Delay->standard_unit: ms
+elin/mod1/run/Delay->unit: ms
+elin/mod1/run/Delay->__value: 58.2
+elin/mod1/run/DelayS->description: DelayS
+elin/mod1/run/DelayS->display_unit: ms
+elin/mod1/run/DelayS->format: %5.2g
+elin/mod1/run/DelayS->standard_unit: ms
+elin/mod1/run/DelayS->unit: ms
+elin/mod1/run/DelayS->__value: 2.5
+elin/mod1/run/PeakPowerOut->description: "Peak Power Out."
+elin/mod1/run/PeakPowerOut->display_unit: MW
+elin/mod1/run/PeakPowerOut->format: %5.2f
+elin/mod1/run/PeakPowerOut->label: "Mod1 Power Out"
+elin/mod1/run/PeakPowerOut->standard_unit: MW
+elin/mod1/run/PeakPowerOut->unit: MW
+
+# --- elin/mod2/run properties
+
+elin/mod2/run->delayS_name: "elin/t-mod/s2"
+elin/mod2/run->delay_name: "elin/t-mod/2"
+
+# --- elin/mod2/run attribute properties
+
+elin/mod2/run/VPFN->description: "Voltage Pulse Forming Network."
+elin/mod2/run/VPFN->display_unit: kV
+elin/mod2/run/VPFN->format: %5.2g
+elin/mod2/run/VPFN->label: "Mod2 VPFN"
+elin/mod2/run/VPFN->standard_unit: kV
+elin/mod2/run/VPFN->unit: kV
+elin/mod2/run/VPFN->__value: 33
+elin/mod2/run/Delay->description: Delay
+elin/mod2/run/Delay->display_unit: ms
+elin/mod2/run/Delay->format: %5.2g
+elin/mod2/run/Delay->standard_unit: ms
+elin/mod2/run/Delay->unit: ms
+elin/mod2/run/Delay->__value: 58.5
+elin/mod2/run/DelayS->description: DelayS
+elin/mod2/run/DelayS->display_unit: ms
+elin/mod2/run/DelayS->format: %5.2g
+elin/mod2/run/DelayS->standard_unit: ms
+elin/mod2/run/DelayS->unit: ms
+elin/mod2/run/DelayS->__value: 2.5
+elin/mod2/run/PeakPowerOut->description: "Peak Power Out."
+elin/mod2/run/PeakPowerOut->display_unit: MW
+elin/mod2/run/PeakPowerOut->format: %5.2f
+elin/mod2/run/PeakPowerOut->label: "Mod2 Power Out"
+elin/mod2/run/PeakPowerOut->standard_unit: MW
+elin/mod2/run/PeakPowerOut->unit: MW
+
+#---------------------------------------------------------
+# CLASS LinacModulator properties
+#---------------------------------------------------------
+
+CLASS/LinacModulator->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/LinacModulator/"
+CLASS/LinacModulator->cvs_tag: LinacModulator-Release_1_0_0
+CLASS/LinacModulator->Description: "The linac is equiped with two identical modulators, supplying two klystrons",\ 
+                                   "with the power necessary for the two 6 meters accelerating sections,",\ 
+                                   "and for the buncher.",\ 
+                                   "The klystrons are multicavity amplifiers.",\ 
+                                   "The two modulators are line type with a Pulse Forming Network (PFN)",\ 
+                                   "short circuited by a thyratron through the primary of a pulse transformer.",\ 
+                                   "The secondary of this transformer supplies the klystron cathode",\ 
+                                   "with a 280kV pulse."
+CLASS/LinacModulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/LinacModulator->InheritedFrom: Tango::Device_4Impl
+CLASS/LinacModulator->ProjectTitle: LinacModulator
+

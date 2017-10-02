@@ -1,0 +1,129 @@
+#
+# Resource backup , created Thu Jul 18 15:00:47 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/adc, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/adc/DEVICE/GenericSimulator: "elin/cool/bun-temps",\ 
+                                              "elin/cool/pbun-temps",\ 
+                                              "elin/cool/sec-temps",\ 
+                                              "elin/cool/temp-adc",\ 
+                                              "elin/gun/gridv-adc",\ 
+                                              "elin/gun/heati-adc",\ 
+                                              "elin/gun/heatv-adc",\ 
+                                              "elin/gun/hv-adc",\ 
+                                              "elin/gun/pulsel-adc",\ 
+                                              "elin/gun/pulsev-adc",\ 
+                                              "elin/mod1/heati-adc",\ 
+                                              "elin/mod1/heatv-adc",\ 
+                                              "elin/mod1/hv-adc",\ 
+                                              "elin/mod1/thyrheatv-adc",\ 
+                                              "elin/mod2/heati-adc",\ 
+                                              "elin/mod2/heatv-adc",\ 
+                                              "elin/mod2/hv-adc",\ 
+                                              "elin/mod2/thyrheatv-adc",\ 
+                                              "elin/rf/bun-at-adc",\ 
+                                              "elin/rf/bun-ph-adc",\ 
+                                              "elin/rf/pbun-at-adc",\ 
+                                              "elin/rf/pbun-ph-adc"
+
+
+# --- elin/cool/bun-temps properties
+
+elin/cool/bun-temps->__SubDevices: "elin/cool/bun-temps"
+
+# --- elin/cool/pbun-temps properties
+
+elin/cool/pbun-temps->__SubDevices: "elin/cool/pbun-temps"
+
+# --- elin/cool/sec-temps properties
+
+elin/cool/sec-temps->__SubDevices: "elin/cool/sec-temps"
+
+# --- elin/cool/temp-adc properties
+
+elin/cool/temp-adc->__SubDevices: "elin/cool/temp-adc"
+
+# --- elin/gun/gridv-adc properties
+
+elin/gun/gridv-adc->__SubDevices: "elin/gun/gridv-adc"
+
+# --- elin/gun/heati-adc properties
+
+elin/gun/heati-adc->__SubDevices: "elin/gun/heati-adc"
+
+# --- elin/gun/heatv-adc properties
+
+elin/gun/heatv-adc->__SubDevices: "elin/gun/heatv-adc"
+
+# --- elin/gun/hv-adc properties
+
+elin/gun/hv-adc->__SubDevices: "elin/gun/hv-adc"
+
+# --- elin/gun/pulsel-adc properties
+
+elin/gun/pulsel-adc->__SubDevices: "elin/gun/pulsel-adc"
+
+# --- elin/gun/pulsev-adc properties
+
+elin/gun/pulsev-adc->__SubDevices: "elin/gun/pulsev-adc"
+
+# --- elin/mod1/heati-adc properties
+
+elin/mod1/heati-adc->__SubDevices: "elin/mod1/heati-adc"
+
+# --- elin/mod1/heatv-adc properties
+
+elin/mod1/heatv-adc->__SubDevices: "elin/mod1/heatv-adc"
+
+# --- elin/mod1/hv-adc properties
+
+elin/mod1/hv-adc->__SubDevices: "elin/mod1/hv-adc"
+
+# --- elin/mod1/thyrheatv-adc properties
+
+elin/mod1/thyrheatv-adc->__SubDevices: "elin/mod1/thyrheatv-adc"
+
+# --- elin/mod2/heati-adc properties
+
+elin/mod2/heati-adc->__SubDevices: "elin/mod2/heati-adc"
+
+# --- elin/mod2/heatv-adc properties
+
+elin/mod2/heatv-adc->__SubDevices: "elin/mod2/heatv-adc"
+
+# --- elin/mod2/hv-adc properties
+
+elin/mod2/hv-adc->__SubDevices: "elin/mod2/hv-adc"
+
+# --- elin/mod2/thyrheatv-adc properties
+
+elin/mod2/thyrheatv-adc->__SubDevices: "elin/mod2/thyrheatv-adc"
+
+# --- elin/rf/bun-at-adc properties
+
+elin/rf/bun-at-adc->__SubDevices: "elin/rf/bun-at-adc"
+
+# --- elin/rf/bun-ph-adc properties
+
+elin/rf/bun-ph-adc->__SubDevices: "elin/rf/bun-ph-adc"
+
+# --- elin/rf/pbun-at-adc properties
+
+elin/rf/pbun-at-adc->__SubDevices: "elin/rf/pbun-at-adc"
+
+# --- elin/rf/pbun-ph-adc properties
+
+elin/rf/pbun-ph-adc->__SubDevices: "elin/rf/pbun-ph-adc"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+
