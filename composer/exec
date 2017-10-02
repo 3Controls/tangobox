@@ -1,0 +1,5 @@
+gnome-terminal -e 'docker exec -it tangobox-archive bash'
+gnome-terminal -e 'docker exec -it tangobox-com bash'
+gnome-terminal -e'docker exec -it tangobox-sardana bash'
+gnome-terminal -e 'docker exec -it tangobox-sim bash'
+gnome-terminal -e 'docker exec -it tangobox-web bash'
