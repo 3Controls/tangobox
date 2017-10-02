@@ -5,7 +5,8 @@ COPY resources/ModbusComposer /usr/local/bin/
 COPY resources/Serial /usr/local/bin/
 COPY resources/supervisord.conf /etc/supervisord.conf
 COPY resources/tango_register_device /usr/local/bin/
-USER root
+
+USER root 
 RUN apt-get update && apt-get install -y \
     git \
     unzip \

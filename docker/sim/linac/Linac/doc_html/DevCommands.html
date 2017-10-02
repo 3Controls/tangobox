@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<Title> Tango Device Server User's Guide </Title>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#7F00FF" ALINK="#FF0000">
+
+<P><!-------TITLE------></P>
+
+<TABLE BORDER="0" WIDTH="100%">
+    <TR>
+        <TD ALIGN="left">
+			<A HREF="http://www.esrf.fr/" TARGET=new>
+			<IMG SRC="http://www.esrf.fr/gifs/logo/80.gif" BORDER=0></A>
+		</Td>
+        <TD ALIGN="center">
+			<A HREF="http://www.elettra.trieste.it/" TARGET=new>
+			<IMG SRC="http://www.esrf.fr/computing/cs/tango/elettra_logo.gif" BORDER=0></A>
+
+		</Td>
+        <TD ALIGN="center">
+			<A HREF="http://www.synchrotron-soleil.fr/" TARGET=new>
+			<IMG SRC="http://www.esrf.fr/computing/cs/tango/soleil_logo.gif" BORDER=0></A>
+		</Td>
+        <TD ALIGN="right">
+			<A HREF="http://www.cells.es/" TARGET=new>
+			<IMG SRC="http://www.esrf.fr/computing/cs/tango/alba.jpg" BORDER=0></A>
+		</Td>
+    	 <Td>
+			<H2><FONT COLOR="#7F00FF">
+			<Center><A HREF="http://www.esrf.fr/Infrastructure/Computing/tango/" TARGET="_top">
+					 TANGO </a> <Br> Device Server
+			</Center></FONT>
+    	</Td>
+    </TR>
+</TABLE>
+
+<HR WIDTH="100%"></H5>
+<Br>
+<center>
+<h1>
+Linac		<Br>
+Device Commands Description 		<Br> <Br>
+Linac Class	<Br>
+</h1>
+<b>
+Revision: Release_1_1 - Author: bourtemb -  CVS repository: ESRF
+</b>
+</center>
+
+
+<Br>
+<Br>
+<Br>
+<A NAME="Init"><!-- --></A>
+<A NAME="Init"><!-- --></A>
+<h2>1 - Init</h2>
+<ul>
+<Li><Strong>Description: </Strong> This commands re-initialise a device keeping the same network connection.<Br>
+After an Init command executed on a device, it is not necessary for client to re-connect to the device.<Br>
+This command first calls the device <i> delete_device() </i>method and then execute its <i> init_device()</i> method.<Br>
+For C++ device server, all the memory allocated in the <i> nit_device() </i> method must be freed in the <i> delete_device() </i> method.<Br>
+The language device desctructor automatically calls the <i> delete_device() </i> method.<Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : none.<Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : none.<Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="State"><!-- --></A>
+<A NAME="State"><!-- --></A>
+<h2>2 - State</h2>
+<ul>
+<Li><Strong>Description: </Strong> This command gets the device state (stored in its <i>device_state</i> data member) and returns it to the caller.<Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : none.<Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_STATE</Strong>
+ : State Code<Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="Status"><!-- --></A>
+<A NAME="Status"><!-- --></A>
+<h2>3 - Status</h2>
+<ul>
+<Li><Strong>Description: </Strong> This command gets the device status (stored in its <i>device_status</i> data member) and returns it to the caller.<Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : none.<Br>&nbsp
+<Li><Strong>Argout:<Br>CONST_DEV_STRING</Strong>
+ : Status description<Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="On"><!-- --></A>
+<A NAME="On"><!-- --></A>
+<h2>4 - On</h2>
+<ul>
+<Li><Strong>Description: </Strong> <Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="Off"><!-- --></A>
+<A NAME="Off"><!-- --></A>
+<h2>5 - Off</h2>
+<ul>
+<Li><Strong>Description: </Strong> <Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="Standby"><!-- --></A>
+<A NAME="Standby"><!-- --></A>
+<h2>6 - Standby</h2>
+<ul>
+<Li><Strong>Description: </Strong> <Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="LowHeating"><!-- --></A>
+<A NAME="LowHeating"><!-- --></A>
+<h2>7 - LowHeating</h2>
+<ul>
+<Li><Strong>Description: </Strong> <Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="Abort"><!-- --></A>
+<A NAME="Abort"><!-- --></A>
+<h2>8 - Abort</h2>
+<ul>
+<Li><Strong>Description: </Strong> <Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="Reset"><!-- --></A>
+<A NAME="Reset"><!-- --></A>
+<h2>9 - Reset</h2>
+<ul>
+<Li><Strong>Description: </Strong> <Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="ReadDirName"><!-- --></A>
+<A NAME="ReadDirName"><!-- --></A>
+<h2>10 - ReadDirName</h2>
+<ul>
+<Li><Strong>Description: </Strong> Command to retrieve the name of the directory under which the Linac configuration files
+are load and saved.<Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_STRING</Strong>
+ : The name of the directory under which the files are load and saved.<Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="LoadFile"><!-- --></A>
+<A NAME="LoadFile"><!-- --></A>
+<h2>11 - LoadFile</h2>
+<ul>
+<Li><Strong>Description: </Strong> Load the configuration file given in argument.<Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_STRING</Strong>
+ : File to load<Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="SaveFile"><!-- --></A>
+<A NAME="SaveFile"><!-- --></A>
+<h2>12 - SaveFile</h2>
+<ul>
+<Li><Strong>Description: </Strong> This command will save all the present settings in a file.
+The argin is the name of the file. It's a relative pathname.
+For example, if 'test/16bunch' is given in argin, the file will be saved in dirname/test/16bunch.
+dirname is the dirname property of the server.
+You can use the command readDirName to know the value of dirname.
+These settings will be applied by the server from now.<Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_STRING</Strong>
+ : Name of the file (relative to dirname property)<Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="ForceSave"><!-- --></A>
+<A NAME="ForceSave"><!-- --></A>
+<h2>13 - ForceSave</h2>
+<ul>
+<Li><Strong>Description: </Strong> This command will force the save of all the present settings in a file
+even if there was a problem when getting all the current set points.
+If a set point could not be read, the set point given in the last loaded or saved file will be used.
+The argin is the name of the file. It's a relative pathname.
+For example, if 'test/16bunch' is given in argin, the file will be saved in dirname/test/16bunch.
+dirname is the dirname property of the server.
+You can use the command readDirName to know the value of dirname.
+These settings will be applied by the server from now.<Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_STRING</Strong>
+ : Name of the file (relative to dirname property)<Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_VOID</Strong>
+ : <Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+<A NAME="GetPCTDeviceName"><!-- --></A>
+<A NAME="GetPCTDeviceName"><!-- --></A>
+<h2>14 - GetPCTDeviceName</h2>
+<ul>
+<Li><Strong>Description: </Strong> This command will return the name of the PCT device to be read.
+This name is obtained through the Taco database by reading the resource sr/d-ct/1/name.
+After the call to this function, the PCT device used in the Linac server will be the one given by the
+taco resource sr/d-ct/1/name.<Br>&nbsp
+<Li><Strong>Argin:<Br>DEV_VOID</Strong>
+ : none<Br>&nbsp
+<Li><Strong>Argout:<Br>DEV_STRING</Strong>
+ : PCT device name<Br>&nbsp
+<Li><Strong>Command allowed for: </Strong><Ul>
+<Li>Tango::ON<Li>Tango::STANDBY<Li>Tango::INIT<Li>Tango::OFF<Li>Tango::MOVING<Li>Tango::FAULT<Li>Tango::UNKNOWN<Li>Tango::DISABLE<Li>Tango::ALARM</Ul>
+<Br>&nbsp
+</ul><Br>
+<Br>
+
+<Center>
+<Br>
+<HR WIDTH="100%"></H5>
+<H3> ESRF - Software Engineering Group </H3>
+</Center>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/**
+ * Device Class Identification:
+ * 
+ * Class Name   :	LinacGun
+ * Contact      :	vedder@esrf.fr
+ * Class Family :	Miscellaneous
+ * Specific     :	ESRF
+ * Platform     :	All Platforms
+ * Bus          :	Not Applicable
+ * Manufacturer :	none
+ * Reference    :	
+ */

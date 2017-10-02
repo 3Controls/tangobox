@@ -1,0 +1,78 @@
+#
+# Resource backup , created Thu Jul 18 15:30:02 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericMultiChannel/steer, GenericMultiChannel device declaration
+#---------------------------------------------------------
+
+GenericMultiChannel/steer/DEVICE/GenericMultiChannel: "elin/steer/1",\ 
+                                                      "elin/steer/gun",\ 
+                                                      "elin/steer/pbunch"
+
+
+# --- elin/steer/1 properties
+
+elin/steer/1->AttributesList: "ELIN/STEER/BH1/current ",\ 
+                              "ELIN/STEER/BV1/current ",\ 
+                              "ELIN/STEER/BH2/current ",\ 
+                              "ELIN/STEER/BV2/current ",\ 
+                              "ELIN/STEER/S1H1/current ",\ 
+                              "ELIN/STEER/S1V1/current ",\ 
+                              "ELIN/STEER/S1H2/current ",\ 
+                              "ELIN/STEER/S1V2/current ",\ 
+                              "ELIN/STEER/TRIPLET/current ",\ 
+                              "ELIN/STEER/S2H1/current ",\ 
+                              "ELIN/STEER/S2V1/current ",\ 
+                              "ELIN/STEER/S2H2/current ",\ 
+                              "ELIN/STEER/S2V2/current ",\ 
+                              "ELIN/STEER/CHAN16/current"
+elin/steer/1->__SubDevices: "elin/steer/bh1",\ 
+                            "elin/steer/bv1",\ 
+                            "elin/steer/bh2",\ 
+                            "elin/steer/bv2",\ 
+                            "elin/steer/s1h1",\ 
+                            "elin/steer/s1v1",\ 
+                            "elin/steer/s1h2",\ 
+                            "elin/steer/s1v2",\ 
+                            "elin/steer/triplet",\ 
+                            "elin/steer/s2h1",\ 
+                            "elin/steer/s2v1",\ 
+                            "elin/steer/s2h2",\ 
+                            "elin/steer/s2v2",\ 
+                            "elin/steer/chan16"
+
+# --- elin/steer/gun properties
+
+elin/steer/gun->AttributesList: "ELIN/STEER/GH1/current ",\ 
+                                "ELIN/STEER/GV1/current ",\ 
+                                "ELIN/STEER/GH2/current ",\ 
+                                "ELIN/STEER/GV2/current ",\ 
+                                "ELIN/STEER/GH3/current ",\ 
+                                "ELIN/STEER/GV3/current"
+elin/steer/gun->__SubDevices: "elin/steer/gh1",\ 
+                              "elin/steer/gv1",\ 
+                              "elin/steer/gh2",\ 
+                              "elin/steer/gv2",\ 
+                              "elin/steer/gh3",\ 
+                              "elin/steer/gv3"
+
+# --- elin/steer/pbunch properties
+
+elin/steer/pbunch->AttributesList: "ELIN/STEER/GH4/current ",\ 
+                                   "ELIN/STEER/GV4/current"
+elin/steer/pbunch->__SubDevices: "elin/steer/gh4",\ 
+                                 "elin/steer/gv4"
+
+#---------------------------------------------------------
+# CLASS GenericMultiChannel properties
+#---------------------------------------------------------
+
+CLASS/GenericMultiChannel->Description: "This class tries to be a generic Tango multichannel device server.",\ 
+                                        "It collects DevDouble data from different devices and compute some common",\ 
+                                        "operation on it : sum, mean, RMS and standard deviation.",\ 
+                                        "The collected data are also provided into a spectrum attribute."
+CLASS/GenericMultiChannel->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericMultiChannel->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericMultiChannel->ProjectTitle: TangoMultiChannel
+

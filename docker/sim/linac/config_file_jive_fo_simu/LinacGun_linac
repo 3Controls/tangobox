@@ -1,0 +1,36 @@
+#
+# Resource backup , created Thu Jul 18 15:30:55 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER LinacGun/linac, LinacGun device declaration
+#---------------------------------------------------------
+
+LinacGun/linac/DEVICE/LinacGun: "elin/beam/run"
+
+
+# --- elin/beam/run properties
+
+elin/beam/run->__SubDevices: "elin/beam/run"
+
+# --- elin/beam/run attribute properties
+
+elin/beam/run/PulseV->__value: 0
+elin/beam/run/PulseL->__value: 2.1
+elin/beam/run/GridV->__value: -74
+elin/beam/run/PulseType->__value: SHORT
+elin/beam/run/Delay->__value: 1
+
+#---------------------------------------------------------
+# CLASS LinacGun properties
+#---------------------------------------------------------
+
+CLASS/LinacGun->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/LinacGun/"
+CLASS/LinacGun->cvs_tag: LinacGun-Release_1_0_1
+CLASS/LinacGun->Description: "This class will manage the gun of the linac.",\ 
+                             "The gun is the electrons source of the accelerator.",\ 
+                             "It defines the pulsed characteristics of the electron beam (duration, rate)."
+CLASS/LinacGun->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/LinacGun->InheritedFrom: Tango::Device_4Impl
+CLASS/LinacGun->ProjectTitle: "Linac Gun"
+

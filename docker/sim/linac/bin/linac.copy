@@ -1,0 +1,17 @@
+#!/bin/bash
+LINAC=/home/tango-cs/dservers/linac
+
+CPDIR=$LINAC/bin
+
+
+echo "Copying all device servers"
+
+TARGETS=('GenericMultiChannel' 'GenericSimulator' 'Linac'
+	'LinacCooling' 'LinacGun' 'LinacGunAux' 'LinacHVPS' 'LinacMediumLevel'
+	'LinacModAux' 'LinacModulator' 'LinacRF' 'LinacSequencer' 'Simurelay')
+
+for TARGET in ${TARGETS[*]}
+do
+	echo "Copy of $TARGET"
+	cp $LINAC/$TARGET/bin/$TARGET $CPDIR
+done
