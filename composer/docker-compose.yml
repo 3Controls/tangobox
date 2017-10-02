@@ -7,63 +7,17 @@ services:
     command: supervisord -c /etc/supervisord.archiving.conf
 #    environment:
     volumes:
-      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.archiving.conf:/etc:ro
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisord.archiving.conf:/etc:ro
     extra_hosts:
-      - "TangoBox-VM:10.0.2.15"
+      - "TangoBox-VM:172.18.0.1"
     links:
-      - base:tangobox-base  
       - sardana:tangobox-sardana
       - sim:tangobox-sim
       - com:tangobox-com
       - web:tangobox-web
-      
-  base :
-    image: base:latest
-    hostname: tangobox-base
-    command: supervisord -c /etc/supervisord.base.conf
-#    environment: 
-    volumes:
-      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.base.conf:/etc:ro
-    extra_hosts:
-      - "TangoBox-VM:10.0.2.15"
-    links:
-      - sardana:tangobox-sardana
-      - sim:tangobox-sim  
-      - com:tangobox-com
-      - archiving:tangobox-archiving
-      - web:tangobox-web
-
-  com:
-    image: com:latest
-    hostname: tangobox-com
-    command: supervisord -c /etc/supervisord.com.conf
-#    environment: 
-    volumes:
-      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.com.conf:/etc:ro
-    extra_hosts:
-      - "TangoBox-VM:10.0.2.15"
-    links:
-      - base:tangobox-base  
-      - sim:tangobox-sim
-      - archiving:tangobox-archiving
-      - web:tangobox-web
-      - sardana:tangobox-sardana
-
-  sardana:
-    image: sardana:latest
-    hostname: tangobox-sardana
-    command: supervisord -c /etc/supervisord.sardana.conf
-#    environment: 
-    volumes:
-      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.sardana.conf:/etc:ro
-    extra_hosts:
-      - "TangoBox-VM:10.0.2.15"
-    links:
-      - base:tangobox-base  
-      - com:tangobox-com
-      - archiving:tangobox-archiving
-      - web:tangobox-web
-
+    networks:
+      vpcbr:
+        ipv4_address: 172.18.0.2
 
   sim:
     image: sim:latest
@@ -71,15 +25,35 @@ services:
     command: supervisord -c /etc/supervisord.sim.conf
 #    environment: 
     volumes:
-      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.sim.conf:/etc:ro
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisord.sim.conf:/etc:ro
     extra_hosts:
-      - "TangoBox-VM:10.0.2.15"
+      - "TangoBox-VM:172.18.0.1"
     links:
-      - base:tangobox-base  
       - com:tangobox-com
       - archiving:tangobox-archiving
       - web:tangobox-web
       - sardana:tangobox-sardana
+    networks:
+      vpcbr:
+        ipv4_address: 172.18.0.3
+      
+  com:
+    image: com:latest
+    hostname: tangobox-com
+    command: supervisord -c /etc/supervisord.com.conf
+#    environment: 
+    volumes:
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisord.com.conf:/etc:ro
+    extra_hosts:
+      - "TangoBox-VM:172.18.0.1"
+    links:
+      - sim:tangobox-sim
+      - archiving:tangobox-archiving
+      - web:tangobox-web
+      - sardana:tangobox-sardana
+    networks:
+      vpcbr:
+        ipv4_address: 172.18.0.4
 
   web:
     image: web:latest
@@ -87,12 +61,40 @@ services:
     command: supervisord -c /etc/supervisord.web.conf
 #    environment: 
     volumes:
-      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisor.web.conf:/etc:ro
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisord.web.conf:/etc:ro
     extra_hosts:
-      - "TangoBox-VM:10.0.2.15"
+      - "TangoBox-VM:172.18.0.1"
     links:
-      - base:tangobox-base  
       - sim:tangobox-sim
       - com:tangobox-com
       - archiving:tangobox-archiving
       - sardana:tangobox-sardana
+    networks:
+      vpcbr:
+        ipv4_address: 172.18.0.5
+
+  sardana:
+    image: sardana:latest
+    hostname: tangobox-sardana
+    command: supervisord -c /etc/supervisord.sardana.conf
+#    environment: 
+    volumes:
+      - /usr/tango-cs/Dockerfiles/composer/config/supervisord/supervisord.sardana.conf:/etc:ro
+    extra_hosts:
+      - "TangoBox-VM:172.18.0.1"
+    links: 
+      - com:tangobox-com
+      - archiving:tangobox-archiving
+      - sim:tangobox-sim
+      - web:tangobox-web
+    networks:
+      vpcbr:
+        ipv4_address: 172.18.0.6
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/24
+        - gateway: 172.18.0.1
