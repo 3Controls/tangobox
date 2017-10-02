@@ -1,0 +1,39 @@
+#
+# Resource backup , created Thu Jul 18 15:25:02 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/simuCT, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/simuCT/DEVICE/GenericSimulator: "sr/d-ct/1",\ 
+                                                 "sr/d-ct/2",\ 
+                                                 "sr/d-ct/ict-bidon",\ 
+                                                 "sr/d-ct/pct-bidon"
+
+
+# --- sr/d-ct/1 properties
+
+sr/d-ct/1->__SubDevices: "sr/d-ct/1"
+
+# --- sr/d-ct/2 properties
+
+sr/d-ct/2->__SubDevices: "sr/d-ct/2"
+
+# --- sr/d-ct/ict-bidon properties
+
+sr/d-ct/ict-bidon->__SubDevices: "sr/d-ct/ict-bidon"
+
+# --- sr/d-ct/pct-bidon properties
+
+sr/d-ct/pct-bidon->__SubDevices: "sr/d-ct/pct-bidon"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+

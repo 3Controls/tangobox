@@ -1,0 +1,50 @@
+#
+# Resource backup , created Thu Jul 18 15:38:11 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER LinacSequencer/linac, LinacSequencer device declaration
+#---------------------------------------------------------
+
+LinacSequencer/linac/DEVICE/LinacSequencer: "elin/master/seq"
+
+
+# --- elin/master/seq properties
+
+elin/master/seq->focus_klystron1_timeout: 3000
+elin/master/seq->focus_klystron2_timeout: 1000
+elin/master/seq->timeout: 5000
+
+#---------------------------------------------------------
+# CLASS LinacSequencer properties
+#---------------------------------------------------------
+
+CLASS/LinacSequencer->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/LinacSequencer/"
+CLASS/LinacSequencer->cvs_tag: LinacSequencer-Release_1_4
+CLASS/LinacSequencer->Description: "Sequencer server to execute the necessary sequences to start and stop the LINAC."
+CLASS/LinacSequencer->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/LinacSequencer->InheritedFrom: Tango::Device_4Impl
+CLASS/LinacSequencer->ProjectTitle: "Sequencer Server for LINAC"
+
+
+# --- dserver/LinacSequencer/linac properties
+
+dserver/LinacSequencer/linac->__SubDevices: "elin/gun/aux",\ 
+                                            "elin/beam/run",\ 
+                                            "elin/gun/hv",\ 
+                                            "elin/rf/run",\ 
+                                            "elin/cool/1",\ 
+                                            "elin/mod1/aux",\ 
+                                            "elin/mod2/aux",\ 
+                                            "elin/mod1/hv",\ 
+                                            "elin/mod2/hv",\ 
+                                            "elin/mod1/run",\ 
+                                            "elin/mod2/run",\ 
+                                            "elin/focus/klystron1",\ 
+                                            "elin/focus/klystron2",\ 
+                                            "elin/focus/beam1",\ 
+                                            "elin/focus/beam2",\ 
+                                            "elin/steer/1",\ 
+                                            "elin/focus/gun",\ 
+                                            "elin/steer/gun",\ 
+                                            "elin/steer/pbunch"

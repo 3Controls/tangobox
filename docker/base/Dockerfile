@@ -38,17 +38,17 @@ RUN apt-get update && apt-get install -y \
     #PyTango
     pytango \
     fandango \
-    panic \
+    panic \ 	
 # cleaning
  && apt-get -y clean \
  && alias python=python2.7 \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-#adding user
+# adding user 
  && useradd -ms /bin/bash tango-cs \
  && tango-cs:tango | chpasswd \
- && ech "tango-cs ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/tango-cs \
+ && echo "tango-cs ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/tango-cs \
  && chmod 0440 /etc/sudoers.d/tango-cs \
- && mkdir /home/tango-cs/dservers
-#supervisor
+ && mkdir /home/tango-cs/dservers	
 USER tango-cs
+# supervisor
 CMD /usr/bin/supervisord -c /etc/supervisord.conf

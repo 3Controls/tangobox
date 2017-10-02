@@ -1,0 +1,89 @@
+#
+# Resource backup , created Thu Jul 18 15:37:44 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER Linac/linac, Linac device declaration
+#---------------------------------------------------------
+
+Linac/linac/DEVICE/Linac: "elin/master/op"
+
+
+# --- elin/master/op properties
+
+elin/master/op->dirname: "/segfs/tango/cppserver/machine/linac/LinacSequencer/configurationFiles"
+elin/master/op->ICT_device: "sr/d-ct/ict-bidon"
+elin/master/op->ict_limit: 224
+elin/master/op->PCT_device: "sr/d-ct/pct-bidon"
+elin/master/op->pct_limit: 102
+elin/master/op->polled_attr: ct_current,\ 
+                             1000,\ 
+                             srct_limit,\ 
+                             1000,\ 
+                             state,\ 
+                             1000,\ 
+                             status,\ 
+                             1000,\ 
+                             file,\ 
+                             1000,\ 
+                             ct_device,\ 
+                             1000,\ 
+                             shortstatus,\ 
+                             1000
+elin/master/op->reset_devices_list: "elin/master/seq",\ 
+                                    "elin/focus/beam1",\ 
+                                    "elin/focus/beam2",\ 
+                                    "elin/focus/klystron1",\ 
+                                    "elin/focus/klystron2",\ 
+                                    "elin/steer/1",\ 
+                                    "elin/r-mod/reset",\ 
+                                    "another/device/bidon"
+elin/master/op->sequencer: "elin/master/seq"
+elin/master/op->startfile: operation_long
+elin/master/op->__SubDevices: "elin/master/seq",\ 
+                              "elin/focus/beam1",\ 
+                              "elin/focus/beam2",\ 
+                              "elin/focus/klystron1",\ 
+                              "elin/focus/klystron2",\ 
+                              "elin/steer/1",\ 
+                              "elin/master/op",\ 
+                              "elin/intlk/0",\ 
+                              "sr/d-ct/pct-bidon",\ 
+                              "sr/d-ct/ict-bidon",\ 
+                              "elin/gun/aux",\ 
+                              "elin/beam/run",\ 
+                              "elin/gun/hv",\ 
+                              "elin/rf/run",\ 
+                              "elin/cool/1",\ 
+                              "elin/mod1/aux",\ 
+                              "elin/mod2/aux",\ 
+                              "elin/mod1/hv",\ 
+                              "elin/mod2/hv",\ 
+                              "elin/mod1/run",\ 
+                              "elin/mod2/run",\ 
+                              "elin/focus/gun",\ 
+                              "elin/steer/gun",\ 
+                              "elin/steer/pbunch"
+
+# --- elin/master/op attribute properties
+
+elin/master/op/SRCT_Limit->__value: 250
+elin/master/op/CT_device->__value: ICT
+
+#---------------------------------------------------------
+# CLASS Linac properties
+#---------------------------------------------------------
+
+CLASS/Linac->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/linac/"
+CLASS/Linac->cvs_tag: Linac-Release_1_3
+CLASS/Linac->Description: "This class will manage the high level object controlling the linac.",\ 
+                          "This object will allow the executions of sequences to put the linac in ON,OFF,",\ 
+                          "STANDBY or LOW HEATING STATE."
+CLASS/Linac->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/Linac->InheritedFrom: Tango::Device_4Impl
+CLASS/Linac->ProjectTitle: Linac
+
+
+# --- dserver/Linac/linac properties
+
+dserver/Linac/linac->polling_threads_pool_conf: "elin/master/op"

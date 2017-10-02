@@ -1,0 +1,10 @@
+#!/bin/sh
+
+TANGO_HOST=TangoBox-VM:10000
+export TANGO_HOST
+
+killall Linac
+killall LinacSequencer
+killall GenericSimulator 
+killall GenericMultiChannel 
+killall LinacMediumLevel

@@ -1,0 +1,74 @@
+#
+# Resource backup , created Thu Jul 18 15:02:22 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/dac, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/dac/DEVICE/GenericSimulator: "alin/o-cool/temp",\ 
+                                              "elin/gun/gridv-dac",\ 
+                                              "elin/gun/headtv-dac",\ 
+                                              "elin/gun/hv-dac",\ 
+                                              "elin/gun/pulsel-dac",\ 
+                                              "elin/gun/pulsev-dac",\ 
+                                              "elin/mod1/hv-dac",\ 
+                                              "elin/mod2/hv-dac",\ 
+                                              "elin/rf/bun-at-dac",\ 
+                                              "elin/rf/pbun-at-dac",\ 
+                                              "elin/rf/pbun-ph-dac"
+
+
+# --- alin/o-cool/temp properties
+
+alin/o-cool/temp->__SubDevices: "alin/o-cool/temp"
+
+# --- elin/gun/gridv-dac properties
+
+elin/gun/gridv-dac->__SubDevices: "elin/gun/gridv-dac"
+
+# --- elin/gun/headtv-dac properties
+
+elin/gun/headtv-dac->__SubDevices: "elin/gun/headtv-dac"
+
+# --- elin/gun/hv-dac properties
+
+elin/gun/hv-dac->__SubDevices: "elin/gun/hv-dac"
+
+# --- elin/gun/pulsel-dac properties
+
+elin/gun/pulsel-dac->__SubDevices: "elin/gun/pulsel-dac"
+
+# --- elin/gun/pulsev-dac properties
+
+elin/gun/pulsev-dac->__SubDevices: "elin/gun/pulsev-dac"
+
+# --- elin/mod1/hv-dac properties
+
+elin/mod1/hv-dac->__SubDevices: "elin/mod1/hv-dac"
+
+# --- elin/mod2/hv-dac properties
+
+elin/mod2/hv-dac->__SubDevices: "elin/mod2/hv-dac"
+
+# --- elin/rf/bun-at-dac properties
+
+elin/rf/bun-at-dac->__SubDevices: "elin/rf/bun-at-dac"
+
+# --- elin/rf/pbun-at-dac properties
+
+elin/rf/pbun-at-dac->__SubDevices: "elin/rf/pbun-at-dac"
+
+# --- elin/rf/pbun-ph-dac properties
+
+elin/rf/pbun-ph-dac->__SubDevices: "elin/rf/pbun-ph-dac"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+

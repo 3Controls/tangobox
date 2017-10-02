@@ -1,0 +1,44 @@
+#
+# Resource backup , created Thu Jul 18 15:36:25 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER Simurelay/test, Simurelay device declaration
+#---------------------------------------------------------
+
+Simurelay/test/DEVICE/Simurelay: "elin/r-beam/off",\ 
+                                 "elin/r-beam/on",\ 
+                                 "elin/r-cool/off",\ 
+                                 "elin/r-cool/on",\ 
+                                 "elin/r-gun/352M",\ 
+                                 "elin/r-gun/economy",\ 
+                                 "elin/r-gun/htoff",\ 
+                                 "elin/r-gun/hton",\ 
+                                 "elin/r-gun/hvoff",\ 
+                                 "elin/r-gun/hvon",\ 
+                                 "elin/r-gun/off",\ 
+                                 "elin/r-gun/on",\ 
+                                 "elin/r-gun/short",\ 
+                                 "elin/r-mod/economy",\ 
+                                 "elin/r-mod/heatoff",\ 
+                                 "elin/r-mod/heaton",\ 
+                                 "elin/r-mod/hvoff",\ 
+                                 "elin/r-mod/hvon",\ 
+                                 "elin/r-rf/off",\ 
+                                 "elin/r-rf/on",\ 
+                                 "elin/v-rv/0",\ 
+                                 "elin/v-rv/1",\ 
+                                 "elin/v-rv/2",\ 
+                                 "elin/v-rv/3",\ 
+                                 "elin/v-rv/4"
+
+
+#---------------------------------------------------------
+# CLASS Simurelay properties
+#---------------------------------------------------------
+
+CLASS/Simurelay->Description: "Simulation relay server to test GUI of the Linac."
+CLASS/Simurelay->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/Simurelay->InheritedFrom: Tango::Device_4Impl
+CLASS/Simurelay->ProjectTitle: "simulation relay server"
+

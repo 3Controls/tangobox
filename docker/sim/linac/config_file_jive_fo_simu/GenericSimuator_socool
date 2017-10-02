@@ -1,0 +1,49 @@
+#
+# Resource backup , created Thu Jul 18 15:25:10 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/socool, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/socool/DEVICE/GenericSimulator: "elin/intlk/0",\ 
+                                                 "elin/o-rf/freq",\ 
+                                                 "elin/rf/bun-ph",\ 
+                                                 "elin/rf/pbun-ph",\ 
+                                                 "elin/rf/sec-ph",\ 
+                                                 "elin/rf/sec-ph-dac"
+
+
+# --- elin/intlk/0 properties
+
+elin/intlk/0->__SubDevices: "elin/intlk/0"
+
+# --- elin/o-rf/freq properties
+
+elin/o-rf/freq->__SubDevices: "elin/o-rf/freq"
+
+# --- elin/rf/bun-ph properties
+
+elin/rf/bun-ph->__SubDevices: "elin/rf/bun-ph"
+
+# --- elin/rf/pbun-ph properties
+
+elin/rf/pbun-ph->__SubDevices: "elin/rf/pbun-ph"
+
+# --- elin/rf/sec-ph properties
+
+elin/rf/sec-ph->__SubDevices: "elin/rf/sec-ph"
+
+# --- elin/rf/sec-ph-dac properties
+
+elin/rf/sec-ph-dac->__SubDevices: "elin/rf/sec-ph-dac"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+
