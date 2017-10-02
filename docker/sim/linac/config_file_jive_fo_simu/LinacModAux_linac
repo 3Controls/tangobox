@@ -1,0 +1,66 @@
+#
+# Resource backup , created Thu Jul 18 15:31:19 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER LinacModAux/linac, LinacModAux device declaration
+#---------------------------------------------------------
+
+LinacModAux/linac/DEVICE/LinacModAux: "elin/mod1/aux",\ 
+                                      "elin/mod2/aux"
+
+
+# --- elin/mod1/aux properties
+
+elin/mod1/aux->heaterPS_device: "rb/test/chroma"
+elin/mod1/aux->heatI_adc: "elin/mod1/heati-adc"
+elin/mod1/aux->heatV_adc: "elin/mod1/heatv-adc"
+elin/mod1/aux->interlocks_list: 1.1,\ 
+                                1.2,\ 
+                                2.1,\ 
+                                2.3,\ 
+                                3.1,\ 
+                                3.2,\ 
+                                3.3
+elin/mod1/aux->thyratronHeatV_adc: "elin/mod1/thyrheatv-adc"
+
+# --- elin/mod1/aux attribute properties
+
+elin/mod1/aux/Economy->__value: true
+
+# --- elin/mod2/aux properties
+
+elin/mod2/aux->heatI_adc: "elin/mod2/heati-adc"
+elin/mod2/aux->heatV_adc: "elin/mod2/heatv-adc"
+elin/mod2/aux->interlocks_list: 1.3,\ 
+                                1.4,\ 
+                                2.2,\ 
+                                2.4,\ 
+                                3.1,\ 
+                                3.2,\ 
+                                3.3
+elin/mod2/aux->thyratronHeatV_adc: "elin/mod2/thyrheatv-adc"
+
+# --- elin/mod2/aux attribute properties
+
+elin/mod2/aux/Temporization->description: "remaining time before the ON state."
+elin/mod2/aux/Temporization->display_unit: s
+elin/mod2/aux/Temporization->format: %4d
+elin/mod2/aux/Temporization->label: "Modulators Remaining Time"
+elin/mod2/aux/Temporization->max_value: 420
+elin/mod2/aux/Temporization->min_value: 0
+elin/mod2/aux/Temporization->standard_unit: seconds
+elin/mod2/aux/Temporization->unit: seconds
+elin/mod2/aux/Economy->__value: true
+
+#---------------------------------------------------------
+# CLASS LinacModAux properties
+#---------------------------------------------------------
+
+CLASS/LinacModAux->cvs_location: "ESRF:/cvsroot/cppserver/machine/linac/LinacModAux/"
+CLASS/LinacModAux->cvs_tag: LinacModAux-Release_1_0_2
+CLASS/LinacModAux->Description: "This class will manage the modulator auxiliaries of the Linac."
+CLASS/LinacModAux->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/LinacModAux->InheritedFrom: Tango::Device_4Impl
+CLASS/LinacModAux->ProjectTitle: "Linac Modulator Auxiliary"
+

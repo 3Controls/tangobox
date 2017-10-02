@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pogoDsl:PogoSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pogoDsl="http://www.esrf.fr/tango/pogo/PogoDsl">
+  <classes name="Linac" pogoRevision="9.1">
+    <description description="This class will manage the high level object controlling the linac.&#xA;This object will allow the executions of sequences to put the linac in ON,OFF,&#xA;STANDBY or LOW HEATING STATE." title="Linac" sourcePath="/home/tango-cs/dservers/linac/Linac" language="Cpp" filestogenerate="XMI   file,Code files,Protected Regions" license="GPL" copyright="" hasMandatoryProperty="false" hasConcreteProperty="true" hasAbstractCommand="false" hasAbstractAttribute="false">
+      <inheritances classname="Device_4Impl" sourcePath="../../../../../segfs/tango/templates/AbstractClasses"/>
+      <identification contact="at esrf.fr - andy.gotz" author="andy.gotz" emailDomain="esrf.fr" classFamily="linac" siteSpecific="" platform="Unix Like" bus="Not Applicable" manufacturer="" reference=""/>
+    </description>
+    <deviceProperties name="Dirname" description="The operation files for the linac will be load and saved in that directory&#xA;and its subfolders.">
+      <type xsi:type="pogoDsl:StringType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </deviceProperties>
+    <deviceProperties name="Startfile" description="Name of the config file to be loaded at startup.">
+      <type xsi:type="pogoDsl:StringType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </deviceProperties>
+    <deviceProperties name="ICT_device" description="ICT device on which we could read the current used for beamstop functionality.">
+      <type xsi:type="pogoDsl:StringType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </deviceProperties>
+    <deviceProperties name="PCT_device" description="PCT device on which we could read the current used for&#xA;beamstop functionality only if we can`t read the taco resource&#xA;sr/d-ct/1/name during the init.&#xA;If we can read this taco resource, we will use this resource as the PCT&#xA;device to be read.">
+      <type xsi:type="pogoDsl:StringType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </deviceProperties>
+    <deviceProperties name="Sequencer" description="Sequencer device name.">
+      <type xsi:type="pogoDsl:StringType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </deviceProperties>
+    <deviceProperties name="ICT_limit" description="Value used at startup as SRCT limit when ct_device = ICT.">
+      <type xsi:type="pogoDsl:DoubleType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <DefaultPropValue>4.60</DefaultPropValue>
+    </deviceProperties>
+    <deviceProperties name="PCT_limit" description="Value used at startup as SRCT limit when ct_device = PCT.">
+      <type xsi:type="pogoDsl:DoubleType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <DefaultPropValue>200.0</DefaultPropValue>
+    </deviceProperties>
+    <deviceProperties name="Daresbury" description="Name of the daresbury device.">
+      <type xsi:type="pogoDsl:StringType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <DefaultPropValue>elin/intlk/0</DefaultPropValue>
+    </deviceProperties>
+    <deviceProperties name="Pss_interlocks_list" description="list of pss interlocks.">
+      <type xsi:type="pogoDsl:DoubleVectorType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <DefaultPropValue>3.3</DefaultPropValue>
+      <DefaultPropValue>5.2</DefaultPropValue>
+      <DefaultPropValue>17.4</DefaultPropValue>
+    </deviceProperties>
+    <deviceProperties name="Reset_devices_list" description="List of devices to be reset when the command reset is called">
+      <type xsi:type="pogoDsl:StringVectorType"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <DefaultPropValue>elin/master/seq</DefaultPropValue>
+      <DefaultPropValue>elin/intlk/0</DefaultPropValue>
+      <DefaultPropValue>elin/r-mod/reset</DefaultPropValue>
+      <DefaultPropValue>elin/focus/klystron1</DefaultPropValue>
+      <DefaultPropValue>elin/focus/klystron2</DefaultPropValue>
+      <DefaultPropValue>elin/focus/beam1</DefaultPropValue>
+      <DefaultPropValue>elin/focus/beam2</DefaultPropValue>
+      <DefaultPropValue>elin/steer/1</DefaultPropValue>
+    </deviceProperties>
+    <commands name="State" description="This command gets the device state (stored in its &lt;i>device_state&lt;/i> data member) and returns it to the caller." execMethod="dev_state" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="none.">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="State Code">
+        <type xsi:type="pogoDsl:StateType"/>
+      </argout>
+      <status abstract="true" inherited="true" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="Status" description="This command gets the device status (stored in its &lt;i>device_status&lt;/i> data member) and returns it to the caller." execMethod="dev_status" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="none.">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="Status description">
+        <type xsi:type="pogoDsl:ConstStringType"/>
+      </argout>
+      <status abstract="true" inherited="true" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="On" description="" execMethod="on" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <excludedStates>ON</excludedStates>
+      <excludedStates>INIT</excludedStates>
+      <excludedStates>OFF</excludedStates>
+    </commands>
+    <commands name="Off" description="" execMethod="off" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <excludedStates>ON</excludedStates>
+      <excludedStates>STANDBY</excludedStates>
+      <excludedStates>OFF</excludedStates>
+    </commands>
+    <commands name="Standby" description="" execMethod="standby" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <excludedStates>STANDBY</excludedStates>
+      <excludedStates>OFF</excludedStates>
+    </commands>
+    <commands name="LowHeating" description="" execMethod="low_heating" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <excludedStates>ON</excludedStates>
+      <excludedStates>INIT</excludedStates>
+    </commands>
+    <commands name="Abort" description="" execMethod="abort" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="Reset" description="" execMethod="reset" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="ReadDirName" description="Command to retrieve the name of the directory under which the Linac configuration files&#xA;are load and saved." execMethod="read_dir_name" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="The name of the directory under which the files are load and saved.">
+        <type xsi:type="pogoDsl:StringType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="LoadFile" description="Load the configuration file given in argument." execMethod="load_file" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="File to load">
+        <type xsi:type="pogoDsl:StringType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="SaveFile" description="This command will save all the present settings in a file.&#xA;The argin is the name of the file. It's a relative pathname.&#xA;For example, if 'test/16bunch' is given in argin, the file will be saved in dirname/test/16bunch.&#xA;dirname is the dirname property of the server.&#xA;You can use the command readDirName to know the value of dirname.&#xA;These settings will be applied by the server from now." execMethod="save_file" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="Name of the file (relative to dirname property)">
+        <type xsi:type="pogoDsl:StringType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="ForceSave" description="This command will force the save of all the present settings in a file&#xA;even if there was a problem when getting all the current set points.&#xA;If a set point could not be read, the set point given in the last loaded or saved file will be used.&#xA;The argin is the name of the file. It's a relative pathname.&#xA;For example, if 'test/16bunch' is given in argin, the file will be saved in dirname/test/16bunch.&#xA;dirname is the dirname property of the server.&#xA;You can use the command readDirName to know the value of dirname.&#xA;These settings will be applied by the server from now." execMethod="force_save" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="Name of the file (relative to dirname property)">
+        <type xsi:type="pogoDsl:StringType"/>
+      </argin>
+      <argout description="">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="GetPCTDeviceName" description="This command will return the name of the PCT device to be read.&#xA;This name is obtained through the Tango database by reading the property sr/d-ct/1/CurrentDeviceName.&#xA;After the call to this function, the PCT device used in the Linac server will be the one given by this property." execMethod="get_pctdevice_name" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="none">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="PCT device name">
+        <type xsi:type="pogoDsl:StringType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </commands>
+    <commands name="GetICTDeviceName" description="This command will return the name of the ICT device to be read.&#xA;This name is obtained through the Tango database by reading the property sr/d-ct/2/CurrentDeviceName.&#xA;After the call to this function, the ICT device used in the Linac server will be the one given by this property." execMethod="get_ictdevice_name" displayLevel="OPERATOR" polledPeriod="0">
+      <argin description="none">
+        <type xsi:type="pogoDsl:VoidType"/>
+      </argin>
+      <argout description="PCT device name">
+        <type xsi:type="pogoDsl:StringType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </commands>
+    <attributes name="File" attType="Scalar" rwType="READ" displayLevel="OPERATOR" polledPeriod="0" maxX="0" maxY="0">
+      <dataType xsi:type="pogoDsl:StringType"/>
+      <changeEvent fire="false" libCheckCriteria="false"/>
+      <archiveEvent fire="false" libCheckCriteria="false"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <properties description="Configuration file" label="" unit="" standardUnit="" displayUnit="" format="" maxValue="" minValue="" maxAlarm="" minAlarm="" maxWarning="" minWarning="" deltaTime="" deltaValue=""/>
+    </attributes>
+    <attributes name="SRCT_Limit" attType="Scalar" rwType="READ_WRITE" displayLevel="OPERATOR" polledPeriod="1000" maxX="0" maxY="0">
+      <dataType xsi:type="pogoDsl:DoubleType"/>
+      <changeEvent fire="false" libCheckCriteria="false"/>
+      <archiveEvent fire="false" libCheckCriteria="false"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <properties description="The set value of this attribute corresponds to the maximum\nallowed threshold for the current in the SR.\nIf the SR current is greater than the set value of this attribute,\nthe linac is put in Standby state and cannot be switched ON.\n\nThe read value of this attribute is the present SR current value." label="SRCT limit" unit="mA" standardUnit="mA" displayUnit="mA" format="%5.2f" maxValue="" minValue="0" maxAlarm="" minAlarm="" maxWarning="" minWarning="" deltaTime="" deltaValue=""/>
+    </attributes>
+    <attributes name="CT_device" attType="Scalar" rwType="READ_WRITE" displayLevel="OPERATOR" polledPeriod="0" maxX="0" maxY="0" memorized="true" memorizedAtInit="true">
+      <dataType xsi:type="pogoDsl:StringType"/>
+      <changeEvent fire="false" libCheckCriteria="false"/>
+      <archiveEvent fire="false" libCheckCriteria="false"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <properties description="Current Transformer on which we read the current used \nfor the beam_stop functionality.\nPossible values are PCT or ICT." label="CT device" unit="" standardUnit="" displayUnit="" format="" maxValue="" minValue="" maxAlarm="" minAlarm="" maxWarning="" minWarning="" deltaTime="" deltaValue=""/>
+    </attributes>
+    <attributes name="CT_Current" attType="Scalar" rwType="READ" displayLevel="OPERATOR" polledPeriod="0" maxX="0" maxY="0">
+      <dataType xsi:type="pogoDsl:DoubleType"/>
+      <changeEvent fire="false" libCheckCriteria="false"/>
+      <archiveEvent fire="false" libCheckCriteria="false"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <properties description="" label="" unit="" standardUnit="" displayUnit="" format="" maxValue="" minValue="" maxAlarm="" minAlarm="" maxWarning="" minWarning="" deltaTime="" deltaValue=""/>
+    </attributes>
+    <attributes name="ShortStatus" attType="Scalar" rwType="READ" displayLevel="OPERATOR" polledPeriod="0" maxX="0" maxY="0">
+      <dataType xsi:type="pogoDsl:StringType"/>
+      <changeEvent fire="false" libCheckCriteria="false"/>
+      <archiveEvent fire="false" libCheckCriteria="false"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <properties description="A short description of the status of the linac." label="shortStatus" unit="" standardUnit="" displayUnit="" format="" maxValue="" minValue="" maxAlarm="" minAlarm="" maxWarning="" minWarning="" deltaTime="" deltaValue=""/>
+    </attributes>
+    <attributes name="PCT_device" attType="Scalar" rwType="READ" displayLevel="OPERATOR" polledPeriod="0" maxX="0" maxY="0">
+      <dataType xsi:type="pogoDsl:StringType"/>
+      <changeEvent fire="false" libCheckCriteria="false"/>
+      <archiveEvent fire="false" libCheckCriteria="false"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <properties description="Name of the PCT device read via the \nproperty sr/d-ct/1/CurrentDeviceName" label="PCT device" unit="" standardUnit="" displayUnit="" format="" maxValue="" minValue="" maxAlarm="" minAlarm="" maxWarning="" minWarning="" deltaTime="" deltaValue=""/>
+    </attributes>
+    <attributes name="ICT_device" attType="Scalar" rwType="READ" displayLevel="OPERATOR" polledPeriod="0" maxX="0" maxY="0">
+      <dataType xsi:type="pogoDsl:StringType"/>
+      <changeEvent fire="false" libCheckCriteria="false"/>
+      <archiveEvent fire="false" libCheckCriteria="false"/>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+      <properties description="Name of the PCT device read via the \nproperty sr/d-ct/2/CurrentDeviceName" label="ICT device" unit="" standardUnit="" displayUnit="" format="" maxValue="" minValue="" maxAlarm="" minAlarm="" maxWarning="" minWarning="" deltaTime="" deltaValue=""/>
+    </attributes>
+    <states name="ON" description="The Linac is ON.">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <states name="STANDBY" description="*">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <states name="INIT" description="Low Heating State">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <states name="OFF" description="The linac is off">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <states name="MOVING" description="*">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <states name="FAULT" description="*">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <states name="UNKNOWN" description="*">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <states name="DISABLE" description="When a sequence failed with errors, the state will be set to DISABLE.">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <states name="ALARM" description="There was an error during the execution of the last sequence.&#xA;The linac is probably in an intermediate state.">
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
+    </states>
+    <preferences docHome="./doc_html" makefileHome="/usr/local/tango-9.1.0/share/pogo/preferences"/>
+  </classes>
+</pogoDsl:PogoSystem>

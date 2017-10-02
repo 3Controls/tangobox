@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<Title> Tango Device Server User's Guide </Title>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#7F00FF" ALINK="#FF0000">
+
+<P><!-------TITLE------></P>
+
+<TABLE BORDER="0" WIDTH="100%">
+    <TR>
+        <TD ALIGN="left">
+			<A HREF="http://www.esrf.fr/" TARGET=new>
+			<IMG SRC="http://www.esrf.fr/gifs/logo/80.gif" BORDER=0></A>
+		</Td>
+        <TD ALIGN="center">
+			<A HREF="http://www.elettra.trieste.it/" TARGET=new>
+			<IMG SRC="http://www.esrf.fr/computing/cs/tango/elettra_logo.gif" BORDER=0></A>
+
+		</Td>
+        <TD ALIGN="center">
+			<A HREF="http://www.synchrotron-soleil.fr/" TARGET=new>
+			<IMG SRC="http://www.esrf.fr/computing/cs/tango/soleil_logo.gif" BORDER=0></A>
+		</Td>
+        <TD ALIGN="right">
+			<A HREF="http://www.cells.es/" TARGET=new>
+			<IMG SRC="http://www.esrf.fr/computing/cs/tango/alba.jpg" BORDER=0></A>
+		</Td>
+    	 <Td>
+			<H2><FONT COLOR="#7F00FF">
+			<Center><A HREF="http://www.esrf.fr/Infrastructure/Computing/tango/" TARGET="_top">
+					 TANGO </a> <Br> Device Server
+			</Center></FONT>
+    	</Td>
+    </TR>
+</TABLE>
+
+<HR WIDTH="100%"></H5>
+<Br>
+<center>
+<h1>
+Linac		<Br>
+Device Attributes Description 		<Br> <Br>
+Linac Class	<Br>
+</h1>
+<b>
+Revision: Release_1_1 - Author: bourtemb -  CVS repository: ESRF
+</b>
+</center>
+
+
+<Br>
+<Table Border=2 Cellpadding=3 CELLSPACING=0 WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<Td COLSPAN=4> <Font Size=+2><Center><b>Scalar Attributes</b></td></Font></Center>
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<Td><Center><b>Attribute name</b></td></Center>
+<Td><Center><b>Data Type</b></td></Center>
+<Td><Center><b>R/W Type</b></td></Center>
+<Td><Center><b>Expert</b></td></Center>
+<Font Size=-1>
+<Tr><Td><b>File</b>: <Font Size=-1>Configuration file</Font></Td>
+<Td><Center><Font Size=-1>DEV_STRING</Font></Center></Td><Td><Center><Font Size=-1>READ</Font></Center></Td><Td><Center><Font Size=-1>No</Font></Center></Td></Tr>
+
+<Font Size=-1>
+<Tr><Td><b>SRCT_Limit</b>: <Font Size=-1>The set value of this attribute corresponds to the maximum allowed threshold for the current in the SR. If the SR current is greater than the set value of this attribute, the linac is put in Standby state and cannot be switched ON.  The read value of this attribute is the present SR current value.</Font></Td>
+<Td><Center><Font Size=-1>DEV_DOUBLE</Font></Center></Td><Td><Center><Font Size=-1>READ_WRITE</Font></Center></Td><Td><Center><Font Size=-1>No</Font></Center></Td></Tr>
+
+<Font Size=-1>
+<Tr><Td><b>CT_device</b>: <Font Size=-1>Current Transformer on which we read the current used  for the beam_stop functionality. Possible values are PCT or ICT.</Font></Td>
+<Td><Center><Font Size=-1>DEV_STRING</Font></Center></Td><Td><Center><Font Size=-1>READ_WRITE</Font></Center></Td><Td><Center><Font Size=-1>No</Font></Center></Td></Tr>
+
+<Font Size=-1>
+<Tr><Td><b>CT_Current</b></Td>
+<Td><Center><Font Size=-1>DEV_DOUBLE</Font></Center></Td><Td><Center><Font Size=-1>READ</Font></Center></Td><Td><Center><Font Size=-1>No</Font></Center></Td></Tr>
+
+<Font Size=-1>
+<Tr><Td><b>ShortStatus</b>: <Font Size=-1>A short description of the status of the linac.</Font></Td>
+<Td><Center><Font Size=-1>DEV_STRING</Font></Center></Td><Td><Center><Font Size=-1>READ</Font></Center></Td><Td><Center><Font Size=-1>No</Font></Center></Td></Tr>
+
+</Table>
+</Center>
+<Br><Br><Br><Br><Br>
+
+<Center>
+<Br>
+<HR WIDTH="100%"></H5>
+<H3> ESRF - Software Engineering Group </H3>
+</Center>
+</body>
+</html>

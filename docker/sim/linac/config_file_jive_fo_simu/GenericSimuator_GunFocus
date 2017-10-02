@@ -1,0 +1,39 @@
+#
+# Resource backup , created Thu Jul 18 15:02:32 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/GunFocus, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/GunFocus/DEVICE/GenericSimulator: "elin/focus/b1coil",\ 
+                                                   "elin/focus/b2coil",\ 
+                                                   "elin/focus/b3coil",\ 
+                                                   "elin/focus/b4coil"
+
+
+# --- elin/focus/b1coil properties
+
+elin/focus/b1coil->__SubDevices: "elin/focus/b1coil"
+
+# --- elin/focus/b2coil properties
+
+elin/focus/b2coil->__SubDevices: "elin/focus/b2coil"
+
+# --- elin/focus/b3coil properties
+
+elin/focus/b3coil->__SubDevices: "elin/focus/b3coil"
+
+# --- elin/focus/b4coil properties
+
+elin/focus/b4coil->__SubDevices: "elin/focus/b4coil"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+

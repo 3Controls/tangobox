@@ -1,0 +1,39 @@
+#
+# Resource backup , created Thu Jul 18 15:02:07 CEST 2013
+#
+
+#---------------------------------------------------------
+# SERVER GenericSimulator/beam1, GenericSimulator device declaration
+#---------------------------------------------------------
+
+GenericSimulator/beam1/DEVICE/GenericSimulator: "elin/focus/buncher",\ 
+                                                "elin/focus/lens",\ 
+                                                "elin/focus/spare",\ 
+                                                "elin/focus/triplet"
+
+
+# --- elin/focus/buncher properties
+
+elin/focus/buncher->__SubDevices: "elin/focus/buncher"
+
+# --- elin/focus/lens properties
+
+elin/focus/lens->__SubDevices: "elin/focus/lens"
+
+# --- elin/focus/spare properties
+
+elin/focus/spare->__SubDevices: "elin/focus/spare"
+
+# --- elin/focus/triplet properties
+
+elin/focus/triplet->__SubDevices: "elin/focus/triplet"
+
+#---------------------------------------------------------
+# CLASS GenericSimulator properties
+#---------------------------------------------------------
+
+CLASS/GenericSimulator->Description: "Generic Simulator for test what you want."
+CLASS/GenericSimulator->doc_url: "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/"
+CLASS/GenericSimulator->InheritedFrom: Tango::Device_4Impl
+CLASS/GenericSimulator->ProjectTitle: GenericSimulator
+

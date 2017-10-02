@@ -1,0 +1,123 @@
+#        ###   #     #    #     #####
+#         #    ##    #   # #   #     #
+#         #    # #   #  #   #  #
+#         #    #  #  # #     # #
+#         #    #   # # ####### #
+#         #    #    ## #     # #     #
+#######  ###   #     # #     #  #####
+
+
+# Focus KLY1_1	164.8 A
+elin/focus/kly1_1/current->__value:		164.8
+# Focus KLY1_2	145.4 A
+elin/focus/kly1_2/current->__value:		145.4
+# Focus KLY1_3	147.0 A
+elin/focus/kly1_3/current->__value:		147.0
+# Focus KLY2_1	179.0 A
+elin/focus/kly2_1/current->__value:		179.0
+# Focus KLY2_2	160.0 A
+elin/focus/kly2_2/current->__value:		160.0
+# Focus KLY2_3	170.0 A
+elin/focus/kly2_3/current->__value:		170.0
+# B1 coil	0.35 A
+elin/focus/b1coil/current->__value:		0.35
+# B2 coil	0.38 A
+elin/focus/b2coil/current->__value:		0.38
+# B3 coil	0.38 A
+elin/focus/b1coil/current->__value:		0.38
+# B4 coil	0.40 A
+elin/focus/b2coil/current->__value:		0.40
+# Buncher Solenoid 68.0 A
+elin/focus/buncher/current->__value:		68.0
+# Magnetic lens	0.00 A
+elin/focus/lens/current->__value:		0.00
+# Triplet	2.32 A
+elin/focus/triplet/current->__value:		2.32
+# S1 solenoid	80.0 A
+elin/focus/sect1/current->__value:		80.0
+# S2 solenoid	10.0 A
+elin/focus/sect2/current->__value:		10.0
+# ELIN/STEER/GH1	0.40 A
+elin/steer/gh1/current->__value:		0.40
+# ELIN/STEER/GV1	0.30 A
+elin/steer/gv1/current->__value:		0.30
+# ELIN/STEER/BH1	0.40 A
+elin/steer/bh1/current->__value:		0.40
+# ELIN/STEER/BV1	-0.20 A
+elin/steer/bv1/current->__value:		-0.20
+# ELIN/STEER/BH2	1.00 A
+elin/steer/bh2/current->__value:		1.00
+# ELIN/STEER/BV2	0.30 A
+elin/steer/bv2/current->__value:		0.30
+# ELIN/STEER/S1H1	-0.30 A
+elin/steer/s1h1/current->__value:		-0.30
+# ELIN/STEER/S1V1	-0.50 A
+elin/steer/s1v1/current->__value:		-0.50
+# ELIN/STEER/S1H2	-0.30 A
+elin/steer/s1h2/current->__value:		-0.30
+# ELIN/STEER/S1V2	-1.20 A
+elin/steer/s1v2/current->__value:		-1.20
+# ELIN/STEER/TRIPLET	0.00 A
+elin/steer/triplet/current->__value:		0.00
+# ELIN/STEER/S2H1	-0.65 A
+elin/steer/s2h1/current->__value:		-0.65
+# ELIN/STEER/S2V1	0.10 A
+elin/steer/s2v1/current->__value:		0.10
+# ELIN/STEER/S2H2	0.00 A
+elin/steer/s2h2/current->__value:		0.00
+# ELIN/STEER/S2V2	0.50 A
+elin/steer/s2v2/current->__value:		0.50
+# ELIN/STEER/CHAN16	 0.00 A
+elin/steer/chan16/current->__value:		0.00
+# ELIN/STEER/GH2	0.40 A
+elin/steer/gh2/current->__value:		0.40
+# ELIN/STEER/GV2	0.00 A
+elin/steer/gv2/current->__value:		0.0
+# ELIN/STEER/GH3	0.20 A
+elin/steer/gh3/current->__value:		0.20
+# ELIN/STEER/GV3	0.40 A
+elin/steer/gv3/current->__value:		0.40
+# ELIN/STEER/GH4	0.00 A
+elin/steer/gh4/current->__value:		0.00
+# ELIN/STEER/GV4	0.20 A
+elin/steer/gv4/current->__value:		0.20
+# mod 1 hv 	19.50 kV
+elin/mod1/hv/highvoltage->__value:		19.50
+# mod 2 hv 	18.85 kV
+elin/mod2/hv/highvoltage->__value:		18.85
+# vpfn1	33.00 kV
+elin/mod1/run/vpfn->__value:			33.00
+# vpfn2	33.00 kV
+elin/mod2/run/vpfn->__value:			33.00
+# buncher phase	17.6 deg
+elin/rf/run/bunchphase->__value:		17.6
+# pbuncher phase	250.0 deg
+elin/rf/run/pbunchphase->__value:		250.0
+# pbuncher atten	7.5 %
+elin/rf/run/pbunchattenu->__value:		7.5
+# section phase	243.0 deg
+elin/rf/run/sect2phase->__value:		243.0
+# gun heating v	5.60 V
+elin/gun/aux/heatv->__value:			5.60
+# gun grid v	-74.0 V
+elin/beam/run/gridv->__value:			-74.0
+# gun pulse v	0.0 V
+elin/beam/run/pulsev->__value:			0.0
+# gun pulse length	2.10 óm
+elin/beam/run/pulsel->__value:			2.10
+# gun hv	75.0 kV
+elin/gun/hv/highvoltage->__value:		75.0
+# frequency	2998.16 MHz
+elin/rf/run/frequency->__value:			2998.160100
+# Short pulse
+elin/beam/run/pulsetype->__value:		"SHORT"
+# timer rf	40.00 ós
+elin/rf/run/delay->__value:			40.00
+# timer mod1	58.20 ós
+elin/mod1/run/delay->__value:			58.20
+# timer mod2	58.50 ós
+elin/mod2/run/delay->__value:			58.50
+# timer mod1_s	2.50 ós
+elin/mod1/run/delays->__value:			2.50
+# timer mod2_s	2.50 ós
+elin/mod2/run/delays->__value:			2.50
