@@ -1,9 +1,9 @@
 #!/bin/bash
 
 TANGO_HOST=TangoBox-VM:10000
-INSTANCE=test
+INSTANCE=$1
 VERSION=rc4-2.2
-WD=`pwd`
+WD=/var/lib/tomcat8/webapps
 
 echo TANGO_HOST=$TANGO_HOST
 echo INSTANCE=$INSTANCE
