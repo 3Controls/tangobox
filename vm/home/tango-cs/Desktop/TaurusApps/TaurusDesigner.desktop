@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/home/tango-cs/Downloads/logos/taurusdesigner.png
+Name[en_US]=TaurusDesigner
+Exec=/usr/local/bin/taurusdesigner
+Name=TaurusDesigner
+Icon=/home/tango-cs/Downloads/logos/taurusdesigner.png

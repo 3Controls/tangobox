@@ -20,4 +20,3 @@ ADD resources/tango_register_device /usr/local/bin/
 EXPOSE 8080
 USER tango-cs
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
-
