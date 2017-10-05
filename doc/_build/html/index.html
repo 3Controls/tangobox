@@ -1,0 +1,181 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to TangoBox - a Tango Controls demo VM’s documentation! &#8212; TangoBox - a Tango Controls demo VM RC10 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'RC10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-tangobox-a-tango-controls-demo-vm-s-documentation">
+<h1>Welcome to TangoBox - a Tango Controls demo VM’s documentation!<a class="headerlink" href="#welcome-to-tangobox-a-tango-controls-demo-vm-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>TangoBox is a VM image running Tango Controls system and its various tools.
+It is intended to be used for demonstration and training.
+It also simulates distributed deployment by using Docker.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="what-is-installed">
+<h1>What is installed<a class="headerlink" href="#what-is-installed" title="Permalink to this headline">¶</a></h1>
+<p>Below there is list of provide packages/features. Please note that some of them
+are installed as docker container and maybe switched off (stopped) and requires to be switched
+on for being explored, see <a class="reference internal" href="#container-switch-on-off"><span class="std std-ref">Switching containers on and off</span></a></p>
+<ul class="simple">
+<li>Tango 9.2.5</li>
+<li>PyTango 9.2.2</li>
+<li>Taurus 4.2.2</li>
+<li>QTango</li>
+<li>Linac system simulation (as docker container tangobox-sim)</li>
+<li>HDB/TDB (as docker container tangobox-archiving)</li>
+<li>HDB++ (as docker container tangobox-hdbpp)</li>
+<li>SerialLine, Modbus and PyPLC device server (as docker container tangobox-com)</li>
+<li>mTango (as docker container tangobox-web)</li>
+<li>E-giga (as docker container tangobox-…)</li>
+</ul>
+</div>
+<div class="section" id="first-steps">
+<h1>First steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h1>
+<p>After importing the VM image to VirtualBox you may start it.</p>
+<ul class="simple">
+<li>Username is: <cite>tango-cs</cite></li>
+<li>Password is: <cite>tango</cite></li>
+</ul>
+<p><cite>tango-cs</cite> user has sudo rights, so he may invoke commands as superuser with command <strong class="command">sudo</strong>.</p>
+<p>You may explore the Tango Controls feature by clicking related shortcuts on the Desktop.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Plese note that some shortcuts are related to features running on containers. Please start related container first.
+See the following section.</p>
+</div>
+</div>
+<div class="section" id="switching-containers-on-and-off">
+<span id="container-switch-on-off"></span><h1>Switching containers on and off<a class="headerlink" href="#switching-containers-on-and-off" title="Permalink to this headline">¶</a></h1>
+<p>Some of the features of Tango are provided inside pre-build docker containers.
+These can be switched on and off by starting or stopping related containers.
+Containers behave similar to virtual machines with they own network cards and operating system stack,
+however, lacking full separations.</p>
+<p>To start a container, open terminal and invoke <strong class="command">docker start {container-name}</strong>. For example, to star
+a linac simulation use the following statement:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker start tangobox-sim
+</pre></div>
+</div>
+<p>To stop a container, open terminal and invoke <strong class="command">docker stop {container-name}</strong>. For example, to stop
+a linac simulation use the following statement:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker stop tangobox-sim
+</pre></div>
+</div>
+<p>To see which containers are running please, call <strong class="command">docker ps</strong></p>
+</div>
+<div class="section" id="deployment-structure">
+<h1>Deployment structure<a class="headerlink" href="#deployment-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="network">
+<h2>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<p>Containers are created withing their own subnet: <cite>172.18.0.0/16</cite>. The network is called <cite>tango_nw</cite>
+The subnet was created with the following docker command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker network create --driver<span class="o">=</span>bridge --subnet<span class="o">=</span><span class="m">172</span>.18.0.0/16 --opt com.docker.network.bridge.enable_icc<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+--opt com.docker.network.bridge.host_binding_ipv4<span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span> --opt com.docker.network.bridge.mtu<span class="o">=</span><span class="m">1500</span> <span class="se">\</span>
+--opt com.docker.network.bridge.enable_ip_masquerade<span class="o">=</span><span class="nb">true</span>  tango_nw
+</pre></div>
+</div>
+<p>Containers are assigned static IPs. List of the IPs assignment maybe seen in <code class="file docutils literal"><span class="pre">/etc/hosts</span></code>. Use command
+<strong class="command">cat /etc/hosts</strong> to see its contents.</p>
+</div>
+<div class="section" id="containers-and-images-dependency">
+<h2>Containers and images dependency<a class="headerlink" href="#containers-and-images-dependency" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">TangoBox - a Tango Controls demo VM</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, 3Controls/Tango Community.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
