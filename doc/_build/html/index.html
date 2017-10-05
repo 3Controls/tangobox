@@ -56,15 +56,35 @@ on for being explored, see <a class="reference internal" href="#container-switch
 <li>PyTango 9.2.2</li>
 <li>Taurus 4.2.2</li>
 <li>QTango</li>
+<li>iTango</li>
+<li>Tango Access</li>
+<li>JupyTango</li>
+<li>PANIC</li>
+<li>Bensikin</li>
+<li>Mambo</li>
+<li>Docker</li>
 <li>Linac system simulation (as docker container tangobox-sim)</li>
-<li>HDB/TDB (as docker container tangobox-archiving)</li>
+<li>HDB/TDB, SNAP DS (as docker container tangobox-archiving)</li>
 <li>HDB++ (as docker container tangobox-hdbpp)</li>
 <li>SerialLine, Modbus and PyPLC device server (as docker container tangobox-com)</li>
-<li>mTango (as docker container tangobox-web)</li>
+<li>mTango + restAPI, TangoWebApp (as docker container tangobox-web)</li>
+<li>E-giga (as docker container tangobox-egiga)</li>
+<li>PyAlarm DS on each container</li>
+<li>PyCharm</li>
+<li>Visual Studio Code</li>
+<li>ModbusPal to simulate Modbus</li>
 </ul>
 </div>
 <div class="section" id="first-steps">
 <h1>First steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>First of all you have to download latest release of VirtualBox. It can be downloaded from <a class="reference external" href="https://www.virtualbox.org/">here</a> .
+Simply install it and start the program.</li>
+<li>TangoBox is released in <strong>.ova</strong> extension so it can be easily imported.</li>
+<li>Select <em>import</em> and choose downloaded TangoBox file</li>
+<li>If you want, you can change VM’s configuration (i.e graphics, RAM)</li>
+<li>Wait for VirtualBox to import machine</li>
+</ul>
 <p>After importing the VM image to VirtualBox you may start it.</p>
 <ul class="simple">
 <li>Username is: <cite>tango-cs</cite></li>
@@ -112,6 +132,90 @@ The subnet was created with the following docker command:</p>
 </div>
 <div class="section" id="containers-and-images-dependency">
 <h2>Containers and images dependency<a class="headerlink" href="#containers-and-images-dependency" title="Permalink to this headline">¶</a></h2>
+<p>Each container is ran based on its image. All images are already build but, if neccessary, <em>Dockerfiles</em> are stored in <cite>home/Dockerfiles</cite>
+directory. Below is the list of all containers and corresponding images:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="18%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Container</th>
+<th class="head">Image</th>
+<th class="head">Remarks</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>tangobox-com</td>
+<td>com</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>tangobox-sim</td>
+<td>sim</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>tangobox-archiving</td>
+<td>archiving</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>tangobox-hdbpp</td>
+<td>hdbpp</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>tangobox-web</td>
+<td>web</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>tangobox-egiga</td>
+<td>egiga</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>base</td>
+<td>Base container</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>ubuntu</td>
+<td>Ubuntu image to build others</td>
+</tr>
+</tbody>
+</table>
+<p>Some device servers may be stopped when launching containers. It is so to get better performance (high cpu and ram usage). To control and
+start/stop particular DS according to your needs, use <em>Tango Manager (Astor)</em> to it.</p>
+</div>
+<div class="section" id="modbus-simulation">
+<h2>Modbus simulation<a class="headerlink" href="#modbus-simulation" title="Permalink to this headline">¶</a></h2>
+<p><strong>to be finished!!!!!!!</strong></p>
+<p>To simulate Modbus, we suggest to use <em>ModbusPal</em>. To use it, run terminal in <em>ModbusPal</em> location and type:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo java -jar ModbusPal.jar
+</pre></div>
+</div>
+<p>After that, simply load session from file and click <strong>RUN</strong> button.</p>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
@@ -165,7 +269,7 @@ The subnet was created with the following docker command:</p>
       &copy;2017, 3Controls/Tango Community.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
