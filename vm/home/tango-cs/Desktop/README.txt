@@ -22,20 +22,57 @@ Switching containers on and off
 
 * QTango
 
+* iTango
+
+* Tango Access
+
+* JupyTango
+
+* PANIC
+
+* Bensikin
+
+* Mambo
+
+* Docker
+
 * Linac system simulation (as docker container tangobox-sim)
 
-* HDB/TDB (as docker container tangobox-archiving)
+* HDB/TDB, SNAP DS (as docker container tangobox-archiving)
 
 * HDB++ (as docker container tangobox-hdbpp)
 
 * SerialLine, Modbus and PyPLC device server (as docker container
   tangobox-com)
 
-* mTango (as docker container tangobox-web)
+* mTango + restAPI, TangoWebApp (as docker container tangobox-web)
+
+* E-giga (as docker container tangobox-egiga)
+
+* PyAlarm DS on each container
+
+* PyCharm
+
+* Visual Studio Code
+
+* ModbusPal to simulate Modbus
 
 
 First steps
 ***********
+
+* First of all you have to download latest release of VirtualBox. It
+  can be downloaded from here . Simply install it and start the
+  program.
+
+* TangoBox is released in **.ova** extension so it can be easily
+  imported.
+
+* Select *import* and choose downloaded TangoBox file
+
+* If you want, you can change VM’s configuration (i.e graphics, RAM)
+
+* Wait for VirtualBox to import machine
 
 After importing the VM image to VirtualBox you may start it.
 
@@ -100,6 +137,49 @@ contents.
 
 Containers and images dependency
 ================================
+
+Each container is based on its image. All images are already build
+but, if neccessary, *Dockerfiles* are stored in *home/Dockerfiles*
+directory. Below is the list of all containers and corresponding
+images:
+
++--------------------+-------------+---------------------------------+
+| Container          | Image       | Remarks                         |
++====================+=============+=================================+
+| tangobox-com       | com         |                                 |
++--------------------+-------------+---------------------------------+
+| tangobox-sim       | sim         |                                 |
++--------------------+-------------+---------------------------------+
+| tangobox-archiving | archiving   |                                 |
++--------------------+-------------+---------------------------------+
+| tangobox-hdbpp     | hdbpp       |                                 |
++--------------------+-------------+---------------------------------+
+| tangobox-web       | web         |                                 |
++--------------------+-------------+---------------------------------+
+| tangobox-egiga     | egiga       |                                 |
++--------------------+-------------+---------------------------------+
+|                    | base        | Base container                  |
++--------------------+-------------+---------------------------------+
+|                    | ubuntu      | Ubuntu image to build others    |
++--------------------+-------------+---------------------------------+
+
+Some device servers may be stopped when launching containers. It is so
+to get better performance (high cpu and ram usage). To control and
+start/stop particular DS according to your needs, use *Tango Manager
+(Astor)* to it.
+
+
+Modbus simulation
+=================
+
+**to be finished!!!!!!!**
+
+To simulate Modbus, we suggest to use *ModbusPal*. To use it, run
+terminal in *ModbusPal* location and type:
+
+   sudo java -jar ModbusPal.jar
+
+After that, simply load session from file and click **RUN** button.
 
 
 Indices and tables

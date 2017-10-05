@@ -119,7 +119,7 @@ Containers are assigned static IPs. List of the IPs assignment maybe seen in :fi
 Containers and images dependency
 --------------------------------
 
-Each container is ran based on its image. All images are already build but, if neccessary, *Dockerfiles* are stored in `home/Dockerfiles`
+Each container is based on its image. All images are already build but, if neccessary, *Dockerfiles* are stored in `home/Dockerfiles`
 directory. Below is the list of all containers and corresponding images:
 
 ================== =========== ===============================
