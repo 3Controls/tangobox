@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Icon[en_US]=/home/tango-cs/Pictures/logos/taurus.png
-Exec=gnome-terminal -e 'docker exec -it tangobox-archive bash'
-Name[en_US]=Archive
-Name=TaurusGui
-Icon=/home/tango-cs/Pictures/3.png
