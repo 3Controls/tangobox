@@ -32,7 +32,6 @@ on for being explored, see :ref:`Switching containers on and off <container_swit
 * HDB++ (as docker container tangobox-hdbpp)
 * SerialLine, Modbus and PyPLC device server (as docker container tangobox-com)
 * mTango (as docker container tangobox-web)
-* E-giga (as docker container tangobox-...)
 
 
 First steps
