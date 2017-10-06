@@ -15,6 +15,8 @@
   
     <link rel="shortcut icon" href="_static/favicon.png"/>
   
+  
+  
 
   
 
@@ -46,6 +48,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -89,8 +92,11 @@
           
             
             
-                <!-- Local TOC -->
-                <div class="local-toc"><ul>
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to TangoBox - a Tango Controls demo VM’s documentation!</a></li>
 <li><a class="reference internal" href="#what-is-installed">What is installed</a></li>
 <li><a class="reference internal" href="#first-steps">First steps</a></li>
@@ -99,6 +105,7 @@
 <li><a class="reference internal" href="#network">Network</a></li>
 <li><a class="reference internal" href="#containers-and-images-dependency">Containers and images dependency</a></li>
 <li><a class="reference internal" href="#modbus-simulation">Modbus simulation</a></li>
+<li><a class="reference internal" href="#jupytango">JupyTango</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -114,8 +121,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">TangoBox - a Tango Controls demo VM</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">TangoBox - a Tango Controls demo VM</a>
+        
       </nav>
 
 
@@ -124,23 +133,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>Welcome to TangoBox - a Tango Controls demo VM’s documentation!</li>
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to TangoBox - a Tango Controls demo VM’s documentation!</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -240,7 +266,7 @@ The subnet was created with the following docker command:</p>
 </div>
 <div class="section" id="containers-and-images-dependency">
 <h2>Containers and images dependency<a class="headerlink" href="#containers-and-images-dependency" title="Permalink to this headline">¶</a></h2>
-<p>Each container is based on its image. All images are already build but, if neccessary, <em>Dockerfiles</em> are stored in <cite>home/Dockerfiles</cite>
+<p>Each container is based on its image. All images are already build but, if neccessary, <em>Dockerfiles</em> are stored in <code class="file docutils literal"><span class="pre">home/Dockerfiles</span></code>
 directory. Below is the list of all containers and corresponding images:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -314,16 +340,55 @@ directory. Below is the list of all containers and corresponding images:</p>
 </tbody>
 </table>
 <p>Some device servers may be stopped when launching containers. It is so to get better performance (high cpu and ram usage). To control and
-start/stop particular DS according to your needs, use <em>Tango Manager (Astor)</em> to it.</p>
+start/stop particular DS according to your needs, use <strong>Tango Manager (Astor)</strong> to it.</p>
 </div>
 <div class="section" id="modbus-simulation">
 <h2>Modbus simulation<a class="headerlink" href="#modbus-simulation" title="Permalink to this headline">¶</a></h2>
-<p><strong>to be finished!!!!!!!</strong></p>
-<p>To simulate Modbus, we suggest to use <em>ModbusPal</em>. To use it, run terminal in <em>ModbusPal</em> location and type:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo java -jar ModbusPal.jar
+<p>To simulate Modbus, we suggest to use <em>ModbusPal</em>. To do so, use <strong>ModbusPal (simulation)</strong> desktop shortcut. Once it is started, load
+session by choosing <strong>load</strong> button and find <em>test_session.xmpp</em> file. It should be in default opening location. When it is not, it can be found
+in <code class="file docutils literal"><span class="pre">/home/tango-cs/ModbusPal</span></code>.</p>
+<p>After that, use <strong>RUN</strong> button to start simulation. Values in registers can be changed by clicking <em>“eye”</em> button in <em>Modbus slaves</em> section.</p>
+<p>Keep in mind that in ModbusPal, registers are counted from <strong>1</strong> while on DS from <strong>0</strong>!</p>
+<p>To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPLC have two attributes configured:</p>
+<ul class="simple">
+<li>ModbusComposer: Temperature uses <strong>4th</strong>; Pressure uses <strong>5th</strong> register in ModbusPal</li>
+<li>PyPLC: Voltage uses <strong>6th</strong>; Flow uses <strong>7th</strong> register in ModbusPal</li>
+</ul>
+</div>
+<div class="section" id="jupytango">
+<h2>JupyTango<a class="headerlink" href="#jupytango" title="Permalink to this headline">¶</a></h2>
+<p><strong>In case you want to try it, here’s the procedure:</strong></p>
+<ol class="arabic simple">
+<li>start jupyterlab using our dedicated script: <cite>jupytango</cite></li>
+<li>a new browser tab is automagically opened with the right URL: <code class="file docutils literal"><span class="pre">localhost:8888/lab?</span></code></li>
+<li>the very first connection to the service requires a ‘token’ which is printed in the jupytango console</li>
+<li>once in jupyterlab, click the JupyTango icon to open a notebook with the appropriate kernel</li>
+<li>enjoy!</li>
+</ol>
+<p><strong>Here are the JupyTango additions to itango:</strong></p>
+<p><strong>Plotting a tango attribute</strong></p>
+<p>Syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pta <span class="o">[</span>options<span class="o">]</span> &lt;tab <span class="k">for</span> device selection&gt; + &lt;tab <span class="k">for</span> attribute selection&gt;
 </pre></div>
 </div>
-<p>After that, simply load session from file and click <strong>RUN</strong> button.</p>
+<p>Supported options:</p>
+<ul class="simple">
+<li><cite>-w</cite> or <cite>–width</cite>: plot width in pixels</li>
+<li><cite>-h</cite> or <cite>–height</cite>: plot height in pixels</li>
+</ul>
+<p><strong>Monitoring a tango attribute:</strong>
+Syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>tm <span class="o">[</span>options<span class="o">]</span>  + &lt;tab <span class="k">for</span> device selection&gt; + &lt;tab <span class="k">for</span> attribute selection&gt;
+</pre></div>
+</div>
+<p>Supported options:</p>
+<ul class="simple">
+<li><cite>-w</cite> or <cite>–width</cite>: plot width in pixels</li>
+<li><cite>-h</cite> or <cite>–height</cite>: plot height in pixels</li>
+<li><cite>-p</cite> or <cite>–period</cite>: plot refresh period in [0.1, 5] seconds - defaults to 1s</li>
+<li><cite>-d</cite> or <cite>–depth</cite>: scalar attribute history depth in [1, 3600] seconds - defaults to 900s</li>
+</ul>
+<p>You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.</p>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
@@ -336,6 +401,9 @@ start/stop particular DS according to your needs, use <em>Tango Manager (Astor)<
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
            </div>
           </div>
           <footer>
@@ -370,7 +438,8 @@ start/stop particular DS according to your needs, use <em>Tango Manager (Astor)<
             VERSION:'RC10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

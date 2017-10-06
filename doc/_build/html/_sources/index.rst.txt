@@ -119,7 +119,7 @@ Containers are assigned static IPs. List of the IPs assignment maybe seen in :fi
 Containers and images dependency
 --------------------------------
 
-Each container is based on its image. All images are already build but, if neccessary, *Dockerfiles* are stored in `home/Dockerfiles`
+Each container is based on its image. All images are already build but, if neccessary, *Dockerfiles* are stored in :file:`home/Dockerfiles`
 directory. Below is the list of all containers and corresponding images:
 
 ================== =========== ===============================
@@ -136,20 +136,66 @@ tangobox-egiga       egiga               -
 ================== =========== ===============================
 
 Some device servers may be stopped when launching containers. It is so to get better performance (high cpu and ram usage). To control and
-start/stop particular DS according to your needs, use *Tango Manager (Astor)* to it.
+start/stop particular DS according to your needs, use **Tango Manager (Astor)** to it.
 
 Modbus simulation
 -----------------
-**to be finished!!!!!!!**
 
-To simulate Modbus, we suggest to use *ModbusPal*. To use it, run terminal in *ModbusPal* location and type:
+To simulate Modbus, we suggest to use *ModbusPal*. To do so, use **ModbusPal (simulation)** desktop shortcut. Once it is started, load
+session by choosing **load** button and find *test_session.xmpp* file. It should be in default opening location. When it is not, it can be found
+in :file:`/home/tango-cs/ModbusPal`.
+
+After that, use **RUN** button to start simulation. Values in registers can be changed by clicking *"eye"* button in *Modbus slaves* section.
+
+Keep in mind that in ModbusPal, registers are counted from **1** while on DS from **0**!
+
+To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPLC have two attributes configured:
+
+* ModbusComposer: Temperature uses **4th**; Pressure uses **5th** register in ModbusPal
+* PyPLC: Voltage uses **6th**; Flow uses **7th** register in ModbusPal
+
+JupyTango
+---------
+
+**In case you want to try it, here's the procedure:**
+
+1. start jupyterlab using our dedicated script: `jupytango`
+2. a new browser tab is automagically opened with the right URL: :file:`localhost:8888/lab?`
+3. the very first connection to the service requires a 'token' which is printed in the jupytango console
+4. once in jupyterlab, click the JupyTango icon to open a notebook with the appropriate kernel
+5. enjoy!
+
+**Here are the JupyTango additions to itango:**
+
+**Plotting a tango attribute**
+
+Syntax:
 
 .. code-block:: bash
 
-   sudo java -jar ModbusPal.jar
+   pta [options] <tab for device selection> + <tab for attribute selection>
 
 
-After that, simply load session from file and click **RUN** button.
+Supported options:
+
+* `-w` or `--width`: plot width in pixels
+* `-h` or `--height`: plot height in pixels
+
+**Monitoring a tango attribute:**
+Syntax:
+
+.. code-block:: bash
+
+   tm [options]  + <tab for device selection> + <tab for attribute selection>
+
+Supported options:
+
+* `-w` or `--width`: plot width in pixels
+* `-h` or `--height`: plot height in pixels
+* `-p` or `--period`: plot refresh period in [0.1, 5] seconds - defaults to 1s
+* `-d` or `--depth`: scalar attribute history depth in [1, 3600] seconds - defaults to 900s
+
+You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.
 
 Indices and tables
 ==================
