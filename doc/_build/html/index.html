@@ -107,6 +107,7 @@
 <li><a class="reference internal" href="#modbus-simulation">Modbus simulation</a></li>
 <li><a class="reference internal" href="#jupytango">JupyTango</a></li>
 <li><a class="reference internal" href="#jlinac-and-elinac-simulation">JLinac and Elinac simulation</a></li>
+<li><a class="reference internal" href="#e-giga">E-giga</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -297,7 +298,7 @@ directory. Below is the list of all containers and corresponding images:</p>
 </td>
 </tr>
 <tr class="row-even"><td>tangobox-archiving</td>
-<td>archiving</td>
+<td>archive</td>
 <td><ul class="first last simple">
 <li></li>
 </ul>
@@ -395,6 +396,15 @@ Syntax:</p>
 <h2>JLinac and Elinac simulation<a class="headerlink" href="#jlinac-and-elinac-simulation" title="Permalink to this headline">¶</a></h2>
 <p>To start simulation, you need to run <strong>sim</strong> container. It is also important to make sure that all DS are started and are
 running (the easiest way to do it is to check it in Astor).</p>
+<p>Don’t worry about warnings during Elinac’s initialization.</p>
+</div>
+<div class="section" id="e-giga">
+<h2>E-giga<a class="headerlink" href="#e-giga" title="Permalink to this headline">¶</a></h2>
+<p>To use e-giga following conditions must be fulfilled:</p>
+<ul class="simple">
+<li>tangobox-archive container must be started and DS must be up</li>
+<li>use i.e. <strong>Mambo</strong> to enable data archiving for HDB database</li>
+</ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Plese keep in mind that you should not rebuild <strong>tangobox-web</strong> image because its configuration is not included in Dockerfile

@@ -127,7 +127,7 @@ Container            Image             Remarks
 ================== =========== ===============================
 tangobox-com         com                 -
 tangobox-sim         sim                 -
-tangobox-archiving   archiving           -
+tangobox-archiving   archive              -
 tangobox-hdbpp       hdbpp               -
 tangobox-web         web                 -
 tangobox-egiga       egiga               -
@@ -203,6 +203,15 @@ JLinac and Elinac simulation
 To start simulation, you need to run **sim** container. It is also important to make sure that all DS are started and are
 running (the easiest way to do it is to check it in Astor).
 
+Don't worry about warnings during Elinac's initialization.
+
+E-giga
+------
+
+To use e-giga following conditions must be fulfilled:
+
+* tangobox-archive container must be started and DS must be up
+* use i.e. **Mambo** to enable data archiving for HDB database
 
 
 .. note::
