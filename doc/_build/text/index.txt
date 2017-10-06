@@ -174,10 +174,11 @@ Modbus simulation
 =================
 
 To simulate Modbus, we suggest to use *ModbusPal*. To do so, use
-**ModbusPal (simulation)** desktop shortcut. Once it is started, load
-session by choosing **load** button and find *test_session.xmpp* file.
-It should be in default opening location. When it is not, it can be
-found in "/home/tango-cs/ModbusPal".
+**ModbusPal (simulation)** desktop shortcut. Once it is started,
+declare new *modbus slave* by clicking **ADD**. Choose 1 and name it
+**10.0.2.15**. Now click “eye” button in modbus slaves section and add
+at least 10 holding registers. You can change their values according
+to your needs.
 
 After that, use **RUN** button to start simulation. Values in
 registers can be changed by clicking *“eye”* button in *Modbus slaves*

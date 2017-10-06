@@ -346,9 +346,9 @@ start/stop particular DS according to your needs, use <strong>Tango Manager (Ast
 </div>
 <div class="section" id="modbus-simulation">
 <h2>Modbus simulation<a class="headerlink" href="#modbus-simulation" title="Permalink to this headline">¶</a></h2>
-<p>To simulate Modbus, we suggest to use <em>ModbusPal</em>. To do so, use <strong>ModbusPal (simulation)</strong> desktop shortcut. Once it is started, load
-session by choosing <strong>load</strong> button and find <em>test_session.xmpp</em> file. It should be in default opening location. When it is not, it can be found
-in <code class="file docutils literal"><span class="pre">/home/tango-cs/ModbusPal</span></code>.</p>
+<p>To simulate Modbus, we suggest to use <em>ModbusPal</em>. To do so, use <strong>ModbusPal (simulation)</strong> desktop shortcut. Once it is started, declare
+new <em>modbus slave</em> by clicking <strong>ADD</strong>. Choose 1 and name it <strong>10.0.2.15</strong>. Now click “eye” button in modbus slaves section and add at least
+10 holding registers. You can change their values according to your needs.</p>
 <p>After that, use <strong>RUN</strong> button to start simulation. Values in registers can be changed by clicking <em>“eye”</em> button in <em>Modbus slaves</em> section.</p>
 <p>Keep in mind that in ModbusPal, registers are counted from <strong>1</strong> while on DS from <strong>0</strong>!</p>
 <p>To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPLC have two attributes configured:</p>
