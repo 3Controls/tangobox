@@ -52,7 +52,7 @@ First steps
   Simply install it and start the program.
 * TangoBox is released in **.ova** extension so it can be easily imported.
 * Select *import* and choose downloaded TangoBox file
-* If you want, you can change VM's configuration (i.e graphics, RAM)
+* If you want, you can change VM's configuration (i.e graphics, RAM). **It is highly recommended to increase default RAM size**
 * Wait for VirtualBox to import machine
 
 After importing the VM image to VirtualBox you may start it.
@@ -196,6 +196,20 @@ Supported options:
 * `-d` or `--depth`: scalar attribute history depth in [1, 3600] seconds - defaults to 900s
 
 You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.
+
+JLinac and Elinac simulation
+----------------------------
+
+To start simulation, you need to run **sim** container. It is also important to make sure that all DS are started and are
+running (the easiest way to do it is to check it in Astor).
+
+
+
+.. note::
+
+   Plese keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
+   (it requires in-container config).
+
 
 Indices and tables
 ==================

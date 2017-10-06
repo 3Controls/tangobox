@@ -106,6 +106,7 @@
 <li><a class="reference internal" href="#containers-and-images-dependency">Containers and images dependency</a></li>
 <li><a class="reference internal" href="#modbus-simulation">Modbus simulation</a></li>
 <li><a class="reference internal" href="#jupytango">JupyTango</a></li>
+<li><a class="reference internal" href="#jlinac-and-elinac-simulation">JLinac and Elinac simulation</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -216,7 +217,7 @@ on for being explored, see <a class="reference internal" href="#container-switch
 Simply install it and start the program.</li>
 <li>TangoBox is released in <strong>.ova</strong> extension so it can be easily imported.</li>
 <li>Select <em>import</em> and choose downloaded TangoBox file</li>
-<li>If you want, you can change VM’s configuration (i.e graphics, RAM)</li>
+<li>If you want, you can change VM’s configuration (i.e graphics, RAM). <strong>It is highly recommended to increase default RAM size</strong></li>
 <li>Wait for VirtualBox to import machine</li>
 </ul>
 <p>After importing the VM image to VirtualBox you may start it.</p>
@@ -389,6 +390,16 @@ Syntax:</p>
 <li><cite>-d</cite> or <cite>–depth</cite>: scalar attribute history depth in [1, 3600] seconds - defaults to 900s</li>
 </ul>
 <p>You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.</p>
+</div>
+<div class="section" id="jlinac-and-elinac-simulation">
+<h2>JLinac and Elinac simulation<a class="headerlink" href="#jlinac-and-elinac-simulation" title="Permalink to this headline">¶</a></h2>
+<p>To start simulation, you need to run <strong>sim</strong> container. It is also important to make sure that all DS are started and are
+running (the easiest way to do it is to check it in Astor).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Plese keep in mind that you should not rebuild <strong>tangobox-web</strong> image because its configuration is not included in Dockerfile
+(it requires in-container config).</p>
+</div>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
