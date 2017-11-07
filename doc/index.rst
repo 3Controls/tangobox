@@ -53,6 +53,13 @@ First steps
 * TangoBox is released in **.ova** extension so it can be easily imported.
 * Select *import* and choose downloaded TangoBox file
 * If you want, you can change VM's configuration (i.e graphics, RAM). **It is highly recommended to increase default RAM size**
+
+   .. figure:: img/import-2.png
+
+      Settings window of VirtualBox.
+
+      You may change CPU numbers and increase RAM size. Memory size has major impact on the VM performance.
+
 * Wait for VirtualBox to import machine
 
 After importing the VM image to VirtualBox you may start it.
@@ -138,6 +145,9 @@ tangobox-egiga       egiga               -
 Some device servers may be stopped when launching containers. It is so to get better performance (high cpu and ram usage). To control and
 start/stop particular DS according to your needs, use **Tango Manager (Astor)** to it.
 
+Example applications
+====================
+
 Modbus simulation
 -----------------
 
@@ -153,6 +163,10 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
 
 * ModbusComposer: Temperature uses **4th**; Pressure uses **5th** register in ModbusPal
 * PyPLC: Voltage uses **6th**; Flow uses **7th** register in ModbusPal
+
+.. figure:: img/modbus.png
+
+   View on a ModbusComposer device and configured ModbusPal simulator.
 
 JupyTango
 ---------
@@ -200,10 +214,46 @@ You can try to kill the monitored device will the JupyTango monitor is running t
 JLinac and Elinac simulation
 ----------------------------
 
-To start simulation, you need to run **sim** container. It is also important to make sure that all DS are started and are
+To start simulation, you need to run **tangobox-sim** container. It is also important to make sure that all DS are started and are
 running (the easiest way to do it is to check it in Astor).
 
 Don't worry about warnings during Elinac's initialization.
+
+.. figure:: img/jlinac.png
+
+   JLinac simulation running.
+
+
+HDB/TDB/SNAP Archiving (Mambo, Bensikin)
+----------------------------------------
+
+Prior to use `HDB/TDB` (:guilabel:`Mambo`) or `SNAP` (:guilabel:`Bensikin`) you need to make sure that
+the  **tangobox-archiving** container and related device servers are running:
+
+* Call :command:`docker start tangobox-archiving` on a terminal.
+* Start :program:`Astor` and check if the `tangobox-archiving` node is green.
+
+Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on the desktop.
+
+.. figure:: img/mambo.png
+
+   Screen of running Mambo
+
+   Please take note of green bulb of `tangobox-archiving` node in Astor window.
+
+
+HDB++ Archiving
+---------------
+
+To use `HD++` and  its tools :guilabel:`HDB Configurator` and :guilabel:`HDB Viewer`) please make sure that
+the  **tangobox-hdbpp** container and related device servers are running:
+
+* Call :command:`docker start tangobox-hdbpp` on a terminal.
+* Start :program:`Astor` and check if the `tangobox-hdbpp` node is green.
+
+Then, you may start :program:`HDB Configurator` or :program:`HDB Viewer` by clicking icons on the desktop.
+
+
 
 E-giga
 ------
@@ -216,7 +266,7 @@ To use e-giga following conditions must be fulfilled:
 
 .. note::
 
-   Plese keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
+   Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
    (it requires in-container config).
 
 
