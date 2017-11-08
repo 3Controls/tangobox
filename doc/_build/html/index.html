@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to TangoBox - a Tango Controls demo VM’s documentation! &mdash; TangoBox - a Tango Controls demo VM RC10 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="stylesheet" href="_static/tango_cs_theme.css" type="text/css" />
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="TangoBox - a Tango Controls demo VM RC10 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> TangoBox - a Tango Controls demo VM
+          
+
+          
+            
+            <img src="_static/logo_tangocontrols_white.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to TangoBox - a Tango Controls demo VM’s documentation!</a></li>
+<li><a class="reference internal" href="#what-is-installed">What is installed</a></li>
+<li><a class="reference internal" href="#first-steps">First steps</a></li>
+<li><a class="reference internal" href="#switching-containers-on-and-off">Switching containers on and off</a></li>
+<li><a class="reference internal" href="#deployment-structure">Deployment structure</a><ul>
+<li><a class="reference internal" href="#network">Network</a></li>
+<li><a class="reference internal" href="#containers-and-images-dependency">Containers and images dependency</a></li>
+<li><a class="reference internal" href="#modbus-simulation">Modbus simulation</a></li>
+<li><a class="reference internal" href="#jupytango">JupyTango</a></li>
+<li><a class="reference internal" href="#jlinac-and-elinac-simulation">JLinac and Elinac simulation</a></li>
+<li><a class="reference internal" href="#e-giga">E-giga</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">TangoBox - a Tango Controls demo VM</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to TangoBox - a Tango Controls demo VM’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-tangobox-a-tango-controls-demo-vm-s-documentation">
+<h1>Welcome to TangoBox - a Tango Controls demo VM’s documentation!<a class="headerlink" href="#welcome-to-tangobox-a-tango-controls-demo-vm-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>TangoBox is a VM image running Tango Controls system and its various tools.
+It is intended to be used for demonstration and training.
+It also simulates distributed deployment by using Docker.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="what-is-installed">
+<h1>What is installed<a class="headerlink" href="#what-is-installed" title="Permalink to this headline">¶</a></h1>
+<p>Below there is list of provide packages/features. Please note that some of them
+are installed as docker container and maybe switched off (stopped) and requires to be switched
+on for being explored, see <a class="reference internal" href="#container-switch-on-off"><span class="std std-ref">Switching containers on and off</span></a></p>
+<ul class="simple">
+<li>Tango 9.2.5</li>
+<li>PyTango 9.2.2</li>
+<li>Taurus 4.2.2</li>
+<li>QTango</li>
+<li>iTango</li>
+<li>Tango Access</li>
+<li>JupyTango</li>
+<li>PANIC</li>
+<li>Bensikin</li>
+<li>Mambo</li>
+<li>Docker</li>
+<li>Linac system simulation (as docker container tangobox-sim)</li>
+<li>HDB/TDB, SNAP DS (as docker container tangobox-archiving)</li>
+<li>HDB++ (as docker container tangobox-hdbpp)</li>
+<li>SerialLine, Modbus and PyPLC device server (as docker container tangobox-com)</li>
+<li>mTango + restAPI, TangoWebApp (as docker container tangobox-web)</li>
+<li>E-giga (as docker container tangobox-egiga)</li>
+<li>PyAlarm DS on each container</li>
+<li>PyCharm</li>
+<li>Visual Studio Code</li>
+<li>ModbusPal to simulate Modbus</li>
+</ul>
+</div>
+<div class="section" id="first-steps">
+<h1>First steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>First of all you have to download latest release of VirtualBox. It can be downloaded from <a class="reference external" href="https://www.virtualbox.org/">here</a> .
+Simply install it and start the program.</li>
+<li>TangoBox is released in <strong>.ova</strong> extension so it can be easily imported.</li>
+<li>Select <em>import</em> and choose downloaded TangoBox file</li>
+<li>If you want, you can change VM’s configuration (i.e graphics, RAM). <strong>It is highly recommended to increase default RAM size</strong></li>
+<li>Wait for VirtualBox to import machine</li>
+</ul>
+<p>After importing the VM image to VirtualBox you may start it.</p>
+<ul class="simple">
+<li>Username is: <cite>tango-cs</cite></li>
+<li>Password is: <cite>tango</cite></li>
+</ul>
+<p><cite>tango-cs</cite> user has sudo rights, so he may invoke commands as superuser with command <strong class="command">sudo</strong>.</p>
+<p>You may explore the Tango Controls feature by clicking related shortcuts on the Desktop.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Plese note that some shortcuts are related to features running on containers. Please start related container first.
+See the following section.</p>
+</div>
+</div>
+<div class="section" id="switching-containers-on-and-off">
+<span id="container-switch-on-off"></span><h1>Switching containers on and off<a class="headerlink" href="#switching-containers-on-and-off" title="Permalink to this headline">¶</a></h1>
+<p>Some of the features of Tango are provided inside pre-build docker containers.
+These can be switched on and off by starting or stopping related containers.
+Containers behave similar to virtual machines with they own network cards and operating system stack,
+however, lacking full separations.</p>
+<p>To start a container, open terminal and invoke <strong class="command">docker start {container-name}</strong>. For example, to star
+a linac simulation use the following statement:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker start tangobox-sim
+</pre></div>
+</div>
+<p>To stop a container, open terminal and invoke <strong class="command">docker stop {container-name}</strong>. For example, to stop
+a linac simulation use the following statement:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker stop tangobox-sim
+</pre></div>
+</div>
+<p>To see which containers are running please, call <strong class="command">docker ps</strong></p>
+</div>
+<div class="section" id="deployment-structure">
+<h1>Deployment structure<a class="headerlink" href="#deployment-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="network">
+<h2>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<p>Containers are created withing their own subnet: <cite>172.18.0.0/16</cite>. The network is called <cite>tango_nw</cite>
+The subnet was created with the following docker command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker network create --driver<span class="o">=</span>bridge --subnet<span class="o">=</span><span class="m">172</span>.18.0.0/16 --opt com.docker.network.bridge.enable_icc<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+--opt com.docker.network.bridge.host_binding_ipv4<span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span> --opt com.docker.network.bridge.mtu<span class="o">=</span><span class="m">1500</span> <span class="se">\</span>
+--opt com.docker.network.bridge.enable_ip_masquerade<span class="o">=</span><span class="nb">true</span>  tango_nw
+</pre></div>
+</div>
+<p>Containers are assigned static IPs. List of the IPs assignment maybe seen in <code class="file docutils literal"><span class="pre">/etc/hosts</span></code>. Use command
+<strong class="command">cat /etc/hosts</strong> to see its contents.</p>
+</div>
+<div class="section" id="containers-and-images-dependency">
+<h2>Containers and images dependency<a class="headerlink" href="#containers-and-images-dependency" title="Permalink to this headline">¶</a></h2>
+<p>Each container is based on its image. All images are already build but, if neccessary, <em>Dockerfiles</em> are stored in <code class="file docutils literal"><span class="pre">home/Dockerfiles</span></code>
+directory. Below is the list of all containers and corresponding images:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="18%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Container</th>
+<th class="head">Image</th>
+<th class="head">Remarks</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>tangobox-com</td>
+<td>com</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>tangobox-sim</td>
+<td>sim</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>tangobox-archiving</td>
+<td>archive</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>tangobox-hdbpp</td>
+<td>hdbpp</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>tangobox-web</td>
+<td>web</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>tangobox-egiga</td>
+<td>egiga</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>base</td>
+<td>Base container</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>ubuntu</td>
+<td>Ubuntu image to build others</td>
+</tr>
+</tbody>
+</table>
+<p>Some device servers may be stopped when launching containers. It is so to get better performance (high cpu and ram usage). To control and
+start/stop particular DS according to your needs, use <strong>Tango Manager (Astor)</strong> to it.</p>
+</div>
+<div class="section" id="modbus-simulation">
+<h2>Modbus simulation<a class="headerlink" href="#modbus-simulation" title="Permalink to this headline">¶</a></h2>
+<p>To simulate Modbus, we suggest to use <em>ModbusPal</em>. To do so, use <strong>ModbusPal (simulation)</strong> desktop shortcut. Once it is started, declare
+new <em>modbus slave</em> by clicking <strong>ADD</strong>. Choose 1 and name it <strong>10.0.2.15</strong>. Now click “eye” button in modbus slaves section and add at least
+10 holding registers. You can change their values according to your needs.</p>
+<p>After that, use <strong>RUN</strong> button to start simulation. Values in registers can be changed by clicking <em>“eye”</em> button in <em>Modbus slaves</em> section.</p>
+<p>Keep in mind that in ModbusPal, registers are counted from <strong>1</strong> while on DS from <strong>0</strong>!</p>
+<p>To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPLC have two attributes configured:</p>
+<ul class="simple">
+<li>ModbusComposer: Temperature uses <strong>4th</strong>; Pressure uses <strong>5th</strong> register in ModbusPal</li>
+<li>PyPLC: Voltage uses <strong>6th</strong>; Flow uses <strong>7th</strong> register in ModbusPal</li>
+</ul>
+</div>
+<div class="section" id="jupytango">
+<h2>JupyTango<a class="headerlink" href="#jupytango" title="Permalink to this headline">¶</a></h2>
+<p><strong>In case you want to try it, here’s the procedure:</strong></p>
+<ol class="arabic simple">
+<li>start jupyterlab using our dedicated script: <cite>jupytango</cite></li>
+<li>a new browser tab is automagically opened with the right URL: <code class="file docutils literal"><span class="pre">localhost:8888/lab?</span></code></li>
+<li>the very first connection to the service requires a ‘token’ which is printed in the jupytango console</li>
+<li>once in jupyterlab, click the JupyTango icon to open a notebook with the appropriate kernel</li>
+<li>enjoy!</li>
+</ol>
+<p><strong>Here are the JupyTango additions to itango:</strong></p>
+<p><strong>Plotting a tango attribute</strong></p>
+<p>Syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pta <span class="o">[</span>options<span class="o">]</span> &lt;tab <span class="k">for</span> device selection&gt; + &lt;tab <span class="k">for</span> attribute selection&gt;
+</pre></div>
+</div>
+<p>Supported options:</p>
+<ul class="simple">
+<li><cite>-w</cite> or <cite>–width</cite>: plot width in pixels</li>
+<li><cite>-h</cite> or <cite>–height</cite>: plot height in pixels</li>
+</ul>
+<p><strong>Monitoring a tango attribute:</strong>
+Syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>tm <span class="o">[</span>options<span class="o">]</span>  + &lt;tab <span class="k">for</span> device selection&gt; + &lt;tab <span class="k">for</span> attribute selection&gt;
+</pre></div>
+</div>
+<p>Supported options:</p>
+<ul class="simple">
+<li><cite>-w</cite> or <cite>–width</cite>: plot width in pixels</li>
+<li><cite>-h</cite> or <cite>–height</cite>: plot height in pixels</li>
+<li><cite>-p</cite> or <cite>–period</cite>: plot refresh period in [0.1, 5] seconds - defaults to 1s</li>
+<li><cite>-d</cite> or <cite>–depth</cite>: scalar attribute history depth in [1, 3600] seconds - defaults to 900s</li>
+</ul>
+<p>You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.</p>
+</div>
+<div class="section" id="jlinac-and-elinac-simulation">
+<h2>JLinac and Elinac simulation<a class="headerlink" href="#jlinac-and-elinac-simulation" title="Permalink to this headline">¶</a></h2>
+<p>To start simulation, you need to run <strong>sim</strong> container. It is also important to make sure that all DS are started and are
+running (the easiest way to do it is to check it in Astor).</p>
+<p>Don’t worry about warnings during Elinac’s initialization.</p>
+</div>
+<div class="section" id="e-giga">
+<h2>E-giga<a class="headerlink" href="#e-giga" title="Permalink to this headline">¶</a></h2>
+<p>To use e-giga following conditions must be fulfilled:</p>
+<ul class="simple">
+<li>tangobox-archive container must be started and DS must be up</li>
+<li>use i.e. <strong>Mambo</strong> to enable data archiving for HDB database</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Plese keep in mind that you should not rebuild <strong>tangobox-web</strong> image because its configuration is not included in Dockerfile
+(it requires in-container config).</p>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 3Controls/Tango Community.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'RC10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

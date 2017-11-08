@@ -1,0 +1,12 @@
+sudo systemctl enable tango-db.service tango-starter.service tango-accesscontrol.service tango-starter.timer tango-accesscontrol.timer 
+sudo systemctl start tango.target
+sudo systemctl status tango.target
+sudo systemctl unit-list | grep tango
+sudo systemctl status tango-db.service
+sudo systemctl status tango-starter.service
+sudo systemctl status tango-accesscontrol.service
+sudo systemctl status tango-test.service
+sudo systemctl status tango-starter.timer
+sudo systemctl status tango-accesscontrol.timer
+sudo systemctl status tango-test.timer
+sudo systemctl disable tango-db.service tango-starter.service tango-accesscontrol.service tango-test.service tango-starter.timer tango-accesscontrol.timer tango-test.timer

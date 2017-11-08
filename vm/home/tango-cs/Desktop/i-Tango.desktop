@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=/home/tango-cs/Downloads/logos/document-properties.svg
+Name[en_US]=i-Tango
+Exec=bash -l -c "itango"
+Name=Astor
+Icon=/home/tango-cs/Pictures/i-Tango.png

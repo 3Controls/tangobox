@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/home/tango-cs/Pictures/logos/taurus.png
+Exec=docker start tangobox-sardana 
+Name[en_US]=Sardana
+Name=TaurusGui
+Icon=/home/tango-cs/Pictures/3.png
