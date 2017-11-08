@@ -56,9 +56,9 @@ First steps
 
    .. figure:: img/import-2.png
 
-      Settings window of VirtualBox.
+      A virtual machine settings window.
 
-      You may change CPU numbers and increase RAM size. Memory size has major impact on the VM performance.
+      You may change number of CPUs and increase RAM size. Memory size has major impact on VM performance.
 
 * Wait for VirtualBox to import machine
 
@@ -239,13 +239,13 @@ Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on
 
    Screen of running Mambo
 
-   Please take note of green bulb of `tangobox-archiving` node in Astor window.
+   Please take note of a green bulb of the `tangobox-archiving` node in the Astor window.
 
 
 HDB++ Archiving
 ---------------
 
-To use `HD++` and  its tools :guilabel:`HDB Configurator` and :guilabel:`HDB Viewer`) please make sure that
+To use `HDB++` and its tools ( :guilabel:`HDB Configurator` and :guilabel:`HDB Viewer`) please make sure that
 the  **tangobox-hdbpp** container and related device servers are running:
 
 * Call :command:`docker start tangobox-hdbpp` on a terminal.
