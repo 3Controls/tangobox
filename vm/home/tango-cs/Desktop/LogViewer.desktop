@@ -2,8 +2,8 @@
 Version=1.0
 Type=Application
 Terminal=false
-Icon[en_US]=/home/tango-cs/Downloads/logos/utilities-system-monitor.svg
+# Icon[en_US]=/home/tango-cs/Downloads/logos/utilities-system-monitor.svg
 Name[en_US]=LogViewer
 Exec=/home/tango-cs/src/tango-9.2.5a/lib/java/logviewer
-Name=AtkMoni
+Name=LogViewer
 Icon=/home/tango-cs/Pictures/LogViewer.png

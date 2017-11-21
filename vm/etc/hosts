@@ -1,11 +1,12 @@
 127.0.0.1	localhost 
-172.18.0.1      tangobox-vm
+172.18.0.1      TangoBox-VM
 172.18.0.2	tangobox-archive
 172.18.0.3	tangobox-sim
 172.18.0.4      tangobox-com
 172.18.0.5      tangobox-web
 172.18.0.6      tangobox-sardana
 172.18.0.7      tangobox-hdbpp
+172.18.0.8      tangobox-egiga
 
 172.17.0.1 a
 172.17.0.2 b
