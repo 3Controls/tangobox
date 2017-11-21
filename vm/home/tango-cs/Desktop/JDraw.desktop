@@ -4,8 +4,8 @@
 Version=1.0
 Type=Application
 Terminal=false
-Icon[en_US]=/home/tango-cs/Downloads/logos/accessories-text-editor.svg
+# Icon[en_US]=/home/tango-cs/Downloads/logos/accessories-text-editor.svg
 Name[en_US]=JDraw
 Exec=/usr/local/bin/jdraw
-Name=Jdraw
+Name=JDraw
 Icon=/home/tango-cs/Pictures/JDraw-01.png

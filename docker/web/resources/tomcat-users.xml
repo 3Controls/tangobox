@@ -30,5 +30,6 @@
 
   <role rolename="tomcat"/>
   <role rolename="mtango-rest"/>
-  <role rolename="mtango-admin"/>
-<user username="tango-cs" password="tango" roles="mtango-rest,mtango-admin,tomcat" />
+  <role rolename="mtango-user"/>
+  <user username="tango-cs" password="tango" roles="mtango-rest,mtango-user,tomcat" />
+</tomcat-users>

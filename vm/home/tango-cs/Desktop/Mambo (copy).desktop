@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Icon[en_US]=/home/tango-cs/Downloads/logos/utilities-system-monitor.svg
-Name[en_US]=Bensikin
-Exec=bash -l -c "/usr/local/bin/linux/bensikin expert"
-Name=AtkMoni
-Icon=/home/tango-cs/Pictures/1.png

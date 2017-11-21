@@ -2,8 +2,8 @@
 Version=1.0
 Type=Application
 Terminal=false
-Icon[en_US]=/home/tango-cs/Downloads/logos/utilities-system-monitor.svg
+# Icon[en_US]=/home/tango-cs/Downloads/logos/utilities-system-monitor.svg
 Name[en_US]=Mambo
 Exec=bash -l -c "/usr/local/bin/linux/mambo expert"
-Name=AtkMoni
+Name=Mambo
 Icon=/home/tango-cs/Pictures/logos/mambo.png

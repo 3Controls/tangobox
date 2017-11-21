@@ -1,0 +1,33 @@
+#!/bin/bash
+
+TANGO_LIBS=/usr/local/share/java
+HDB_LIBS=$TANGO_LIBS
+TANGO_APP=$TANGO_LIBS
+
+Appli=$TANGO_APP/jhdbviewer-1.13.jar
+
+CLASSPATH=$TANGO_LIBS/JTango.jar:$TANGO_LIBS/ATKWidget.jar:$TANGO_LIBS/ATKCore.jar
+CLASSPATH=$CLASSPATH:$HDB_LIBS/jhdbviewer-1.13.jar:$HDB_LIBS/HDB++-1.10.jar
+CLASSPATH=$CLASSPATH:$HDB_LIBS/jcalendar-1.4.jar:$HDB_LIBS/jython-standalone-2.7.0.jar
+export CLASSPATH
+echo CLASSPATH $CLASSPATH
+
+export TANGO_HOST=TangoBox-VM:10000
+export JNIPATH=-Djava.library.path=/usr/lib/x86_64-linux-gnu/
+export HDB_TYPE=mysql
+export HDB_NAME=hdbpp
+export HDB_MYSQL_HOST=tangobox-hdbpp
+export HDB_USER=hdbpprw
+export HDB_PASSWORD=hdbpprw
+
+if [ "$#" -lt 1 ]
+then
+    java $JNIPATH -cp $CLASSPATH HDBViewer.MainPanel
+else
+    if [ $1 = "-diag" ]
+    then 
+        echo "-diag option not supported!"
+    else
+        java $JNIPATH -cp $CLASSPATH HDBViewer.MainPanel
+    fi
+fi
