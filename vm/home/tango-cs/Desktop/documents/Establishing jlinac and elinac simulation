@@ -1,0 +1,60 @@
+Enter dockerfile location
+docker build -t base .
+then:
+docker run -it -h base --add-host TangoBox-VM:10.0.2.15 --add-host base:172.17.0.2 --name test base
+
+etc/enviroment
+#source
+
+ git clone https://github.com/zeromq/jzmq.git
+
+copy linac filder from old TangoBox
+put it in Dockerfile/sim
+enter it
+rename 
+MulticlassLinac to LinacMediumLevel
+LinacSequencer/makefile
+OBJ_DIR -> OBJDIR
+
+in linac.stop /start/copy and jlinac:
+
+TangoBox-VM
+JTango
+'LinacMediumLevel'
+
+
+cp /Jlinac to /deservers/linac
+Delate Jlinac and share
+
+sudo cp -a /home/tango-cs/Dockerfiles/sim/linac/bin/jlinac /usr/local/bin/
+
+#docker run -it --name tangobox-sim --hostname tangobox-sim --add-host TangoBox-VM:10.0.2.15 sim bash
+#docker exec -it -u 0 tangobox-sim /bin/bash
+
+
+sudo apt-get -y install autoconf maven
+
+cd jzmq-jni/
+./autogen.sh
+./configure
+make
+make install
+cd ..
+mvn package
+
+
+
+Get Vacca:
+
+> git clone -b develop https://github.com/tango-controls/vacca vacca.git
+> export PATH=$(pwd)/vacca.git/bin:$PATH
+> export PYTHONPATH=$(pwd)/vacca.git:$PYTHONPATH
+> cd vacca.git/examples/elinac
+
+
+
+
+
+skrot do vacca/examples/elinac/elinac.py na pulpicie
+
+

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+# Icon[en_US]=/home/tango-cs/Pictures/logos/taurus.png
+Exec=gnome-terminal -e 'bash -c /home/tango-cs/ModbusPal/modbus.sh;bash'
+Name[en_US]=ModbusPal (Modbus simulation)
+Name=ModbusPal
+Icon=/home/tango-cs/Pictures/logos/document-properties.svg

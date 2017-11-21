@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+# Icon[en_US]=/home/tango-cs/Downloads/logos/ibus-engine.svg
+Name[en_US]=Jive
+Exec=/usr/local/bin/jive
+Name=Jive
+Icon=/home/tango-cs/Pictures/JIVE.png

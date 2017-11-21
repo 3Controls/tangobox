@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/home/tango-cs/Downloads/logos/taurus.png
+Exec=/usr/local/bin/taurustrend
+Name[en_US]=TaurusTrend
+Name=TaurusTrend
+Icon=/home/tango-cs/Pictures/logos/taurus.png

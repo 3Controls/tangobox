@@ -1,0 +1,13 @@
+unset PYTHONPATH
+unset LD_LIBRARY_PATH
+
+export CONDA_ROOT=/home/tango-cs/JupyTango
+
+export PATH=$CONDA_ROOT/bin:$PATH
+
+export LD_LIBRARY_PATH=$CONDA_ROOT/lib:$LD_LIBRARY_PATH
+
+export JUPYTER_CONTEXT=LAB
+
+jupyter-lab --NotebookApp.iopub_data_rate_limit=10000000000
+ 

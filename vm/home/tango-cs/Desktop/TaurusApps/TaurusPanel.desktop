@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/home/tango-cs/Downloads/logos/taurus.png
+Name[en_US]=TaurusPanel
+Exec=/usr/local/bin/tauruspanel
+Name=TaurusPanel
+Icon=/home/tango-cs/Pictures/logos/taurus.png

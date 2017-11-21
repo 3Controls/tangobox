@@ -1,0 +1,4 @@
+Enter dockerfile location
+docker build -t base .
+then:
+docker run -it -h base --add-host TangoBox-VM:10.0.2.15 --add-host base:172.17.0.2 --name test base

@@ -1,0 +1,16 @@
+Enter dockerfile location
+docker build -t com .
+then:
+docker run -it -h tangobox-com --add-host TangoBox-VM:10.0.2.15 --add-host tangobox-com:172.17.0.2 --name tangobox-com com
+
+
+NOTICE
+check if tangobox-com container has IP address as above.
+
+docker inspect tangobox-com | grep Address
+
+simulate Modbus by typing in terminal in /home/tango-cs/src:
+
+sudo java -jar ModbusPal.jar
+
+run TCP connection and load example settings (./ModbusPal_save)

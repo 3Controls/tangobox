@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+# Icon[en_US]=/home/tango-cs/Downloads/logos/utilities-system-monitor.svg
+Name[en_US]=E-giga
+Exec=firefox --new-window http://tangobox-egiga/eGiga2m/egiga2m.html
+Name=E-giga
+Icon=/usr/share/icons/ubuntu-mobile/apps/240/webbrowser-app.png

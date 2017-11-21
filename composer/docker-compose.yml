@@ -1,0 +1,77 @@
+version: '1'
+services:
+
+  archiving:
+    image: archiving:latest
+    hostname: tangobox-archiving
+    command: supervisord -c /etc/supervisord.archiving.conf
+#    environment:
+    volumes:
+      - ./.config/supervisord/supervisord.archiving.conf:/etc:ro
+    extra_hosts:
+      - "TangoBox-VM:10.0.2.15"
+    links:
+      - base:tangobox-base  
+      - sim:tangobox-sim
+      - com:tangobox-com
+      - web:tangobox-web
+      
+  base :
+    image: base:latest
+    hostname: tangobox-base
+    command: supervisord -c /etc/supervisord.base.conf
+#    environment: 
+    volumes:
+      - ./.config/supervisord/d.base.conf:/etc:ro
+    extra_hosts:
+      - "TangoBox-VM:10.0.2.15"
+    links:
+      - sim:tangobox-sim  
+      - com:tangobox-com
+      - archiving:tangobox-archiving
+      - web:tangobox-web
+
+  com:
+    image: com:latest
+    hostname: tangobox-com
+    command: supervisord -c /etc/supervisord.com.conf
+#    environment: 
+    volumes:
+      - ./.config/supervisord/supervisord.com.conf:/etc:ro
+    extra_hosts:
+      - "TangoBox-VM:10.0.2.15"
+    links:
+      - base:tangobox-base  
+      - sim:tangobox-sim
+      - archiving:tangobox-archiving
+      - web:tangobox-web
+
+  sim:
+    image: sim:latest
+    hostname: tangobox-sim
+    command: supervisord -c /etc/supervisord.sim.conf
+#    environment: 
+    volumes:
+      - ./.config/supervisord/supervisord.sim.conf:/etc:ro
+    extra_hosts:
+      - "TangoBox-VM:10.0.2.15"
+    links:
+      - base:tangobox-base  
+      - com:tangobox-com
+      - archiving:tangobox-archiving
+      - web:tangobox-web
+
+  web:
+    image: web:latest
+    hostname: tangobox-web
+    command: supervisord -c /etc/supervisord.web.conf
+#    environment: 
+    volumes:
+      - ./.config/supervisord/supervisord.web.conf:/etc:ro
+    extra_hosts:
+      - "TangoBox-VM:10.0.2.15"
+    links:
+      - base:tangobox-base  
+      - sim:tangobox-sim
+      - com:tangobox-com
+      - archiving:tangobox-archiving

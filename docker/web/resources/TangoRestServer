@@ -1,0 +1,23 @@
+#!/bin/bash
+
+TANGO_HOST=TangoBox-VM:10000
+INSTANCE=$1
+VERSION=rc4-2.2
+WD=/var/lib/tomcat8/webapps
+
+echo TANGO_HOST=$TANGO_HOST
+echo INSTANCE=$INSTANCE
+echo VERSION=$VERSION
+echo Using Java:
+echo `java -version`
+
+XMX=1G
+echo XMX=$XMX
+
+JAVA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5339 -Dcom.sun.management.jmxremote.port=3339 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Xmx$XMX -Xshare:off -XX:+UseG1GC -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$WD/mtango.hprof -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:$WD/mtango.loggc -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=3"
+echo JAVA_OPTS=$JAVA_OPTS
+
+JAVA_ARGS="-DTANGO_HOST=$TANGO_HOST"
+echo JAVA_ARGS=$JAVA_ARGS
+
+/usr/bin/java $JAVA_OPTS $JAVA_ARGS -jar $WD/mtangorest.server-$VERSION.jar $INSTANCE TangoRestServer $INSTANCE & > /dev/null
