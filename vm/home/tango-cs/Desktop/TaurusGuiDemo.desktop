@@ -5,5 +5,5 @@ Terminal=false
 Icon[en_US]=/home/tango-cs/Pictures/logos/taurus.png
 Exec=/usr/local/bin/taurusgui example01
 Name[en_US]=TaurusGuiDemo
-Name=TaurusGui
+Name=TaurusGuiDemo
 Icon=/home/tango-cs/Pictures/logos/taurus.png

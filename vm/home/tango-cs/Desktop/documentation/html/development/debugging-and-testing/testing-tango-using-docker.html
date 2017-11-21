@@ -238,40 +238,6 @@
 <p>One can setup Tango docker stack for Tango REST API [reference] as well. Currently only mtangorest.server [link] provides docker container that can be used together with Tango docker containers:
 <a class="reference external" href="https://bitbucket.org/hzgwpn/mtangorest.docker">https://bitbucket.org/hzgwpn/mtangorest.docker</a></p>
 <p>The following docker-compose.yml assembles the whole stack:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="s">&#39;2&#39;</span>
-<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">tango-db</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tangocs/mysql:9.2.2</span>
-    <span class="l l-Scalar l-Scalar-Plain">ports</span><span class="p p-Indicator">:</span>
-     <span class="p p-Indicator">-</span> <span class="s">&quot;9999:3306&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">environment</span><span class="p p-Indicator">:</span>
-     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MYSQL_ROOT_PASSWORD=root</span>
-  <span class="l l-Scalar l-Scalar-Plain">tango-cs</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tangocs/tango-cs:9</span>
-    <span class="l l-Scalar l-Scalar-Plain">ports</span><span class="p p-Indicator">:</span>
-     <span class="p p-Indicator">-</span> <span class="s">&quot;10000:10000&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">environment</span><span class="p p-Indicator">:</span>
-     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TANGO_HOST=localhost:10000</span>
-     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MYSQL_HOST=tango-db:3306</span>
-     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MYSQL_USER=tango</span>
-     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MYSQL_PASSWORD=tango</span>
-     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MYSQL_DATABASE=tango</span>
-    <span class="l l-Scalar l-Scalar-Plain">links</span><span class="p p-Indicator">:</span>
-     <span class="p p-Indicator">-</span> <span class="s">&quot;tango-db:localhost&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">depends_on</span><span class="p p-Indicator">:</span>
-     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tango-db</span>
-  <span class="l l-Scalar l-Scalar-Plain">tango-rest</span><span class="p p-Indicator">:</span>
-     <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">hzgde/mtangorest.docker:rc4</span>
-     <span class="l l-Scalar l-Scalar-Plain">ports</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;10001:10001&quot;</span>
-     <span class="l l-Scalar l-Scalar-Plain">environment</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TANGO_HOST=tango-cs:10000</span>
-     <span class="l l-Scalar l-Scalar-Plain">links</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;tango-cs:localhost&quot;</span>
-     <span class="l l-Scalar l-Scalar-Plain">depends_on</span><span class="p p-Indicator">:</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tango-cs</span>
-</pre></div>
-</div>
 <p>Note this is almost the same as the previous, expect we have added tango-rest node. Once <strong class="command">docker-compose up</strong> executed one can access Tango REST API at <a class="reference external" href="http://localhost:10001/tango/rest">http://localhost:10001/tango/rest</a></p>
 </div>
 </div>

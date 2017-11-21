@@ -4,7 +4,7 @@
 Version=1.0
 Type=Application
 Terminal=false
-Icon[en_US]=/home/tango-cs/Downloads/logos/document-properties.svg
+# Icon[en_US]=/home/tango-cs/Downloads/logos/document-properties.svg
 Name[en_US]=Astor
 Exec=/usr/local/bin/astor
 Name=Astor

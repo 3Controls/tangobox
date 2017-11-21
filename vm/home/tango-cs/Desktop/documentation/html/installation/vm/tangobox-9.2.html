@@ -221,6 +221,7 @@ on for being explored, see <a class="reference internal" href="#container-switch
 <li>PyCharm</li>
 <li>Visual Studio Code</li>
 <li><a class="reference internal" href="#modbus"><span class="std std-ref">ModbusPal to simulate Modbus</span></a></li>
+<li><a class="reference internal" href="#sardana"><span class="std std-ref">Sardana 2.3.2</span></a></li>
 </ul>
 </div>
 <div class="section" id="first-steps">
@@ -235,7 +236,7 @@ Simply install it and start the program.</p>
 </li>
 <li><p class="first">If you want, you can change VM’s configuration (i.e graphics, RAM). <strong>It is highly recommended to increase default RAM size</strong></p>
 <blockquote>
-<div><div class="figure" id="id4">
+<div><div class="figure" id="id5">
 <img alt="../../_images/import-2.png" src="../../_images/import-2.png" />
 <p class="caption"><span class="caption-text">A virtual machine settings window.</span></p>
 <div class="legend">
@@ -351,14 +352,18 @@ directory. Below is the list of all containers and corresponding images:</p>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><ul class="first last simple">
+<tr class="row-even"><td>tangobox-sardana</td>
+<td>sardana</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
 <li></li>
 </ul>
 </td>
 <td>base</td>
 <td>Base container</td>
 </tr>
-<tr class="row-odd"><td><ul class="first last simple">
+<tr class="row-even"><td><ul class="first last simple">
 <li></li>
 </ul>
 </td>
@@ -385,16 +390,16 @@ new <em>modbus slave</em> by clicking <strong>ADD</strong>. Choose 1 and name it
 <li>ModbusComposer: Temperature uses <strong>4th</strong>; Pressure uses <strong>5th</strong> register in ModbusPal</li>
 <li>PyPLC: Voltage uses <strong>6th</strong>; Flow uses <strong>7th</strong> register in ModbusPal</li>
 </ul>
-<div class="figure" id="id5">
+<div class="figure" id="id6">
 <img alt="../../_images/modbus.png" src="../../_images/modbus.png" />
 <p class="caption"><span class="caption-text">View on a ModbusComposer device and configured ModbusPal simulator.</span></p>
 </div>
 </div>
 <div class="section" id="jupytango">
 <span id="id1"></span><h3>JupyTango<a class="headerlink" href="#jupytango" title="Permalink to this headline">¶</a></h3>
-<p>JupyTango is a <cite>Jupyter &lt;http://jupyter.org/&gt;</cite> featuring Tango related kernels. With JupyterLab you may interact
+<p>JupyTango is a <a class="reference external" href="http://jupyter.org/">Jupyter</a> featuring Tango related kernels. With JupyterLab you may interact
 and do scripting for Tango through a web browser.</p>
-<div class="figure" id="id6">
+<div class="figure" id="id7">
 <img alt="../../_images/jupytango.png" src="../../_images/jupytango.png" />
 <p class="caption"><span class="caption-text">Browser window with JupyTango in action</span></p>
 </div>
@@ -434,10 +439,11 @@ Syntax:</p>
 </div>
 <div class="section" id="jlinac-and-elinac-simulation">
 <span id="jlinac"></span><h3>JLinac and Elinac simulation<a class="headerlink" href="#jlinac-and-elinac-simulation" title="Permalink to this headline">¶</a></h3>
-<p>To start simulation, you need to run <strong>tangobox-sim</strong> container. It is also important to make sure that all DS are started and are
-running (the easiest way to do it is to check it in Astor).</p>
+<p>To start simulation, you need to run <strong>tangobox-sim</strong> container (use <strong class="command">docker start tangobox-sim</strong> to start it
+from a terminal). It is also important to make sure that all related device servers are running.
+The easiest way to do it is to check it in Astor - a bulb next to <cite>tangobox-sim</cite> should be green.</p>
 <p>Don’t worry about warnings during Elinac’s initialization.</p>
-<div class="figure" id="id7">
+<div class="figure" id="id8">
 <img alt="../../_images/jlinac.png" src="../../_images/jlinac.png" />
 <p class="caption"><span class="caption-text">JLinac simulation running.</span></p>
 </div>
@@ -447,15 +453,15 @@ running (the easiest way to do it is to check it in Astor).</p>
 <p>Prior to use <cite>HDB/TDB</cite> (<span class="guilabel">Mambo</span>) or <cite>SNAP</cite> (<span class="guilabel">Bensikin</span>) you need to make sure that
 the  <strong>tangobox-archiving</strong> container and related device servers are running:</p>
 <ul class="simple">
-<li>Call <strong class="command">docker start tangobox-archiving</strong> on a terminal.</li>
-<li>Start <strong class="program">Astor</strong> and check if the <cite>tangobox-archiving</cite> node is green.</li>
+<li>Call <strong class="command">docker start tangobox-archive</strong> on a terminal.</li>
+<li>Start <strong class="program">Astor</strong> and check if the <cite>tangobox-archive</cite> node is green.</li>
 </ul>
 <p>Then, you may start <strong class="program">Mambo</strong> or <strong class="program">Bensikin</strong> by clicking icons on the desktop.</p>
-<div class="figure" id="id8">
+<div class="figure" id="id9">
 <img alt="../../_images/mambo.png" src="../../_images/mambo.png" />
 <p class="caption"><span class="caption-text">Screen of running Mambo</span></p>
 <div class="legend">
-Please take note of a green bulb of the <cite>tangobox-archiving</cite> node in the Astor window.</div>
+Please take note of a green bulb of the <cite>tangobox-archive</cite> node in the Astor window.</div>
 </div>
 </div>
 <div class="section" id="hdb-archiving">
@@ -472,7 +478,7 @@ the  <strong>tangobox-hdbpp</strong> container and related device servers are ru
 <span id="id2"></span><h3>E-giga<a class="headerlink" href="#e-giga" title="Permalink to this headline">¶</a></h3>
 <p><strong class="program">E-giga</strong> is a web application for archiving data visualization (HDB/TDB and HDB++). The TangoBox deployment
 uses HDB/TDB.</p>
-<div class="figure" id="id9">
+<div class="figure" id="id10">
 <img alt="../../_images/e-giga.png" src="../../_images/e-giga.png" />
 <p class="caption"><span class="caption-text">E-giga in a web browser window</span></p>
 </div>
@@ -494,7 +500,7 @@ is green and with <strong class="program">Mambo</strong> if there are any attrib
 <span id="webapp"></span><h3>Tango WebApp<a class="headerlink" href="#tango-webapp" title="Permalink to this headline">¶</a></h3>
 <p>Tango may be available through a web browser. <cite>Tango WebApp</cite> is a general purpose Tango web application. You may try it
 on the TangoBox.</p>
-<div class="figure" id="id10">
+<div class="figure" id="id11">
 <img alt="../../_images/webapp-2.png" src="../../_images/webapp-2.png" />
 <p class="caption"><span class="caption-text">A screenshot of Tango WebApp in a browser</span></p>
 </div>
@@ -510,7 +516,7 @@ desktop icon. Use username <cite>tango-cs</cite> and  password <cite>tango</cite
 <strong class="command">docker start tangobox-web</strong>.</p>
 <p>Related deskto icon opens a web browser pointing to REST API interface. The REST server requires authentication.
 User is <cite>tango-cs</cite> and password is <cite>tango</cite>.</p>
-<div class="figure" id="id11">
+<div class="figure" id="id12">
 <img alt="../../_images/rest-api.png" src="../../_images/rest-api.png" />
 <p class="caption"><span class="caption-text">A web browser window presenting JSON response of the Tango REST server</span></p>
 </div>
@@ -521,6 +527,19 @@ address: <cite>http://tangobox-web:8080/tango/rest/rc4/hosts/tangobox-vm/10000</
 <p class="last">Please keep in mind that you should not rebuild <strong>tangobox-web</strong> image because its configuration is not included in Dockerfile
 (it requires in-container config).</p>
 </div>
+</div>
+<div class="section" id="sardana">
+<span id="id4"></span><h3>Sardana<a class="headerlink" href="#sardana" title="Permalink to this headline">¶</a></h3>
+<p>Sardana is a software suite for Supervision, Control and Data Acquisition in scientific installations. I
+t aims to reduce cost and time of design, development and support of the control and data acquisition systems.
+For more information about it please refer to <a class="reference external" href="http://www.sardana-controls.org">Sardana documentation</a>.</p>
+<div class="figure" id="id13">
+<img alt="../../_images/sardana.png" src="../../_images/sardana.png" />
+<p class="caption"><span class="caption-text">SardanaGUI in action</span></p>
+</div>
+<p>To play with Sardana the <strong>tangobox-sardana</strong> container has to be started. Open a terminal and call
+<strong class="command">docker start tangobox-sardana</strong>. Then, you may double-click the <span class="guilabel">SardanaGUI</span> icon on
+the desktop or run it from a terminal (type <strong class="command">SardanaGUI</strong>).</p>
 </div>
 </div>
 </div>

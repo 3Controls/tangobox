@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Terminal=false
-Icon[en_US]=gnome-panel-launcher
+# Icon[en_US]=gnome-panel-launcher
 Exec=python /usr/local/lib/python2.7/dist-packages/panic-6.4.0-py2.7.egg/panic/gui/gui.py
 Name[en_US]=PANIC 
 Name=PANIC 

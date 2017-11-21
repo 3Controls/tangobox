@@ -221,7 +221,7 @@
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>&gt; mvn archetype:generate <span class="se">\</span>
       -DarchetypeGroupId<span class="o">=</span>org.tango-controls <span class="se">\</span>
       -DarchetypeArtifactId<span class="o">=</span>jtango-maven-archetype <span class="se">\</span>
-      -DarchetypeVersion<span class="o">=</span><span class="m">1</span>.4
+      -DarchetypeVersion<span class="o">=</span><span class="m">1</span>.1
 </pre></div>
 </div>
 <p>This command generates skeleton project using special Maven artifact that defines the template of the project. While generating new project you have to define several properties:</p>
@@ -239,10 +239,7 @@
 <li><strong>platform</strong> – Windows, MacOS, Unix/Linux etc. Typically Java projects will have <em>All</em> in this property</li>
 <li><strong>family</strong> – as in POGO. Typically Java high level projects will have <em>SoftwareSystem</em> in this property</li>
 <li><strong>bus</strong> – bus to the device (underlying hardware) e.g. <em>Serial</em>. For Java this might be <em>NA</em> if there is no real hardware associated with this Tango server.</li>
-<li><strong>jtango-version</strong> – a version of JTango dependency or <em>LATEST</em> if you are know what are you doing.</li>
 </ul>
-<p>Latest version of JTango is</p>
-<a class="reference external image-reference" href="https://bintray.com/tango-controls/jtango/JTango/_latestVersion"><img alt="JTango latest version" src="https://api.bintray.com/packages/tango-controls/jtango/JTango/images/download.svg" /></a>
 <p>The following output indicates that project has been successfully generated:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[INFO] ------------------------------------------------------------------------</span>
 <span class="go">[INFO] BUILD SUCCESS</span>
