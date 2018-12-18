@@ -10,7 +10,7 @@ User=tango-cs
 Environment=MYSQL_UNIX_PORT=/var/run/mysqld/mysqld.sock
 Environment=MYSQL_USER=tango
 Environment=MYSQL_PASSWORD=tango
-Environment=TANGO_HOST=tangobox-vm:10000
+Environment=TANGO_HOST=tangobox:10000
 ExecStart=/usr/local/bin/DataBaseds 2 -ORBendPoint giop:tcp::10000
 
 [Install]

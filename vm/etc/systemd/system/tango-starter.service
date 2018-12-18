@@ -10,6 +10,6 @@ RestartSec=10
 #Environment=MYSQL_UNIX_PORT=/var/run/mysqld/mysqld.sock
 Environment=LD_LIBRARY_PATH=/usr/local/lib
 Environment=PYTHONPATH=${PYTHONPATH}:/home/tango-cs/.local/lib/python2.7/site-packages
-Environment=TANGO_HOST=tangobox-vm:10000
-ExecStart=/usr/local/bin/Starter TangoBox-VM
+Environment=TANGO_HOST=tangobox:10000
+ExecStart=/usr/local/bin/Starter tangobox
 
