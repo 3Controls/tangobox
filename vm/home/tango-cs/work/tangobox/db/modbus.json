@@ -1,0 +1,37 @@
+{
+    "servers": {
+        "Modbus": {
+            "modbus1": {
+                "Modbus": {
+                    "com/modbus/modbus1": {
+                        "properties": {
+                            "Iphost": [
+                                "10.0.2.15"
+                            ], 
+                            "Protocol": [
+                                "TCP"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "ModbusComposer": {
+            "composer1": {
+                "ModbusComposer": {
+                    "com/modbus/composer": {
+                        "properties": {
+                            "DynamicAttributes": [
+                                "Temperature=DevDouble(reg(0x3)*0.1)", 
+                                "Pressure=DevDouble(reg(0x4)*0.3+50)"
+                            ], 
+                            "Modbus_name": [
+                                "com/modbus/modbus1"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
