@@ -1,0 +1,368 @@
+{
+    "servers": {
+        "ArchivingManager": {
+            "1": {
+                "ArchivingManager": {
+                    "archiving/hdbtdb/archivingmanager": {
+                        "properties": {
+                            "HdbPassword": [
+                                "hdbmanager"
+                            ], 
+                            "HdbUser": [
+                                "hdbmanager"
+                            ], 
+                            "TdbPassword": [
+                                "tdbmanager"
+                            ], 
+                            "TdbUser": [
+                                "tdbmanager"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "HDBTDBArchivingWatcher": {
+            "HDBTDB": {
+                "HDBTDBArchivingWatcher": {
+                    "archiving/hdbtdb/hdbtdbarchivingwatcher.1": {
+                        "properties": {
+                            "GapDuration": [
+                                "900000"
+                            ], 
+                            "archiverClass": [
+                                "HdbArchiver"
+                            ], 
+                            "checkLastValidDate": [
+                                "false"
+                            ], 
+                            "cyclePause": [
+                                "1200000"
+                            ], 
+                            "dbPwd": [
+                                "hdbarchiver"
+                            ], 
+                            "dbUser": [
+                                "hdbarchiver"
+                            ], 
+                            "doArchiverDiagnosis": [
+                                "true"
+                            ], 
+                            "doDiagnosis": [
+                                "true"
+                            ], 
+                            "doDiffReport": [
+                                "false"
+                            ], 
+                            "doRetry": [
+                                "true"
+                            ], 
+                            "exludeList": [
+                                " "
+                            ], 
+                            "notificationContact": [
+                                " "
+                            ], 
+                            "notificationThreshold": [
+                                "340"
+                            ], 
+                            "onlyIncludeList": [
+                                " "
+                            ], 
+                            "periodicReport": [
+                                "7 days"
+                            ], 
+                            "realCheck": [
+                                "true"
+                            ], 
+                            "safetyPeriod": [
+                                "15 minutes"
+                            ], 
+                            "textTalkerLanguage": [
+                                "en"
+                            ], 
+                            "unitaryPause": [
+                                "500"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "HdbArchiver": {
+            "01": {
+                "HdbArchiver": {
+                    "archiving/hdb/hdbarchiver.01_01": {
+                        "properties": {
+                            "DbPassword": [
+                                "hdbarchiver"
+                            ], 
+                            "DbUser": [
+                                "hdbarchiver"
+                            ], 
+                            "HasThreadedStartup": [
+                                "true"
+                            ], 
+                            "diaryLogLevel": [
+                                "INFO"
+                            ], 
+                            "diaryPath": [
+                                "/home/archivage/tango/hdbarchiver/diary/01"
+                            ], 
+                            "hasDiary": [
+                                "false"
+                            ], 
+                            "isDedicated": [
+                                "false"
+                            ], 
+                            "reservedAttributes": [
+                                ""
+                            ]
+                        }
+                    }, 
+                    "archiving/hdb/hdbarchiver.01_02": {
+                        "properties": {
+                            "DbPassword": [
+                                "hdbarchiver"
+                            ], 
+                            "DbUser": [
+                                "hdbarchiver"
+                            ], 
+                            "HasThreadedStartup": [
+                                "true"
+                            ], 
+                            "diaryLogLevel": [
+                                "INFO"
+                            ], 
+                            "diaryPath": [
+                                "/home/archivage/tango/hdbarchiver/diary/01"
+                            ], 
+                            "hasDiary": [
+                                "false"
+                            ], 
+                            "isDedicated": [
+                                "false"
+                            ], 
+                            "reservedAttributes": [
+                                ""
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "HdbExtractor": {
+            "1": {
+                "HdbExtractor": {
+                    "archiving/hdb/hdbextractor.1": {
+                        "properties": {
+                            "DbPassword": [
+                                "hdbarchiver"
+                            ], 
+                            "DbUser": [
+                                "hdbarchiver"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "SnapArchiver": {
+            "01": {
+                "SnapArchiver": {
+                    "archiving/snap/snaparchiver.01_01": {
+                        "properties": {
+                            "DbHost": [
+                                "tangobox-archive"
+                            ], 
+                            "DbName": [
+                                "snap"
+                            ], 
+                            "DbPassword": [
+                                "snaparchiver"
+                            ], 
+                            "DbSchema": [
+                                "snap"
+                            ], 
+                            "DbUser": [
+                                "snaparchiver"
+                            ], 
+                            "beansFileName": [
+                                "beansBeamline.xml"
+                            ]
+                        }
+                    }, 
+                    "archiving/snap/snaparchiver.01_02": {
+                        "properties": {
+                            "DbHost": [
+                                "tangobox-archive"
+                            ], 
+                            "DbName": [
+                                "snap"
+                            ], 
+                            "DbPassword": [
+                                "snaparchiver"
+                            ], 
+                            "DbSchema": [
+                                "snap"
+                            ], 
+                            "DbUser": [
+                                "snaparchiver"
+                            ], 
+                            "beansFileName": [
+                                "beansRCM.xml"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "SnapExtractor": {
+            "1": {
+                "SnapExtractor": {
+                    "archiving/snap/snapextractor.1": {
+                        "properties": {
+                            "DbPassword": [
+                                "snaparchiver"
+                            ], 
+                            "DbUser": [
+                                "snaparchiver"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "SnapManager": {
+            "1": {
+                "SnapManager": {
+                    "archiving/snap/snapmanager.1": {
+                        "properties": {
+                            "DbHost": [
+                                "tangobox-archive"
+                            ], 
+                            "DbName": [
+                                "snap"
+                            ], 
+                            "DbPassword": [
+                                "snapmanager"
+                            ], 
+                            "DbSchema": [
+                                "snap"
+                            ], 
+                            "DbUser": [
+                                "snapmanager"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "TdbArchiver": {
+            "01": {
+                "TdbArchiver": {
+                    "archiving/tdb/tdbarchiver.01_01": {
+                        "properties": {
+                            "DbPassword": [
+                                "tdbarchiver"
+                            ], 
+                            "DbUser": [
+                                "tdbarchiver"
+                            ], 
+                            "HasThreadedStartup": [
+                                "true"
+                            ], 
+                            "diaryLogLevel": [
+                                "INFO"
+                            ], 
+                            "diaryPath": [
+                                "/home/archivage/tango/TDBarchiver/diary/01"
+                            ], 
+                            "hasDiary": [
+                                "false"
+                            ], 
+                            "isDedicated": [
+                                "false"
+                            ], 
+                            "reservedAttributes": [
+                                ""
+                            ]
+                        }
+                    }, 
+                    "archiving/tdb/tdbarchiver.01_02": {
+                        "properties": {
+                            "DbPassword": [
+                                "tdbarchiver"
+                            ], 
+                            "DbUser": [
+                                "tdbarchiver"
+                            ], 
+                            "HasThreadedStartup": [
+                                "true"
+                            ], 
+                            "diaryLogLevel": [
+                                "INFO"
+                            ], 
+                            "diaryPath": [
+                                "/home/archivage/tango/TDBarchiver/diary/01"
+                            ], 
+                            "hasDiary": [
+                                "false"
+                            ], 
+                            "isDedicated": [
+                                "false"
+                            ], 
+                            "reservedAttributes": [
+                                ""
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "TdbExtractor": {
+            "1": {
+                "TdbExtractor": {
+                    "archiving/tdb/tdbextractor.1": {
+                        "properties": {
+                            "DbPassword": [
+                                "tdbarchiver", 
+                                "tdbarchiver"
+                            ], 
+                            "DbUser": [
+                                "tdbarchiver", 
+                                "tdbarchiver"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "hdb++cm-srv": {
+            "1": {
+                "HdbConfigurationManager": {
+                    "archiving/hdbpp/configurationmanager.1": {
+                        "properties": {
+                            "ArchiverList": [
+                                "archiving/hdbpp/eventsubscriber.1"
+                            ]
+                        }
+                    }
+                }
+            }
+        }, 
+        "hdb++es-srv": {
+            "1": {
+                "HdbEventSubscriber": {
+                    "archiving/hdbpp/eventsubscriber.1": {
+                        "properties": {
+                            "AttributeList": [
+                                "tango://tangobox-vm:10000/sys/tg_test/1/ampli;strategy=ALWAYS;ttl=0"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
