@@ -36,3 +36,5 @@ sudo mysql -u root < tango-2018-12-18-base.sql
 
 ./install-services.sh
 
+. /etc/tangorc
+expor TANGO_HOST
