@@ -1,0 +1,230 @@
+{
+    "servers": {
+        "Starter": {
+            "tangobox-archive": {
+                "Starter": {
+                    "tango/admin/tangobox-archive": {
+                        "properties": {
+                            "StartDsPath": [
+                                "/usr/local/bin"
+                            ], 
+                            "UseEvents": [
+                                "0"
+                            ], 
+                            "logging_level": [
+                                "WARNING"
+                            ], 
+                            "logging_rft": [
+                                "500"
+                            ], 
+                            "logging_target": [
+                                "file::/tmp/ds.log/starter_tangobox-archive.log"
+                            ], 
+                            "polled_attr": [
+                                "hoststate", 
+                                "1000", 
+                                "runningservers", 
+                                "1000", 
+                                "stoppedservers", 
+                                "1000", 
+                                "notifdstate", 
+                                "1000", 
+                                "servers", 
+                                "1000", 
+                                "state", 
+                                "1000"
+                            ]
+                        }
+                    }
+                }
+            }, 
+            "tangobox-com": {
+                "Starter": {
+                    "tango/admin/tangobox-com": {
+                        "properties": {
+                            "StartDsPath": [
+                                "/usr/local/bin"
+                            ], 
+                            "UseEvents": [
+                                "0"
+                            ], 
+                            "logging_level": [
+                                "WARNING"
+                            ], 
+                            "logging_rft": [
+                                "500"
+                            ], 
+                            "logging_target": [
+                                "file::/tmp/ds.log/starter_tangobox-com.log"
+                            ], 
+                            "polled_attr": [
+                                "hoststate", 
+                                "1000", 
+                                "runningservers", 
+                                "1000", 
+                                "stoppedservers", 
+                                "1000", 
+                                "notifdstate", 
+                                "1000", 
+                                "servers", 
+                                "1000", 
+                                "state", 
+                                "1000"
+                            ]
+                        }
+                    }
+                }
+            }, 
+            "tangobox-hdbpp": {
+                "Starter": {
+                    "tango/admin/tangobox-hdbpp": {
+                        "properties": {
+                            "StartDsPath": [
+                                "/usr/bin"
+                            ], 
+                            "UseEvents": [
+                                "0"
+                            ], 
+                            "logging_level": [
+                                "WARNING"
+                            ], 
+                            "logging_rft": [
+                                "500"
+                            ], 
+                            "logging_target": [
+                                "file::/tmp/ds.log/starter_tangobox-hdbpp.log"
+                            ], 
+                            "polled_attr": [
+                                "hoststate", 
+                                "1000", 
+                                "runningservers", 
+                                "1000", 
+                                "stoppedservers", 
+                                "1000", 
+                                "notifdstate", 
+                                "1000", 
+                                "servers", 
+                                "1000", 
+                                "state", 
+                                "1000"
+                            ]
+                        }
+                    }
+                }
+            }, 
+            "tangobox-sardana": {
+                "Starter": {
+                    "tango/admin/tangobox-sardana": {
+                        "properties": {
+                            "StartDsPath": [
+                                "/usr/local/bin"
+                            ], 
+                            "UseEvents": [
+                                "0"
+                            ], 
+                            "logging_level": [
+                                "WARNING"
+                            ], 
+                            "logging_rft": [
+                                "500"
+                            ], 
+                            "logging_target": [
+                                "file::/tmp/ds.log/starter_tangobox-sardana.log"
+                            ], 
+                            "polled_attr": [
+                                "hoststate", 
+                                "1000", 
+                                "runningservers", 
+                                "1000", 
+                                "stoppedservers", 
+                                "1000", 
+                                "notifdstate", 
+                                "1000", 
+                                "servers", 
+                                "1000", 
+                                "state", 
+                                "1000"
+                            ]
+                        }
+                    }
+                }
+            }, 
+            "tangobox-sim": {
+                "Starter": {
+                    "tango/admin/tangobox-sim": {
+                        "properties": {
+                            "StartDsPath": [
+                                "/usr/local/bin", 
+                                "/home/tango-cs/dservers/linac/bin"
+                            ], 
+                            "UseEvents": [
+                                "0"
+                            ], 
+                            "logging_level": [
+                                "WARNING"
+                            ], 
+                            "logging_rft": [
+                                "500"
+                            ], 
+                            "logging_target": [
+                                "file::/tmp/ds.log/starter_tangobox-sim.log"
+                            ], 
+                            "polled_attr": [
+                                "hoststate", 
+                                "1000", 
+                                "runningservers", 
+                                "1000", 
+                                "stoppedservers", 
+                                "1000", 
+                                "notifdstate", 
+                                "1000", 
+                                "servers", 
+                                "1000", 
+                                "state", 
+                                "1000"
+                            ]
+                        }
+                    }
+                }
+            }, 
+            "tangobox-web": {
+                "Starter": {
+                    "tango/admin/tangobox-web": {
+                        "properties": {
+                            "StartDsPath": [
+                                "/usr/local/bin\t", 
+                                "/var/lib/tomcat8/webapps"
+                            ], 
+                            "UseEvents": [
+                                "0"
+                            ], 
+                            "logging_level": [
+                                "WARNING"
+                            ], 
+                            "logging_rft": [
+                                "500"
+                            ], 
+                            "logging_target": [
+                                "file::/tmp/ds.log/starter_tangobox-web.log"
+                            ], 
+                            "polled_attr": [
+                                "hoststate", 
+                                "1000", 
+                                "runningservers", 
+                                "1000", 
+                                "stoppedservers", 
+                                "1000", 
+                                "notifdstate", 
+                                "1000", 
+                                "servers", 
+                                "1000", 
+                                "state", 
+                                "1000"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
