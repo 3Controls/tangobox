@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV TANGO_HOST TangoBox-VM:10000
+ENV TANGO_HOST tangobox:10000
 
 COPY resources/supervisord.conf /etc/supervisord.conf
 COPY resources/tango_register_device /usr/local/bin/

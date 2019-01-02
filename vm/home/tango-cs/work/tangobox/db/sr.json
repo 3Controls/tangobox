@@ -1,0 +1,28 @@
+{
+    "servers": {
+        "GenericSimulator": {
+            "genericForLinac": {
+                "GenericSimulator": {
+                    "sr/d-ct/1": {}, 
+                    "sr/d-ct/2": {}, 
+                    "sr/d-ct/ict-bidon": {
+                        "attribute_properties": {
+                            "Current": {
+                                "display_unit": [
+                                    "1.0"
+                                ], 
+                                "standard_unit": [
+                                    "1.0"
+                                ], 
+                                "unit": [
+                                    "mA"
+                                ]
+                            }
+                        }
+                    }, 
+                    "sr/d-ct/pct-bidon": {}
+                }
+            }
+        }
+    }
+}
