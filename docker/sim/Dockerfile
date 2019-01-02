@@ -1,6 +1,6 @@
 FROM base:latest
 
-ENV TANGO_HOST TangoBox-VM:10000
+ENV TANGO_HOST tangobox:10000
 #adding linac files
 ADD linac/ /home/tango-cs/dservers/linac
 

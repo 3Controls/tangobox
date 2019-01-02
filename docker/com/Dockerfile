@@ -12,8 +12,9 @@ RUN apt-get update && apt-get install -y \
     unzip \
     && git clone https://github.com/sergirubio/PyPLC.git \
     && cd PyPLC \
-    && sudo python setup.py install \
-    && cd /usr/local/lib/python2.7/dist-packages \
-    && sudo unzip pyplc-7.7-py2.7.egg
+    && sudo python setup.py install 
+#    && cd /usr/local/lib/python2.7/dist-packages \
+#    && sudo unzip pyplc-7.7-py2.7.egg
+
 USER tango-cs
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
