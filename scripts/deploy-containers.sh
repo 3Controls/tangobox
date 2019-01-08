@@ -14,7 +14,7 @@ docker build -t hdbpp hdbpp/
 docker build -t web web/ 
 
 # containers strart
-create-tangobox-container archive
+create-tangobox-container-root archive
 create-tangobox-container sim
 create-tangobox-container com
 create-tangobox-container egiga
