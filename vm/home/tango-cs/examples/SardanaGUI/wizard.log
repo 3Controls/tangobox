@@ -1,0 +1,10 @@
+Project created by AppSettingsWizard on 2017-10-04T10:55:35.613450
+File copied: /home/tango-cs/Pictures/3.png --> /home/tango-cs/src/SardanaGUI/tgconf_SardanaGUI/3.png
+XML Config file created: "/home/tango-cs/src/SardanaGUI/tgconf_SardanaGUI/config.xml"
+Python config file created: "/home/tango-cs/src/SardanaGUI/tgconf_SardanaGUI/config.py"
+python init file created: "/home/tango-cs/src/SardanaGUI/tgconf_SardanaGUI/__init__.py"
+Application project was successfully created.You can find the files in: "/home/tango-cs/src/SardanaGUI"
+Tip: You can install it with:
+	pip install /home/tango-cs/src/SardanaGUI
+Tip: And then run the application with:
+	 SardanaGUI
