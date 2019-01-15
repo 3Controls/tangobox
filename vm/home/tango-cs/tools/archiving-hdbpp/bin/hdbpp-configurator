@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+#
+# Define the class path
+#
+TANGO_LIB=$TANGO_ROOT/share/java
+TANGO_APPLI=$TANGO_ROOT/share/java
+HDBPP_LIB=$HDBPP_ROOT/java
+
+JTANGO=$TANGO_LIB/JTango.jar
+ATK=$TANGO_LIB/ATKCore.jar:$TANGO_LIB/ATKWidget.jar
+
+CONFIGURATOR=$HDBPP_LIB/hdbpp-configurator.jar
+JIVE=$TANGO_APPLI/Jive.jar
+
+CLASSPATH=$JTANGO:$ATK:$CONFIGURATOR:$JIVE
+export CLASSPATH
+echo "CLASSPATH=$CLASSPATH"
+
+#
+# Define the default GUI
+#
+APPLI_JAR=$CONFIGURATOR
+APPLI_PACKAGE=org.tango.hdb_configurator
+APPLI_MAIN_CLASS=configurator.HdbConfigurator
+
+#
+# Gives the hdbpp-cm-srv device
+#
+export HdbManager=archiving/hdbpp/configurationmanager.1
+
+#=====================================
+#
+#            Main part
+#
+#=====================================
+DisplaySyntax() {
+        echo ""
+        echo "$0: "
+        echo "Options:"
+        echo "   -configure: Start HDB++ configurator"
+        echo "   -diag:      Start HDB++ diagnostics window"
+        echo "   -servers:   Start HDB++ server status window"
+        echo "   --help:     Display this message"
+}
+#=====================================
+
+
+case "$1" in
+
+# ----------------------------------------------
+    -configure)
+        # Start Configurator
+        java  $APPLI_PACKAGE.$APPLI_MAIN_CLASS
+    ;;
+    
+# ----------------------------------------------
+    -diag)
+        # Display disgnostics
+        java  $APPLI_PACKAGE.diagnostics.HdbDiagnostics
+    ;;
+    
+# ----------------------------------------------
+    -servers)
+        # Display servers status
+        java  $APPLI_PACKAGE.diagnostics.ServerInfoTable
+    ;;
+    
+# ----------------------------------------------
+    *)
+        # Default case  --> Display Syntax
+        DisplaySyntax
+    ;;
+esac
