@@ -1,6 +1,27 @@
 #!/usr/bin/env bash
 
-# This script install set of  Tango tools 
+# This script installs set of  Tango tools 
+
+# Python tools
+sudo apt install python-pip
+sudo apt install python-qwt python-qwt5-qt4 python-guiqwt python-numpy
+sudo apt install python-pymca python-pymca5
+sudo apt install libboost-python-dev
+sudo apt install python-pyqt5.qtwebkit
+sudo apt install python-pyqt5.qtsvg
+sudo apt install python-spyder
+sudo apt install python-spyderlib
+sudo apt install python-html5lib 
+sudo apt install python-ipython
+sudo apt install python-ply
+
+pip install pytango --user
+pip install fandango --user
+pip install lxml --user
+pip install PyTangoArchiving --user
+pip install itango --user
+pip install taurus --user
+pip install panic --user
 
 # archiving suit from SOLEIL (java)
 cd ~/work/tangobox/build/
