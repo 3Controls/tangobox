@@ -1,14 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-TANGO_LIBS=/usr/local/share/java
-HDB_LIBS=$TANGO_LIBS
+TANGO_LIBS=$TANGO_ROOT/share/java
+HDB_LIBS=$HDBPP_ROOT/java
 TANGO_APP=$TANGO_LIBS
 
-Appli=$TANGO_APP/jhdbviewer-1.13.jar
+HDB_VIEWER=$HDB_LIBS/jhdbviewer.jar
 
 CLASSPATH=$TANGO_LIBS/JTango.jar:$TANGO_LIBS/ATKWidget.jar:$TANGO_LIBS/ATKCore.jar
-CLASSPATH=$CLASSPATH:$HDB_LIBS/jhdbviewer-1.13.jar:$HDB_LIBS/HDB++-1.10.jar
-CLASSPATH=$CLASSPATH:$HDB_LIBS/jcalendar-1.4.jar:$HDB_LIBS/jython-standalone-2.7.0.jar
+CLASSPATH=$CLASSPATH:$HDB_VIEWER:$HDB_LIBS/HDB++.jar
+CLASSPATH=$CLASSPATH:$HDB_LIBS/jcalendar.jar:$HDB_LIBS/jython.jar
 export CLASSPATH
 echo CLASSPATH $CLASSPATH
 
