@@ -4,6 +4,8 @@
 
 # Python tools
 sudo apt install python-pip
+sudo apt install python-qt4
+sudo apt install qt4-designer
 sudo apt install python-qwt python-qwt5-qt4 python-guiqwt python-numpy
 sudo apt install python-pymca python-pymca5
 sudo apt install libboost-python-dev
@@ -15,13 +17,19 @@ sudo apt install python-html5lib
 sudo apt install python-ipython
 sudo apt install python-ply
 
+pip install numpy --user
+pip install sphinx --user
+pip install sphinx_rtd_theme --user
+pip install lxml --user
 pip install pytango --user
 pip install fandango --user
-pip install lxml --user
 pip install PyTangoArchiving --user
 pip install itango --user
 pip install taurus --user
 pip install panic --user
+pip install sardana --user
+cd ~/examples/SardanaGUI
+pip install . --user
 
 # archiving suit from SOLEIL (java)
 cd ~/work/tangobox/build/
