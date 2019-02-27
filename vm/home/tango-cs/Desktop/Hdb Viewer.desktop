@@ -1,9 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Terminal=true
-# Icon[en_US]=/home/tango-cs/Downloads/logos/document-properties.svg
+Terminal=false
 Name[en_US]=Hdb Viewer
-Exec=bash -l -c "/home/tango-cs/bin/jhdbviewer"
+Exec=bash -l -c "hdbpp-viewer"
 Name=Hdb Viewer
 Icon=/home/tango-cs/Pictures/HdB_Viewer.png

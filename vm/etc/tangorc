@@ -1,1 +1,4 @@
 TANGO_HOST=tangobox:10000
+TANGO_ROOT=/usr/local
+ARCHIVING_ROOT=/home/tango-cs/tools/archiving-java
+HDBPP_ROOT=/home/tango-cs/tools/archiving-hdbpp

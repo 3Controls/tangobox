@@ -1,4 +1,234 @@
 {
+    "classes": {
+        "ArchivingManager": {
+            "properties": {
+                "Description": [
+                    ""
+                ], 
+                "ProjectTitle": [
+                    ""
+                ]
+            }
+        }, 
+        "HdbArchiver": {
+            "properties": {
+                "CommitCounter": [
+                    "10"
+                ], 
+                "DbCnxInactivityTimeout": [
+                    "1800"
+                ], 
+                "DbHost": [
+                    "tangobox-archive"
+                ], 
+                "DbMaxPoolSize": [
+                    "10"
+                ], 
+                "DbMinPoolSize": [
+                    "2"
+                ], 
+                "DbName": [
+                    "hdb"
+                ], 
+                "DbONSConf": [
+                    "crshcl:6200"
+                ], 
+                "DbSchema": [
+                    "hdb"
+                ], 
+                "DbTnsNames": [
+                    "(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = crshcl)(PORT = 1521)) (CONNECT_DATA = (SERVICE_NAME = HCL)))"
+                ], 
+                "DbType": [
+                    "MySQL"
+                ], 
+                "Facility": [
+                    "false"
+                ], 
+                "RacConnection": [
+                    "false"
+                ], 
+                "isDegradMode": [
+                    "false"
+                ], 
+                "isRac": [
+                    "false"
+                ]
+            }
+        }, 
+        "HdbConfigurationManager": {
+            "properties": {
+                "Description": [
+                    ""
+                ], 
+                "InheritedFrom": [
+                    "TANGO_BASE_CLASS"
+                ], 
+                "LibConfiguration": [
+                    "host=tangobox-hdbpp", 
+                    "user=hdbpprw", 
+                    "password=hdbpprw", 
+                    "dbname=hdbpp", 
+                    "port=3306", 
+                    "libname=libhdb++mysql.so.6"
+                ], 
+                "MaxSearchSize": [
+                    "2000"
+                ], 
+                "ProjectTitle": [
+                    "Hdb++ configuration manager"
+                ]
+            }
+        }, 
+        "HdbEventSubscriber": {
+            "properties": {
+                "CheckPeriodicTime": [
+                    "150"
+                ], 
+                "DefaultContext": [
+                    "ALWAYS"
+                ], 
+                "Description": [
+                    "This class is able to subscribe on archive events and store value in Historical DB"
+                ], 
+                "HdbppContext": [
+                    "0:ALWAYS", 
+                    "1:RUN", 
+                    "2:SHUTDOWN", 
+                    "3:SERVICE"
+                ], 
+                "InheritedFrom": [
+                    "TANGO_BASE_CLASS"
+                ], 
+                "LibConfiguration": [
+                    "host=tangobox-hdbpp", 
+                    "user=hdbpprw", 
+                    "password=hdbpprw", 
+                    "dbname=hdbpp", 
+                    "port=3306", 
+                    "libname=libhdb++mysql.so.6"
+                ], 
+                "PollingThreadPeriod": [
+                    "60"
+                ], 
+                "ProjectTitle": [
+                    "Tango Device Server"
+                ], 
+                "StartArchivingAtStart": [
+                    "false"
+                ], 
+                "StatisticsTimeWindow": [
+                    "60"
+                ], 
+                "SubscribeRetryPeriod": [
+                    "150"
+                ]
+            }
+        }, 
+        "SnapArchiver": {
+            "properties": {
+                "DbHost": [
+                    "tangobox-archive"
+                ], 
+                "DbName": [
+                    "snap"
+                ], 
+                "DbPassword": [
+                    "snaparchiver"
+                ], 
+                "DbSchema": [
+                    "snap"
+                ], 
+                "DbUser": [
+                    "snaparchiver"
+                ], 
+                "Description": [
+                    ""
+                ], 
+                "ProjectTitle": [
+                    ""
+                ], 
+                "beansFileName": [
+                    "beansBeamline.xml"
+                ]
+            }
+        }, 
+        "SnapExtractor": {
+            "properties": {
+                "Description": [
+                    ""
+                ], 
+                "ProjectTitle": [
+                    ""
+                ]
+            }
+        }, 
+        "SnapManager": {
+            "properties": {
+                "DbHost": [
+                    "tangobox-archive"
+                ], 
+                "DbName": [
+                    "snap"
+                ], 
+                "DbSchema": [
+                    "snap"
+                ], 
+                "Description": [
+                    ""
+                ], 
+                "ProjectTitle": [
+                    ""
+                ], 
+                "isRac": [
+                    "false"
+                ]
+            }
+        }, 
+        "TdbArchiver": {
+            "properties": {
+                "CommitCounter": [
+                    "10"
+                ], 
+                "DbCnxInactivityTimeout": [
+                    "1800"
+                ], 
+                "DbHost": [
+                    "tangobox-archive"
+                ], 
+                "DbMaxPoolSize": [
+                    "10"
+                ], 
+                "DbMinPoolSize": [
+                    "2"
+                ], 
+                "DbName": [
+                    "tdb"
+                ], 
+                "DbONSConf": [
+                    "crshcl:6200"
+                ], 
+                "DbSchema": [
+                    "tdb"
+                ], 
+                "DbTnsNames": [
+                    "(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = crshcl)(PORT = 1521)) (CONNECT_DATA = (SERVICE_NAME = HCL)))"
+                ], 
+                "DbType": [
+                    "MySQL"
+                ], 
+                "Facility": [
+                    "false"
+                ], 
+                "isDegradMode": [
+                    "false"
+                ], 
+                "isRac": [
+                    "false"
+                ]
+            }
+        }
+    }, 
     "servers": {
         "ArchivingManager": {
             "1": {
@@ -210,7 +440,7 @@
                                 "snaparchiver"
                             ], 
                             "beansFileName": [
-                                "beansRCM.xml"
+                                "beansBeamline.xml"
                             ]
                         }
                     }
