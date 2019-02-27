@@ -34,7 +34,9 @@ RUN apt-get update && apt-get install -y \
  && mkdir /usr/local/lib/java/ && cp /tmp/mambo/lib/java/* /usr/local/lib/java/ \
 # cleaning
  && apt-get clean -y \
+ && apt autoremove -y \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 
 # making executables executable
 RUN chmod +x /usr/local/bin/*

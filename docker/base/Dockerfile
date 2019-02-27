@@ -31,13 +31,14 @@ RUN apt-get update && apt-get install -y \
     libboost-dev \
     libboost-python-dev \
     sudo \
- && pip install -U \
+ && pip install -U --no-cache-dir \
     numpy \
     six \
     setuptools \
     #PyTango
     pytango \
     fandango \
+    PyTangoArchiving \
     panic \ 	
 # cleaning
  && apt-get -y clean \
@@ -48,7 +49,8 @@ RUN apt-get update && apt-get install -y \
  && tango-cs:tango | chpasswd \
  && echo "tango-cs ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/tango-cs \
  && chmod 0440 /etc/sudoers.d/tango-cs \
- && mkdir /home/tango-cs/dservers	
+ && mkdir /home/tango-cs/dservers
+ && rm -rf /home/tango-cs/.cache	
 USER tango-cs
 # supervisor
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
