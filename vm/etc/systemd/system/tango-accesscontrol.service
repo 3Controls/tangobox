@@ -7,6 +7,7 @@ After=tango-db.service
 [Service]
 Restart=always
 RestartSec=10
+User=tango-cs
 Environment=MYSQL_UNIX_PORT=/var/run/mysqld/mysqld.sock
 Environment=MYSQL_USER=tango
 Environment=MYSQL_PASSWORD=tango
