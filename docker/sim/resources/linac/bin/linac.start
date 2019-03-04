@@ -3,7 +3,7 @@
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export LD_LIBRARY_PATH
 
-TANGO_HOST=TangoBox-VM:10000
+TANGO_HOST=tangobox:10000
 export TANGO_HOST
 
 cd /home/tango-cs/dservers/linac/bin

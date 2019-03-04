@@ -46,4 +46,4 @@ JAVA_OPTS="-Djava.awt.headless=true -Xmx128m -XX:+UseConcMarkSweepGC"
 #AUTHBIND=no
 
 #Setting TANGO_HOST variable
-TANGO_HOST=TangoBox-VM:10000
+TANGO_HOST=tangobox:10000

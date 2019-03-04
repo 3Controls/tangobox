@@ -8,13 +8,13 @@ COPY resources/supervisord.conf /etc/supervisord.conf
 COPY resources/initdb.sh /usr/local/bin/
 
 RUN apt-get update && apt-get install -y \
-# mandatory tools/packages
-	build-essential \
-	sudo \
+        build-essential \
+        sudo \
 	apt-transport-https \
-	supervisor \
+	supervisor
+
 # install mariadb and mysql
-	mariadb-client mariadb-server default-libmysqlclient-dev libmariadb-client-lgpl-dev \
+RUN apt-get install -y mariadb-client mariadb-server default-libmysqlclient-dev libmariadb-client-lgpl-dev \
  && echo "deb [trusted=yes] https://dl.bintray.com/tango-controls/debian stretch main" | sudo tee -a /etc/apt/sources.list \
  && apt-get update && apt-get install -y \
 	hdb++mysql \
@@ -22,14 +22,25 @@ RUN apt-get update && apt-get install -y \
 	tango-starter \
 	libtango-dev \
 	libtango-tools \
- && chmod 755 /usr/lib/tango/Starter \
+ && chmod 755 /usr/lib/tango/Starter
+
 # cleaning
- && apt-get remove -y && apt-get -y clean \
+RUN apt-get remove -y && apt-get -y clean && apt-get -y autoclean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY resources/add_tables.sh /usr/local/bin/
 COPY resources/create_hdb++.sql /usr/share/libhdb++mysql/
 COPY resources/my.cnf /etc/mysql/	 
+
+# making executables executable
+RUN chmod +x /usr/local/bin/*
+
+# database preparation
+RUN bash -c "mysqld_safe --defaults-file=/etc/mysql/my.cnf &"\
+ && sleep 5 \
+ && /usr/local/bin/initdb.sh \
+ && sleep 10
+
 
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
 

@@ -27,6 +27,15 @@ sudo make
 sudo make install
 sudo ldconfig
 
+# add missing log4j library
+cd /home/tango-cs/work/tangobox/build
+wget http://ftp.man.poznan.pl/apache/logging/log4j/1.2.17/log4j-1.2.17.tar.gz
+tar -xzf log4j-1.2.17.tar.gz
+sudo cp apache-log4j-1.2.17/log4j-1.2.17.jar /usr/local/share/java/
+sudo ln -s /usr/local/share/java/log4j-1.2.17.jar /usr/local/share/java/log4j.jar
+mkdir /tmp/log
+mdkir /tmp/log/TagoRestServer
+
 # update priviledges for database
 sudo mysql -u root -e "create user tango identified by 'tango';"
 sudo mysql -u root -e "grant all on tango.* to 'tango';"

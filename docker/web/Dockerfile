@@ -7,27 +7,25 @@ ENV CATALINA_PID=/opt/tomcat/temp/tomcat.pid
 ENV CATALINA_HOME=/opt/tomcat
 ENV CATALINA_BASE=/opt/tomcat
 
-RUN apt-get update \
-    && apt-get -y install \
-    nano \
-    unzip \
-    && cd /opt \
-    && wget http://ftp.ps.pl/pub/apache/tomcat/tomcat-8/v8.5.23/bin/apache-tomcat-8.5.23.tar.gz \
+RUN cd /opt \
+    && wget http://ftp.man.poznan.pl/apache/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38.tar.gz \
     && sudo mkdir /opt/tomcat \
     && sudo tar xzvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1 \
-    && rm -r apache-tomcat-8.5.23.tar.gz \
+    && rm -r apache-tomcat-8.5.38.tar.gz \
     && cd /opt/tomcat \
     && sudo chgrp -R tango-cs /opt/tomcat \
     && sudo chmod -R g+r conf \
     && sudo chmod g+x conf \
     && sudo chown -R tango-cs webapps/ work/ temp/ logs/ 
+
 RUN cd /opt/tomcat/webapps \
-    && wget https://bitbucket.org/hzgwpn/mtangorest.server/downloads/mtangorest.server-rc4-2.2.zip \
-    && wget https://github.com/tango-controls/tango-webapp/releases/download/v0.3-rc2/TangoWebapp.war \
-    && unzip mtangorest.server-rc4-2.2.zip \
-    && cp -r -a ./mtangorest.server-rc4-2.2/tango.war ./ \
-    && sudo chmod 755 TangoWebapp.war \
-    && rm -r mtangorest.server-rc4-2.2 mtangorest.server-rc4-2.2.zip 
+    && wget https://github.com/tango-controls/waltz/releases/download/v0.6.1/TangoWebapp.war \
+    && sudo chmod 755 TangoWebapp.war
+
+#cleaning
+RUN sudo apt-get -y clean \
+    && sudo apt-get -y autoclean \
+    && sudo apt-get -y autoremove
 
 EXPOSE 8080
 ADD resources/web.xml /opt/tomcat/webapps/tango/WEB_INF/web.xml
