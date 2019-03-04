@@ -7,50 +7,63 @@ COPY resources/supervisord.conf /etc/supervisord.conf
 COPY resources/tango_register_device /usr/local/bin/
 
 RUN apt-get update && apt-get install -y \
-    # mandatory packages/tools
     build-essential \
     wget \
-    bzip2 \
+    bzip2 unzip \
     pkg-config \
-    #Python
     -qq python2.7 \
+    mariadb-client libmysqlclient-dev libmariadb-client-lgpl-dev \
     python-dev \
     python-pip \
-    # Tango dependencies
+    python-mysqldb \
+    git \ 
+    nano \
     default-jdk \
     libzmq3-dev \
     libomniorb4-dev libcos4-dev omniidl \
-	supervisor \
-    # Tango-9.2.5a
- && wget https://sourceforge.net/projects/tango-cs/files/tango-9.2.5a.tar.gz -P /tmp && cd /tmp/ && tar xvfz tango-9.2.5a.tar.gz \
+    supervisor
+
+# Tango-9.2.5a
+RUN wget https://sourceforge.net/projects/tango-cs/files/tango-9.2.5a.tar.gz -P /tmp && cd /tmp/ && tar xvfz tango-9.2.5a.tar.gz \
  && tango-9.2.5a/configure --prefix=/usr/local --enable-java --enable-mariadb --disable-dbserver \
- && make && make install \
-    # PyTango dependencies
- && apt-get install -y \
+ && make && make install
+
+# Prepare for PyTango
+RUN apt-get install -y \
     libboost-all-dev \
     libboost-dev \
     libboost-python-dev \
     sudo \
- && pip install -U --no-cache-dir \
-    numpy \
-    six \
-    setuptools \
-    #PyTango
-    pytango \
-    fandango \
-    PyTangoArchiving \
-    panic \ 	
+ && alias python='python2.7'
+
 # cleaning
- && apt-get -y clean \
- && alias python=python2.7 \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-# adding user 
- && useradd -ms /bin/bash tango-cs \
- && tango-cs:tango | chpasswd \
+RUN apt-get -y clean \
+ && apt-get -y autoclean \
+ && apt-get -y autoremove \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# adding a user 
+RUN  useradd -ms /bin/bash tango-cs \
+ && echo "tango-cs:tango" | chpasswd \
  && echo "tango-cs ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/tango-cs \
  && chmod 0440 /etc/sudoers.d/tango-cs \
  && mkdir /home/tango-cs/dservers
- && rm -rf /home/tango-cs/.cache	
+
 USER tango-cs
+# add pytango and tools
+RUN alias python='python2.7' \
+ && sudo -H python -m pip install --upgrade --no-cache-dir pip \
+ && pip install -U --no-cache-dir --user \
+    numpy \
+    six \
+    setuptools \
+    pytango \
+    fandango \
+    PyTangoArchiving \
+    panic
+
+RUN rm -rf /home/tango-cs/.cache	
+
+
 # supervisor
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
