@@ -1,0 +1,58 @@
+#!/bin/bash
+#
+
+TANGO_JAVA_HOME=/usr/local/share/java
+LINAC_JAVA_HOME=/home/tango-cs/dservers/linac/JLinac
+export TANGO_JAVA_HOME
+TANGO_HOST="TangoBox-VM:10000"
+
+TANGO=$TANGO_JAVA_HOME/JTango.jar
+ATK=$TANGO_JAVA_HOME/ATKCore.jar:$TANGO_JAVA_HOME/ATKWidget.jar
+TANGOPANELS=$TANGO_JAVA_HOME/tangopanels.jar
+ATKPANEL=$TANGO_JAVA_HOME/atkpanel.jar
+TACO=$LINAC_JAVA_HOME/Taco.jar
+
+#--------------------------------------------------------------------------------
+#   Set the variables for Application jarfile, Package and Main class name
+#
+#  Set APPLI_JAR to the absolute pathname of your application's jarfile
+#  Set APPLI_PACKAGE to the fully qualified package name which contains the main class
+#         example : fr.esrf.tangoatk.widget.util.jdraw
+#  Set APPLI_MAIN_CLASS to the name of the main class that this script should start
+#-------------------------------------------------------------------------------
+APPLI_JAR=$LINAC_JAVA_HOME/JLinac-simu.jar
+APPLI_PACKAGE=jlinac
+APPLI_MAIN_CLASS=MainWindow
+
+
+
+#--------------------------------------------------------------------------------
+#   Set the eventual additional variables Specific to the application
+#
+#   Here you can add some jarfiles which contains other applications you may launch
+#   through your application
+#-------------------------------------------------------------------------------
+JPSS=$LINAC_JAVA_HOME/Jpss.jar
+
+#--------------------------------------------------------------------------------
+#  Set the CLASSPATH
+#-------------------------------------------------------------------------------
+CLASSPATH=$TANGO:$ATK:$TANGOPANELS:$JPSS:$ATKPANEL:$TACO:$APPLI_JAR
+export CLASSPATH
+echo "CLASSPATH=$CLASSPATH"
+
+
+#-----------------------------------------------------------------------------------
+#       Start the JLinac application
+#
+#       All applications should normally have the same startup command line
+#-----------------------------------------------------------------------------------
+#
+
+java -version
+
+echo "Starting jlinac ..."
+echo "TANGO_HOST=$TANGO_HOST"
+
+java -Djava.library.path=/usr/local/lib/libjzmq.so.0.0.0 -DTANGO_HOST=$TANGO_HOST -DNETHOST=$TANGO_HOST $APPLI_PACKAGE.$APPLI_MAIN_CLASS $*
+
