@@ -9,3 +9,6 @@
 # make jlinac example running
 cd ~/bin/
 ln -s ~/examples/linac/JLinac/jlinac
+
+cd ~/Desktop/
+ln -s ~/examples/ "Examples"
