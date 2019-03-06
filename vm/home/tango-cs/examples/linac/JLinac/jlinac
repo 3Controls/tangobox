@@ -4,7 +4,7 @@
 TANGO_JAVA_HOME=/usr/local/share/java
 LINAC_JAVA_HOME=/home/tango-cs/examples/linac/JLinac
 export TANGO_JAVA_HOME
-TANGO_HOST="tangobox:10000"
+# TANGO_HOST="tangobox:10000"
 
 TANGO=$TANGO_JAVA_HOME/JTango.jar
 ATK=$TANGO_JAVA_HOME/ATKCore.jar:$TANGO_JAVA_HOME/ATKWidget.jar

@@ -2,8 +2,7 @@
 Version=1.0
 Type=Application
 Terminal=false
-# Icon[en_US]=/home/tango-cs/Downloads/logos/utilities-system-monitor.svg
 Name[en_US]=JLinac
-Exec=bash /usr/local/bin/jlinac
+Exec=bash -l -c "jlinac"
 Name=JLinac
 Icon=/home/tango-cs/Pictures/logos/jlinac.png

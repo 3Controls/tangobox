@@ -28,8 +28,6 @@ pip install itango --user
 pip install taurus --user
 pip install panic --user
 pip install sardana --user
-cd ~/examples/SardanaGUI
-pip install . --user
 
 # archiving suit from SOLEIL (java)
 cd ~/work/tangobox/build/
