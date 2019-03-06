@@ -2,9 +2,9 @@
 #
 
 TANGO_JAVA_HOME=/usr/local/share/java
-LINAC_JAVA_HOME=/home/tango-cs/dservers/linac/JLinac
+LINAC_JAVA_HOME=/home/tango-cs/examples/linac/JLinac
 export TANGO_JAVA_HOME
-TANGO_HOST="TangoBox-VM:10000"
+TANGO_HOST="tangobox:10000"
 
 TANGO=$TANGO_JAVA_HOME/JTango.jar
 ATK=$TANGO_JAVA_HOME/ATKCore.jar:$TANGO_JAVA_HOME/ATKWidget.jar
@@ -54,5 +54,6 @@ java -version
 echo "Starting jlinac ..."
 echo "TANGO_HOST=$TANGO_HOST"
 
-java -Djava.library.path=/usr/local/lib/libjzmq.so.0.0.0 -DTANGO_HOST=$TANGO_HOST -DNETHOST=$TANGO_HOST $APPLI_PACKAGE.$APPLI_MAIN_CLASS $*
+# java -Djava.library.path=/usr/local/lib/libjzmq.so.0.0.0 -DTANGO_HOST=$TANGO_HOST -DNETHOST=$TANGO_HOST $APPLI_PACKAGE.$APPLI_MAIN_CLASS $*
 
+java -Djava.library.path=/usr/local/lib/libjzmq.so.0.0.0 -DTANGO_HOST=$TANGO_HOST -DNETHOST=$TANGO_HOST $APPLI_PACKAGE.$APPLI_MAIN_CLASS $*
