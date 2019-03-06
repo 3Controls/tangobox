@@ -6,4 +6,4 @@ Terminal=false
 Name[en_US]=Tango REST API
 Exec=firefox --new-window http://tangobox-web:8080/tango/rest/rc4/hosts/tangobox-vm/10000
 Name=mTango REST API
-Icon=/usr/share/icons/ubuntu-mobile/apps/240/webbrowser-app.png
+Icon=/usr/share/icons/hicolor/scalable/apps/software-properties.svg

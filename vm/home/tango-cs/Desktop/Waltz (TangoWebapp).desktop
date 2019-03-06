@@ -6,4 +6,4 @@ Terminal=false
 Name[en_US]=Waltz (TangoWebapp)
 Exec=firefox --new-window http://tangobox-web:8080/TangoWebapp
 Name=TangoWebapp
-Icon=/usr/share/icons/ubuntu-mobile/apps/240/webbrowser-app.png
+Icon=/usr/share/icons/hicolor/scalable/apps/software-properties.svg
